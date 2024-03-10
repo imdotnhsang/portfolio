@@ -13,7 +13,7 @@
     "test:e2e": "playwright test",
     "doc": "storybook dev -p 6006",
     "build-doc": "storybook build",
-    "format":"prettier --write ."
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.0.10",

@@ -1,5 +1,7 @@
 /**
+ * * You are currently running a version of TypeScript which is not officially supported by @typescript-eslint/typescript-estree.
  * TODO: migrate to eslint stylistic https://eslint.style soon
+ * TODO: wait for the next version of eslint to be released to fix the issue typescript version 5.4.2 is not supported
  */
 
 module.exports = {
