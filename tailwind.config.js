@@ -1,21 +1,21 @@
-import { createThemes } from "tw-colors";
+import { createThemes } from 'tw-colors';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    extend: {},
+    extend: {}
   },
   plugins: [
     createThemes({
       light: {
-        primary: "#FF0000",
-        secondary: "#00FF00",
+        primary: '#FF0000',
+        secondary: '#00FF00'
       },
       dark: {
-        primary: "#0000FF",
-        secondary: "#FFFF00",
-      },
-    }),
-  ],
+        primary: '#0000FF',
+        secondary: '#FFFF00'
+      }
+    })
+  ]
 };
