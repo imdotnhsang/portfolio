@@ -44,11 +44,11 @@ jobs:
       - name: Run Vitest tests
         run: npm run test:coverage
       - uses: actions/upload-artifact@v4
-              if: always()
-              with:
-                name: coverage
-                path: coverage/
-                retention-days: 30
+        if: always()
+          with:
+            name: coverage
+            path: coverage/
+            retention-days: 30
   test-e2e:
     timeout-minutes: 60
     runs-on: ubuntu-latest
