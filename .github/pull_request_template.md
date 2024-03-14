@@ -1,4 +1,4 @@
-# Issue 
+# Issue
 
 _Add "#123" to link PR with Jira issue. PRs cannot be merged without an issue attached._
 
@@ -15,16 +15,17 @@ _Please include either a link to a video, screenshots, or an animated GIF._
 
 ### Testing instructions:
 
-_Please replace this text with UI/UX instructions on how to test these changes with the device.
+\_Please replace this text with UI/UX instructions on how to test these changes with the device.
 
 ## Reviews
+
 ### Author
 
 _Please delete options that are not relevant._
 
 - [ ] I have reviewed my own code (all files marked as viewed in GitHub).
 - [ ] I have tested (via the browsers, at least 2 browsers) each of the interfaces/features related to the files changed/added.
-	- [ ] Chrome
-	- [ ] Safari
-	- [ ] Brave
-	- [ ] Edge
+  - [ ] Chrome
+  - [ ] Safari
+  - [ ] Brave
+  - [ ] Edge
