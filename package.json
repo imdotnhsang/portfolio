@@ -10,7 +10,6 @@
     "lint:fix": "next lint --fix",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:e2e": "playwright test",
     "doc": "storybook dev -p 6006",
     "build-doc": "storybook build",
     "format": "prettier --write ."

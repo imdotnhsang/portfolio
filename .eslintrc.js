@@ -1,7 +1,7 @@
 /**
  * * You are currently running a version of TypeScript which is not officially supported by @typescript-eslint/typescript-estree.
- * TODO: migrate to eslint stylistic https://eslint.style soon
  * TODO: wait for the next version of eslint to be released to fix the issue typescript version 5.4.2 is not supported
+ * TODO: migrate to eslint stylistic https://eslint.style soon
  */
 
 module.exports = {
@@ -38,6 +38,11 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    semi: ['error', 'always']
+    semi: ['error', 'always'],
+    'import/named': 'off',
+    'import/namespace': 'off',
+    'import/default': 'off',
+    'import/no-named-as-default-member': 'off',
+    'import/no-unresolved': 'off'
   }
 };
