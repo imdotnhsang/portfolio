@@ -9,10 +9,12 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "test": "vitest",
+    "test-u": "vitest -u",
     "test:coverage": "vitest run --coverage",
     "doc": "storybook dev -p 6006",
     "build-doc": "storybook build",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.0.10",
