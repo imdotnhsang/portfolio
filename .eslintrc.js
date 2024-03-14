@@ -39,10 +39,10 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     semi: ['error', 'always'],
-    'import/named': "off",
-    "import/namespace": "off",
-    "import/default": "off",
-    "import/no-named-as-default-member": "off",
-    "import/no-unresolved": "off",
+    'import/named': 'off',
+    'import/namespace': 'off',
+    'import/default': 'off',
+    'import/no-named-as-default-member': 'off',
+    'import/no-unresolved': 'off'
   }
 };
