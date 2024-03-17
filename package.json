@@ -19,6 +19,8 @@
   "dependencies": {
     "@vercel/speed-insights": "^1.0.10",
     "next": "latest",
+    "next-intl": "^3.9.5",
+    "next-themes": "^0.3.0",
     "react": "latest",
     "react-dom": "latest"
   },

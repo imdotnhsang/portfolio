@@ -36,13 +36,14 @@ module.exports = {
     project: ['./packages/*/tsconfig.json'],
     tsconfigRootDir: __dirname
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'import'],
   rules: {
     semi: ['error', 'always'],
     'import/named': 'off',
     'import/namespace': 'off',
     'import/default': 'off',
     'import/no-named-as-default-member': 'off',
-    'import/no-unresolved': 'off'
+    'import/no-unresolved': 'off',
+    'react/prop-types': 'off'
   }
 };

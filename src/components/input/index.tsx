@@ -1,8 +1,11 @@
-import type { FC } from 'react';
 import { memo } from 'react';
 
-interface IInputProps {}
+import type { FC } from 'react';
 
-export const Input: FC<IInputProps> = memo(function Input() {
-  return <div>Input</div>;
+interface IInputProps {
+  label?: string;
+}
+
+export const Input: FC<IInputProps> = memo(function Input({ label }) {
+  return <div>{label && <span>{label}: </span>}Input</div>;
 });
