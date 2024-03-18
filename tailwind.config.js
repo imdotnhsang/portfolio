@@ -9,12 +9,26 @@ module.exports = {
   plugins: [
     createThemes({
       light: {
-        primary: '#FF0000',
-        secondary: '#00FF00'
+        black: '#01080E',
+        white: '#FFFFFF',
+        gray: '#607B96',
+        sunset: '#FEA55F',
+        cyan: '#43D9AD',
+        brown: '#E99287',
+        violet: '#C98BDF',
+        green: '#3C9D93',
+        purple: '#4D5BCE'
       },
       dark: {
-        primary: '#0000FF',
-        secondary: '#FFFF00'
+        black: '#01080E',
+        white: '#FFFFFF',
+        gray: '#607B96',
+        sunset: '#FEA55F',
+        cyan: '#43D9AD',
+        brown: '#E99287',
+        violet: '#C98BDF',
+        green: '#3C9D93',
+        purple: '#4D5BCE'
       }
     })
   ]
