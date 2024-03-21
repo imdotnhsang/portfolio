@@ -17,6 +17,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@remixicon/react": "^4.2.0",
     "@vercel/speed-insights": "^1.0.10",
     "next": "latest",
     "next-intl": "^3.9.5",
