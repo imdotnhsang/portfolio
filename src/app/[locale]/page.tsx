@@ -1,11 +1,13 @@
-import { useTranslations } from 'next-intl';
+import { Button } from '@/components';
 
 const App = () => {
-  const t = useTranslations('app');
-
   return (
-    <div className='bg-blue-500 rounded px-4 py-2 text-base text-white'>
-      app page {t('title')}
+    <div className=''>
+      <div className='w-[120px]'>
+        <Button fullW>Click me</Button>
+      </div>
+      <Button color='black'>Click me</Button>
+      <Button variant='ghost'>Click me</Button>
     </div>
   );
 };

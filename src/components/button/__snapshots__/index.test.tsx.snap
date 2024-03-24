@@ -5,15 +5,19 @@ exports[`components-button > renders correctly 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
-        123
-      </div>
+      <button
+        class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out text-black-bold shadow-border-brown bg-brown hover:bg-brown/90"
+      >
+        Click me
+      </button>
     </div>
   </body>,
   "container": <div>
-    <div>
-      123
-    </div>
+    <button
+      class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out text-black-bold shadow-border-brown bg-brown hover:bg-brown/90"
+    >
+      Click me
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
