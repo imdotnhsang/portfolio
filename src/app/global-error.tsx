@@ -10,7 +10,7 @@ const GlobalError: FC<IGlobalErrorProps> = ({ error }) => {
   return (
     <html>
       <body>
-        <h2>app global error: {error.message}</h2>
+        <h2>global error: {error.message}</h2>
       </body>
     </html>
   );

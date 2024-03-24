@@ -29,16 +29,23 @@ module.exports = {
   theme: {
     extend: {
       borderRadius: widthSizes,
-      borderWidth: widthSizes
+      borderWidth: widthSizes,
+      boxShadow: {
+        'border-white': 'inset 0 0 0 1px #FFFFFF',
+        'border-black-bold': 'inset 0 0 0 1px #01080E',
+        'border-black-slight': 'inset 0 0 0 1px #1C2B3A',
+        'border-brown': 'inset 0 0 0 1px #FEA55F'
+      }
     }
   },
   plugins: [
     createThemes({
       light: {
         line: '#1E2D3D',
-        'black-strong': '#01080E',
-        'black-subtle': '#011221',
-        'black-slight': '#011627',
+        'black-bold': '#01080E',
+        'black-strong': '#011221',
+        'black-subtle': '#011627',
+        'black-slight': '#1C2B3A',
         gray: '#607B96',
         blue: '#3C9D93',
         violet: '#4D5BCE',
@@ -50,7 +57,7 @@ module.exports = {
 
         base: {
           line: '#1E2D3D',
-          'black-strong': '#01080E',
+          'black-bold': '#01080E',
           'black-subtle': '#011221',
           'black-slight': '#011627',
           gray: '#607B96',
@@ -64,7 +71,7 @@ module.exports = {
         },
         'base-d': {
           line: '#1E2D3D',
-          'black-strong': '#01080E',
+          'black-bold': '#01080E',
           'black-subtle': '#011221',
           'black-slight': '#011627',
           gray: '#607B96',
@@ -79,9 +86,10 @@ module.exports = {
       },
       dark: {
         line: '#1E2D3D',
-        'black-strong': '#01080E',
-        'black-subtle': '#011221',
-        'black-slight': '#011627',
+        'black-bold': '#01080E',
+        'black-strong': '#011221',
+        'black-subtle': '#011627',
+        'black-slight': '#1C2B3A',
         gray: '#607B96',
         blue: '#3C9D93',
         violet: '#4D5BCE',
@@ -93,9 +101,10 @@ module.exports = {
 
         base: {
           line: '#1E2D3D',
-          'black-strong': '#01080E',
-          'black-subtle': '#011221',
-          'black-slight': '#011627',
+          'black-bold': '#01080E',
+          'black-strong': '#011221',
+          'black-subtle': '#011627',
+          'black-slight': '#1C2B3A',
           gray: '#607B96',
           blue: '#3C9D93',
           violet: '#4D5BCE',
@@ -107,9 +116,10 @@ module.exports = {
         },
         'base-d': {
           line: '#1E2D3D',
-          'black-strong': '#01080E',
-          'black-subtle': '#011221',
-          'black-slight': '#011627',
+          'black-bold': '#01080E',
+          'black-strong': '#011221',
+          'black-subtle': '#011627',
+          'black-slight': '#1C2B3A',
           gray: '#607B96',
           blue: '#3C9D93',
           violet: '#4D5BCE',

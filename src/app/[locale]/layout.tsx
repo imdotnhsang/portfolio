@@ -40,10 +40,12 @@ const RootLayout: FC<{ children: ReactNode; params: { locale: string } }> = ({
       </head>
       <body>
         <ThemeProvider>
-          <span>app layout</span>
-          <div>header</div>
-          {children}
-          <div>footer</div>
+          <div className='bg-black-subtle'>
+            <span>app layout</span>
+            <div>header</div>
+            {children}
+            <div>footer</div>
+          </div>
         </ThemeProvider>
         <SpeedInsights />
       </body>
