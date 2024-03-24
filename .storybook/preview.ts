@@ -2,6 +2,8 @@ import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
 import '../src/styles/_autoload.scss';
 
+// background themes
+
 export const decorators = [
   withThemeByDataAttribute({
     themes: {
@@ -21,6 +23,19 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i
       }
+    },
+    backgrounds: {
+      default: 'dark',
+      values: [
+        {
+          name: 'light',
+          value: '#f0f0f0'
+        },
+        {
+          name: 'dark',
+          value: '#011627'
+        }
+      ]
     }
   }
 };

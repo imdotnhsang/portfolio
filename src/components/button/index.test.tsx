@@ -8,4 +8,28 @@ describe('components-button', () => {
 
     expect(result).toMatchSnapshot();
   });
+
+  it('renders with black color', () => {
+    const result = render(<Button color='black'>Click me</Button>);
+
+    expect(result).toMatchSnapshot();
+  });
+
+  it('renders as ghost', () => {
+    const result = render(<Button variant='ghost'>Click me</Button>);
+
+    expect(result).toMatchSnapshot();
+  });
+
+  it('renders as full width', () => {
+    const result = render(<Button fullW>Click me</Button>);
+
+    expect(result).toMatchSnapshot();
+  });
+
+  it('renders with label "Click me"', () => {
+    const { getByText } = render(<Button>Matched label</Button>);
+
+    expect(getByText('Matched label')).not.toBeNull();
+  });
 });
