@@ -34,7 +34,8 @@ module.exports = {
         'border-white': 'inset 0 0 0 1px #FFFFFF',
         'border-black-bold': 'inset 0 0 0 1px #01080E',
         'border-black-slight': 'inset 0 0 0 1px #1C2B3A',
-        'border-brown': 'inset 0 0 0 1px #FEA55F'
+        'border-brown': 'inset 0 0 0 1px #FEA55F',
+        'border-line': 'inset 0 0 0 1px #1E2D3D'
       }
     }
   },
@@ -46,7 +47,8 @@ module.exports = {
         'black-strong': '#011221',
         'black-subtle': '#011627',
         'black-slight': '#1C2B3A',
-        gray: '#607B96',
+        'gray-secondary': '#607B96',
+        'gray-subtle': '#465E77',
         blue: '#3C9D93',
         violet: '#4D5BCE',
         white: '#FFFFFF',
@@ -54,34 +56,41 @@ module.exports = {
         cyan: '#43D9AD',
         pink: '#E99287',
         purple: '#C98BDF',
+        red: '#FF5C5C',
 
         base: {
           line: '#1E2D3D',
           'black-bold': '#01080E',
-          'black-subtle': '#011221',
-          'black-slight': '#011627',
-          gray: '#607B96',
+          'black-strong': '#011221',
+          'black-subtle': '#011627',
+          'black-slight': '#1C2B3A',
+          'gray-secondary': '#607B96',
+          'gray-subtle': '#465E77',
           blue: '#3C9D93',
           violet: '#4D5BCE',
           white: '#FFFFFF',
           brown: '#FEA55F',
           cyan: '#43D9AD',
           pink: '#E99287',
-          purple: '#C98BDF'
+          purple: '#C98BDF',
+          red: '#FF5C5C'
         },
         'base-d': {
           line: '#1E2D3D',
           'black-bold': '#01080E',
-          'black-subtle': '#011221',
-          'black-slight': '#011627',
-          gray: '#607B96',
+          'black-strong': '#011221',
+          'black-subtle': '#011627',
+          'black-slight': '#1C2B3A',
+          'gray-secondary': '#607B96',
+          'gray-subtle': '#465E77',
           blue: '#3C9D93',
           violet: '#4D5BCE',
           white: '#FFFFFF',
           brown: '#FEA55F',
           cyan: '#43D9AD',
           pink: '#E99287',
-          purple: '#C98BDF'
+          purple: '#C98BDF',
+          red: '#FF5C5C'
         }
       },
       dark: {
@@ -90,7 +99,8 @@ module.exports = {
         'black-strong': '#011221',
         'black-subtle': '#011627',
         'black-slight': '#1C2B3A',
-        gray: '#607B96',
+        'gray-secondary': '#607B96',
+        'gray-subtle': '#465E77',
         blue: '#3C9D93',
         violet: '#4D5BCE',
         white: '#FFFFFF',
@@ -98,6 +108,7 @@ module.exports = {
         cyan: '#43D9AD',
         pink: '#E99287',
         purple: '#C98BDF',
+        red: '#FF5C5C',
 
         base: {
           line: '#1E2D3D',
@@ -105,14 +116,16 @@ module.exports = {
           'black-strong': '#011221',
           'black-subtle': '#011627',
           'black-slight': '#1C2B3A',
-          gray: '#607B96',
+          'gray-secondary': '#607B96',
+          'gray-subtle': '#465E77',
           blue: '#3C9D93',
           violet: '#4D5BCE',
           white: '#FFFFFF',
           brown: '#FEA55F',
           cyan: '#43D9AD',
           pink: '#E99287',
-          purple: '#C98BDF'
+          purple: '#C98BDF',
+          red: '#FF5C5C'
         },
         'base-d': {
           line: '#1E2D3D',
@@ -120,14 +133,16 @@ module.exports = {
           'black-strong': '#011221',
           'black-subtle': '#011627',
           'black-slight': '#1C2B3A',
-          gray: '#607B96',
+          'gray-secondary': '#607B96',
+          'gray-subtle': '#465E77',
           blue: '#3C9D93',
           violet: '#4D5BCE',
           white: '#FFFFFF',
           brown: '#FEA55F',
           cyan: '#43D9AD',
           pink: '#E99287',
-          purple: '#C98BDF'
+          purple: '#C98BDF',
+          red: '#FF5C5C'
         }
       }
     })

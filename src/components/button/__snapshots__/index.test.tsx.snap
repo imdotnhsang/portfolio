@@ -6,28 +6,28 @@ exports[`components-button > renders as full width 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-brown text-black-bold shadow-border-brown hover:bg-brown/90"
+        class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 text-black-bold shadow-border-brown bg-brown hover:bg-brown/90 focus:ring-brown/20 focus:ring-offset-brown/10"
       >
         Click me
       </button>
     </div>
     <div>
       <button
-        class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-black-slight text-white shadow-border-black-slight hover:bg-black-slight/90"
+        class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 shadow-border-black-slight bg-black-slight text-white hover:bg-black-slight/90 focus:ring-black-slight/20 focus:ring-offset-black-slight/10"
       >
         Click me
       </button>
     </div>
     <div>
       <button
-        class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-transparent text-white shadow-border-white hover:bg-white/5"
+        class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 shadow-border-white bg-transparent text-white hover:bg-white/5 focus:ring-white/20 focus:ring-offset-white/10"
       >
         Click me
       </button>
     </div>
     <div>
       <button
-        class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-brown text-black-bold shadow-border-brown hover:bg-brown/90 w-full"
+        class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 text-black-bold shadow-border-brown bg-brown hover:bg-brown/90 focus:ring-brown/20 focus:ring-offset-brown/10 w-full"
       >
         Click me
       </button>
@@ -35,7 +35,7 @@ exports[`components-button > renders as full width 1`] = `
   </body>,
   "container": <div>
     <button
-      class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-brown text-black-bold shadow-border-brown hover:bg-brown/90 w-full"
+      class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 text-black-bold shadow-border-brown bg-brown hover:bg-brown/90 focus:ring-brown/20 focus:ring-offset-brown/10 w-full"
     >
       Click me
     </button>
@@ -100,21 +100,21 @@ exports[`components-button > renders as ghost 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-brown text-black-bold shadow-border-brown hover:bg-brown/90"
+        class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 text-black-bold shadow-border-brown bg-brown hover:bg-brown/90 focus:ring-brown/20 focus:ring-offset-brown/10"
       >
         Click me
       </button>
     </div>
     <div>
       <button
-        class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-black-slight text-white shadow-border-black-slight hover:bg-black-slight/90"
+        class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 shadow-border-black-slight bg-black-slight text-white hover:bg-black-slight/90 focus:ring-black-slight/20 focus:ring-offset-black-slight/10"
       >
         Click me
       </button>
     </div>
     <div>
       <button
-        class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-transparent text-white shadow-border-white hover:bg-white/5"
+        class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 shadow-border-white bg-transparent text-white hover:bg-white/5 focus:ring-white/20 focus:ring-offset-white/10"
       >
         Click me
       </button>
@@ -122,7 +122,7 @@ exports[`components-button > renders as ghost 1`] = `
   </body>,
   "container": <div>
     <button
-      class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-transparent text-white shadow-border-white hover:bg-white/5"
+      class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 shadow-border-white bg-transparent text-white hover:bg-white/5 focus:ring-white/20 focus:ring-offset-white/10"
     >
       Click me
     </button>
@@ -187,7 +187,7 @@ exports[`components-button > renders correctly 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-brown text-black-bold shadow-border-brown hover:bg-brown/90"
+        class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 text-black-bold shadow-border-brown bg-brown hover:bg-brown/90 focus:ring-brown/20 focus:ring-offset-brown/10"
       >
         Click me
       </button>
@@ -195,7 +195,7 @@ exports[`components-button > renders correctly 1`] = `
   </body>,
   "container": <div>
     <button
-      class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-brown text-black-bold shadow-border-brown hover:bg-brown/90"
+      class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 text-black-bold shadow-border-brown bg-brown hover:bg-brown/90 focus:ring-brown/20 focus:ring-offset-brown/10"
     >
       Click me
     </button>
@@ -260,14 +260,14 @@ exports[`components-button > renders with black color 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-brown text-black-bold shadow-border-brown hover:bg-brown/90"
+        class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 text-black-bold shadow-border-brown bg-brown hover:bg-brown/90 focus:ring-brown/20 focus:ring-offset-brown/10"
       >
         Click me
       </button>
     </div>
     <div>
       <button
-        class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-black-slight text-white shadow-border-black-slight hover:bg-black-slight/90"
+        class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 shadow-border-black-slight bg-black-slight text-white hover:bg-black-slight/90 focus:ring-black-slight/20 focus:ring-offset-black-slight/10"
       >
         Click me
       </button>
@@ -275,7 +275,7 @@ exports[`components-button > renders with black color 1`] = `
   </body>,
   "container": <div>
     <button
-      class="rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out bg-black-slight text-white shadow-border-black-slight hover:bg-black-slight/90"
+      class="flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm transition-all duration-200 ease-in-out outline-none focus:ring-2 focus:ring-offset-1 shadow-border-black-slight bg-black-slight text-white hover:bg-black-slight/90 focus:ring-black-slight/20 focus:ring-offset-black-slight/10"
     >
       Click me
     </button>
