@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 
 import { Button } from '.';
 
-describe('components-button', () => {
+describe('components button', () => {
   it('renders correctly', () => {
     const result = render(<Button>Click me</Button>);
 

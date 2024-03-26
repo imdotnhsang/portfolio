@@ -7,7 +7,7 @@ vi.mock('uuid', () => ({
   v4: () => 'I am mocked'
 }));
 
-describe('components-input', () => {
+describe('components input', () => {
   it('renders correctly', () => {
     const result = render(<Input label='name' placeholder='Sang Nguyen' />);
 
