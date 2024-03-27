@@ -13,6 +13,5 @@ export const config = {
 };
 
 export function middleware(req: NextRequest) {
-  req.nextUrl.pathname = '/vi/coming-soon';
   return NextResponse.rewrite(req.nextUrl);
 }

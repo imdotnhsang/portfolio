@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components-input > renders correctly 1`] = `
+exports[`components input > renders correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -9,7 +9,7 @@ exports[`components-input > renders correctly 1`] = `
         class="flex flex-col"
       >
         <label
-          class="text-gray-secondary mb-2.5 w-fit text-base"
+          class="mb-2.5 w-fit text-base text-gray-secondary"
           for="I am mocked"
         >
           _
@@ -21,7 +21,7 @@ exports[`components-input > renders correctly 1`] = `
             class="relative w-full"
           >
             <input
-              class="shadow-border-line placeholder-gray-subtle w-full rounded-2 bg-black-strong px-4 py-2.5 text-base text-white outline-none transition-all duration-200 ease-in-out focus:ring-2 focus:ring-line/20 focus:ring-offset-1 focus:ring-offset-line/10"
+              class="w-full rounded-2 bg-black-strong px-4 py-2.5 text-base text-white placeholder-gray-subtle shadow-border-line outline-none transition-all duration-200 ease-in-out focus:ring-2 focus:ring-line/20 focus:ring-offset-1 focus:ring-offset-line/10"
               id="I am mocked"
               placeholder="Sang Nguyen"
             />
@@ -35,7 +35,7 @@ exports[`components-input > renders correctly 1`] = `
       class="flex flex-col"
     >
       <label
-        class="text-gray-secondary mb-2.5 w-fit text-base"
+        class="mb-2.5 w-fit text-base text-gray-secondary"
         for="I am mocked"
       >
         _
@@ -47,7 +47,7 @@ exports[`components-input > renders correctly 1`] = `
           class="relative w-full"
         >
           <input
-            class="shadow-border-line placeholder-gray-subtle w-full rounded-2 bg-black-strong px-4 py-2.5 text-base text-white outline-none transition-all duration-200 ease-in-out focus:ring-2 focus:ring-line/20 focus:ring-offset-1 focus:ring-offset-line/10"
+            class="w-full rounded-2 bg-black-strong px-4 py-2.5 text-base text-white placeholder-gray-subtle shadow-border-line outline-none transition-all duration-200 ease-in-out focus:ring-2 focus:ring-line/20 focus:ring-offset-1 focus:ring-offset-line/10"
             id="I am mocked"
             placeholder="Sang Nguyen"
           />

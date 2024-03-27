@@ -1,6 +1,6 @@
 import { createThemes } from 'tw-colors';
 
-const widthSizes = {
+const baseSizes = {
   0.5: '0.125rem',
   1: '0.25rem',
   1.5: '0.375rem',
@@ -28,15 +28,27 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
-      borderRadius: widthSizes,
-      borderWidth: widthSizes,
+      borderRadius: baseSizes,
+      borderWidth: baseSizes,
       boxShadow: {
         'border-white': 'inset 0 0 0 1px #FFFFFF',
         'border-black-bold': 'inset 0 0 0 1px #01080E',
         'border-black-slight': 'inset 0 0 0 1px #1C2B3A',
         'border-brown': 'inset 0 0 0 1px #FEA55F',
         'border-line': 'inset 0 0 0 1px #1E2D3D'
-      }
+      },
+      zIndex: {
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        6: 6,
+        7: 7,
+        8: 8,
+        9: 9
+      },
+      inset: baseSizes
     }
   },
   plugins: [
