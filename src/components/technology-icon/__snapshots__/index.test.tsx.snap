@@ -6,7 +6,7 @@ exports[`components technology-icon > renders correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="size-7 rounded-0.5 flex items-center justify-center bg-[#86E1F9]"
+        class="flex size-7 items-center justify-center rounded-0.5 bg-[#86E1F9]"
       >
         <svg
           class="remixicon text-black-strong"
@@ -25,7 +25,7 @@ exports[`components technology-icon > renders correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="size-7 rounded-0.5 flex items-center justify-center bg-[#86E1F9]"
+      class="flex size-7 items-center justify-center rounded-0.5 bg-[#86E1F9]"
     >
       <svg
         class="remixicon text-black-strong"
