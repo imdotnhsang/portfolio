@@ -33,7 +33,7 @@ export const Button: FC<
           color === 'black' &&
           'bg-black-slight text-white shadow-border-black-slight hover:bg-black-slight/90 focus:ring-black-slight/20 focus:ring-offset-black-slight/10',
         variant === 'ghost' &&
-          'bg-transparent text-white shadow-border-white hover:bg-white/5 focus:ring-white/20 focus:ring-offset-white/10',
+          'text-white shadow-border-white hover:bg-white/5 focus:ring-white/20 focus:ring-offset-white/10 bg-transparent',
         fullW && 'w-full'
       )}
       {...props}

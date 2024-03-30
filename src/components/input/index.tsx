@@ -40,7 +40,7 @@ export const Input: FC<
     <div className='flex flex-col'>
       {!!label && (
         <label
-          className='mb-2.5 w-fit text-base text-gray-secondary'
+          className='text-gray-secondary mb-2.5 w-fit text-base'
           htmlFor={inputId}
         >
           _{label}:
@@ -52,7 +52,7 @@ export const Input: FC<
             id={inputId}
             type={showPassword ? 'text' : props.type}
             className={twMerge(
-              'w-full rounded-2 bg-black-strong px-4 py-2.5 text-base text-white placeholder-gray-subtle shadow-border-line outline-none transition-all duration-200 ease-in-out focus:ring-2 focus:ring-line/20 focus:ring-offset-1 focus:ring-offset-line/10',
+              'bg-black-strong text-white placeholder-gray-subtle shadow-border-line focus:ring-line/20 focus:ring-offset-line/10 w-full rounded-2 px-4 py-2.5 text-base outline-none transition-all duration-200 ease-in-out focus:ring-2 focus:ring-offset-1',
               showViewPasswordToggle && 'pr-11',
               props.className
             )}
@@ -79,7 +79,7 @@ export const Input: FC<
           )}
         </div>
         {!!errMsg && (
-          <span className='mt-1 inline-block text-sm text-red'>{errMsg}</span>
+          <span className='text-red mt-1 inline-block text-sm'>{errMsg}</span>
         )}
       </div>
     </div>
