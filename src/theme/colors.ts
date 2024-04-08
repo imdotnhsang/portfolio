@@ -159,26 +159,20 @@ export const colorsBase = {
 
 export const colorsLight = {
   red: colorsBase.red[600],
-  pink: colorsBase.pink[600],
-  purple: colorsBase.purple[500],
   blue: colorsBase.blue[500],
-  cyan: colorsBase.cyan[600],
   green: colorsBase.green[600],
-  lime: colorsBase.lime[600],
-  orange: colorsBase.orange[500],
-  yellow: colorsBase.yellow[600],
-  brown: colorsBase.brown[700]
+  group: colorsBase.white[500],
+  semantic: {
+    primary: colorsBase.black[500]
+  }
 };
 
 export const colorsDark = {
   red: colorsBase.red[500],
-  pink: colorsBase.pink[400],
-  purple: colorsBase.purple[200],
-  blue: colorsBase.blue[200],
-  cyan: colorsBase.cyan[400],
+  blue: colorsBase.blue[400],
   green: colorsBase.green[400],
-  lime: colorsBase.lime[400],
-  orange: colorsBase.orange[400],
-  yellow: colorsBase.yellow[400],
-  brown: colorsBase.brown[400]
+  group: colorsBase.black[500],
+  semantic: {
+    primary: colorsBase.white[500]
+  }
 };

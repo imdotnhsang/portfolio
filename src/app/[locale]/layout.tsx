@@ -1,17 +1,25 @@
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ThemeProvider } from 'next-themes';
-import { Fira_Code, Fira_Sans } from 'next/font/google';
+import { Fira_Code, Fira_Sans, Inter } from 'next/font/google';
 
 import type { Metadata } from 'next';
-import type { NextFont } from 'next/dist/compiled/@next/font';
 import type { FC, ReactNode } from 'react';
 
 import '@/styles/_autoload.scss';
+import { twMerge } from 'tailwind-merge';
 
-const firaCode = Fira_Code({ subsets: ['latin'] });
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  variable: '--font-fira'
+});
 const firaSans = Fira_Sans({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  subsets: ['latin']
+  subsets: ['latin'],
+  variable: '--font-fira'
+});
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter'
 });
 
 export const metadata: Metadata = {
@@ -24,15 +32,19 @@ const RootLayout: FC<{ children: ReactNode; params: { locale: string } }> = ({
   children,
   params: { locale }
 }) => {
-  const fonts: { [key in string]: NextFont } = {
-    en: firaCode,
-    vi: firaSans
+  const fonts: { [key in string]: string } = {
+    en: firaCode.variable,
+    vi: firaSans.variable
   };
 
   return (
     <html
       lang={locale}
-      className={(fonts[locale] || firaSans).className}
+      className={twMerge(
+        inter.variable,
+        fonts[locale] || firaSans.variable,
+        'font-sans'
+      )}
       suppressHydrationWarning
     >
       <head>
@@ -40,7 +52,7 @@ const RootLayout: FC<{ children: ReactNode; params: { locale: string } }> = ({
       </head>
       <body>
         <ThemeProvider>
-          <div className='bg-black-subtle'>
+          <div className='bg-group'>
             <span>app layout</span>
             <div>header</div>
             {children}
