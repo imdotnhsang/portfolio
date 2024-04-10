@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { RiBearSmileLine } from '@remixicon/react';
+import { Smiley } from '@phosphor-icons/react';
 import { Button } from '.';
 
 const meta: Meta<typeof Button> = {
@@ -25,13 +25,13 @@ export const Default: Story = {
 export const DefaultWithStartIcon: Story = {
   args: {
     children: 'Click me',
-    startIcon: RiBearSmileLine
+    startIcon: Smiley
   }
 };
 
 export const DefaultWithEndIcon: Story = {
   args: {
     children: 'Click me',
-    endIcon: RiBearSmileLine
+    endIcon: Smiley
   }
 };

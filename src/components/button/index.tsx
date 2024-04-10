@@ -1,16 +1,17 @@
 'use client';
 
-import { memo } from 'react';
+import { useMatchScreen } from '@/hooks';
+import { IconProps } from '@phosphor-icons/react';
+import { memo, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { RemixiconComponentType } from '@remixicon/react';
 import type { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 
 interface IButtonProps {
   children: ReactNode;
   fullW?: boolean;
-  startIcon?: RemixiconComponentType;
-  endIcon?: RemixiconComponentType;
+  startIcon?: FC<IconProps>;
+  endIcon?: FC<IconProps>;
 }
 
 export const Button: FC<
@@ -22,6 +23,10 @@ export const Button: FC<
   children,
   ...props
 }) {
+  const isBiggerMd = useMatchScreen('md');
+
+  const iconSize = useMemo(() => (isBiggerMd ? 24 : 20), [isBiggerMd]);
+
   return (
     <button
       className={twMerge(
@@ -30,9 +35,9 @@ export const Button: FC<
       )}
       {...props}
     >
-      {StartIcon && <StartIcon className='mr-2' />}
+      {StartIcon && <StartIcon className='mr-2' size={iconSize} />}
       {children}
-      {EndIcon && <EndIcon className='ml-2' />}
+      {EndIcon && <EndIcon className='ml-2' size={iconSize} />}
     </button>
   );
 });

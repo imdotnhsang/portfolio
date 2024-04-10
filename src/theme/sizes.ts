@@ -34,12 +34,12 @@ export const sizesDeep = {
 };
 
 export const sizesScreen = {
-  '2XS': 320,
-  XS: 480,
-  SM: 640,
-  MD: 768,
-  LG: 1024,
-  XL: 1280,
-  '2XL': 1536,
-  '3XL': 1920
+  '2xs': 320,
+  xs: 480,
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  '2xl': 1536,
+  '3xl': 1920
 };

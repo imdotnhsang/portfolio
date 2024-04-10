@@ -53,7 +53,7 @@ const RootLayout: FC<{ children: ReactNode; params: { locale: string } }> = ({
       <body>
         <ThemeProvider>
           <div className='bg-group'>
-            <span>app layout</span>
+            <span className='font-mono'>app layout</span>
             <div>header</div>
             {children}
             <div>footer</div>
