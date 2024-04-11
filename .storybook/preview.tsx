@@ -1,8 +1,15 @@
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
+import { Inter } from 'next/font/google';
+import * as React from 'react';
+import { twMerge } from 'tailwind-merge';
 import '../src/styles/_autoload.scss';
+import { colorsDark, colorsLight } from '../src/theme';
 
-// background themes
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter'
+});
 
 export const decorators = [
   withThemeByDataAttribute({
@@ -29,15 +36,22 @@ const preview: Preview = {
       values: [
         {
           name: 'light',
-          value: '#f0f0f0'
+          value: colorsLight.group
         },
         {
           name: 'dark',
-          value: '#011627'
+          value: colorsDark.group
         }
       ]
     }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <main className={twMerge(inter.variable, 'font-sans')}>
+        <Story />
+      </main>
+    )
+  ]
 };
 
 export default preview;

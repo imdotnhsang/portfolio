@@ -1,10 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from './index';
+import { Smiley } from '@phosphor-icons/react';
+import { Button } from '.';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
-  component: Button
+  component: Button,
+  parameters: {
+    controls: {
+      exclude: ['startIcon', 'endIcon']
+    }
+  }
 };
 export default meta;
 
@@ -16,9 +22,16 @@ export const Default: Story = {
   }
 };
 
-export const Ghost: Story = {
+export const DefaultWithStartIcon: Story = {
   args: {
     children: 'Click me',
-    variant: 'ghost'
+    startIcon: Smiley
+  }
+};
+
+export const DefaultWithEndIcon: Story = {
+  args: {
+    children: 'Click me',
+    endIcon: Smiley
   }
 };

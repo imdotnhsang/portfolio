@@ -1,60 +1,12 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components input > renders correctly 1`] = `
+exports[`components no-ssr > renders correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
-    <div>
-      <div
-        class="flex flex-col"
-      >
-        <label
-          class="mb-2.5 w-fit text-base text-gray-secondary"
-          for="I am mocked"
-        >
-          _
-          name
-          :
-        </label>
-        <div>
-          <div
-            class="relative w-full"
-          >
-            <input
-              class="w-full rounded-2 bg-black-strong px-4 py-2.5 text-base text-white placeholder-gray-subtle shadow-border-line outline-none transition-all duration-200 ease-in-out focus:ring-2 focus:ring-line/20 focus:ring-offset-1 focus:ring-offset-line/10"
-              id="I am mocked"
-              placeholder="Sang Nguyen"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    <div />
   </body>,
-  "container": <div>
-    <div
-      class="flex flex-col"
-    >
-      <label
-        class="mb-2.5 w-fit text-base text-gray-secondary"
-        for="I am mocked"
-      >
-        _
-        name
-        :
-      </label>
-      <div>
-        <div
-          class="relative w-full"
-        >
-          <input
-            class="w-full rounded-2 bg-black-strong px-4 py-2.5 text-base text-white placeholder-gray-subtle shadow-border-line outline-none transition-all duration-200 ease-in-out focus:ring-2 focus:ring-line/20 focus:ring-offset-1 focus:ring-offset-line/10"
-            id="I am mocked"
-            placeholder="Sang Nguyen"
-          />
-        </div>
-      </div>
-    </div>
-  </div>,
+  "container": <div />,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],
