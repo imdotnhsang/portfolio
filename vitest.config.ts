@@ -11,7 +11,11 @@ export default defineConfig({
     setupFiles: ['__mocks__/index.ts'],
     coverage: {
       include: ['src/**/*.{js,ts,jsx,tsx}'],
-      exclude: ['src/**/*.stories.{js,ts,jsx,tsx}']
+      exclude: [
+        'src/**/*.stories.{js,ts,jsx,tsx}',
+        'src/interfaces/**/*.ts',
+        'src/types/**/*.ts'
+      ]
     }
   },
   resolve: {

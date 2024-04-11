@@ -1,10 +1,14 @@
 import { render } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { Button } from '.';
 
 describe('components button', () => {
   const Icon = vi.fn();
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
 
   it('renders correctly', () => {
     const result = render(<Button>Click me</Button>);
@@ -46,5 +50,17 @@ describe('components button', () => {
     expect(result).toMatchSnapshot();
   });
 
-  // TODO: add test for screen size
+  it('renders with bigger icon on bigger screen', () => {
+    vi.mock('@/hooks', async (importOriginal) => {
+      const mod = await importOriginal<typeof import('@/hooks')>();
+      return {
+        ...mod,
+        useMatchScreen: vi.fn().mockReturnValue(true)
+      };
+    });
+
+    const result = render(<Button>Click me</Button>);
+
+    expect(result).toMatchSnapshot();
+  });
 });
