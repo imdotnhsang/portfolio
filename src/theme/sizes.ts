@@ -40,6 +40,6 @@ export const sizesScreen = {
   md: 768,
   lg: 1024,
   xl: 1280,
-  '2xl': 1536,
+  '2xl': 1440,
   '3xl': 1920
 };

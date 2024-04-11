@@ -24,7 +24,6 @@ export const Button: FC<
   ...props
 }) {
   const isBiggerMd = useMatchScreen('md');
-  console.log('🚀 ~ isBiggerMd:', isBiggerMd);
 
   const iconSize = useMemo(() => (isBiggerMd ? 24 : 20), [isBiggerMd]);
 

@@ -1,5 +1,5 @@
 const App = () => {
-  return <div>app page</div>;
+  return <div className='h-[80vh]'>app page</div>;
 };
 
 export default App;

@@ -5,6 +5,7 @@ import { Fira_Code, Fira_Sans, Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 
+import { Footer, Header } from '@/layouts';
 import '@/styles/_autoload.scss';
 import { twMerge } from 'tailwind-merge';
 
@@ -43,7 +44,7 @@ const RootLayout: FC<{ children: ReactNode; params: { locale: string } }> = ({
       className={twMerge(
         inter.variable,
         fonts[locale] || firaSans.variable,
-        'font-sans'
+        'font-sans text-semantic-primary'
       )}
       suppressHydrationWarning
     >
@@ -53,12 +54,12 @@ const RootLayout: FC<{ children: ReactNode; params: { locale: string } }> = ({
       <body>
         <ThemeProvider>
           <div className='bg-group'>
-            <span className='font-mono'>app layout</span>
-            <div>header</div>
+            <Header />
             {children}
-            <div>footer</div>
+            <Footer />
           </div>
         </ThemeProvider>
+
         <SpeedInsights />
       </body>
     </html>
