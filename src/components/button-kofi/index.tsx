@@ -5,7 +5,8 @@ import { memo } from 'react';
 import type { ButtonHTMLAttributes, FC } from 'react';
 
 import { ImageKofi24 } from '@/assets';
-import { Button } from '../button';
+
+import { Button } from '..';
 
 interface IButtonKofiProps {
   fullW?: boolean;

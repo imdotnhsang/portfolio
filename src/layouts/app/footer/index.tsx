@@ -1,24 +1,26 @@
 'use client';
 
-import { ButtonKofi, ButtonMomo } from '@/components';
 import { ArrowUpRight, GitBranch, Star } from '@phosphor-icons/react';
 import Link from 'next/link';
 import { memo } from 'react';
 
 import type { FC } from 'react';
 
+import { ButtonKofi, ButtonMomo } from '@/components';
+import { CEnv } from '@/constants';
+
 const ForkAndStarRepo: FC = memo(function ForkAndStarRepo() {
   return (
     <div className='flex items-center gap-5'>
       <Link
         className='text-sm-rps middle link gap-1.5'
-        href='https://github.com/imdotnhsang/portfolio'
+        href={CEnv.STAR_REPO_URL}
       >
         <Star weight='fill' /> Star
       </Link>
       <Link
         className='text-sm-rps middle link gap-1.5'
-        href='https://github.com/imdotnhsang/portfolio/fork'
+        href={CEnv.FORK_REPO_URL}
       >
         <GitBranch weight='fill' /> Fork
       </Link>

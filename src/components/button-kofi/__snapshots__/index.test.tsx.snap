@@ -1,29 +1,74 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components button > renders as full width 1`] = `
+exports[`components button kofi > renders as full width 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
+        class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus gap-2"
       >
-        Click me
+        <div
+          class="relative flex size-5 md:size-6"
+        >
+          <img
+            alt="im-kofi-24"
+            class="m-auto !h-auto"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            sizes="100vw"
+            src="/_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=3840&q=75"
+            srcset="/_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=640&q=75 640w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=750&q=75 750w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=828&q=75 828w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=3840&q=75 3840w"
+            style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+          />
+        </div>
+        Kofi me
       </button>
     </div>
     <div>
       <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk w-full"
+        class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus w-full gap-2"
       >
-        Click me
+        <div
+          class="relative flex size-5 md:size-6"
+        >
+          <img
+            alt="im-kofi-24"
+            class="m-auto !h-auto"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            sizes="100vw"
+            src="/_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=3840&q=75"
+            srcset="/_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=640&q=75 640w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=750&q=75 750w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=828&q=75 828w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=3840&q=75 3840w"
+            style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+          />
+        </div>
+        Kofi me
       </button>
     </div>
   </body>,
   "container": <div>
     <button
-      class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk w-full"
+      class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus w-full gap-2"
     >
-      Click me
+      <div
+        class="relative flex size-5 md:size-6"
+      >
+        <img
+          alt="im-kofi-24"
+          class="m-auto !h-auto"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=3840&q=75"
+          srcset="/_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=640&q=75 640w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=750&q=75 750w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=828&q=75 828w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=3840&q=75 3840w"
+          style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+        />
+      </div>
+      Kofi me
     </button>
   </div>,
   "debug": [Function],
@@ -80,441 +125,53 @@ exports[`components button > renders as full width 1`] = `
 }
 `;
 
-exports[`components button > renders correctly 1`] = `
+exports[`components button kofi > renders correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
+        class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus gap-2"
       >
-        Click me
+        <div
+          class="relative flex size-5 md:size-6"
+        >
+          <img
+            alt="im-kofi-24"
+            class="m-auto !h-auto"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            sizes="100vw"
+            src="/_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=3840&q=75"
+            srcset="/_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=640&q=75 640w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=750&q=75 750w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=828&q=75 828w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=3840&q=75 3840w"
+            style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+          />
+        </div>
+        Kofi me
       </button>
     </div>
   </body>,
   "container": <div>
     <button
-      class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
+      class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus gap-2"
     >
-      Click me
-    </button>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`components button > renders with bigger icon on bigger screen 1`] = `
-{
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
+      <div
+        class="relative flex size-5 md:size-6"
       >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk w-full"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Matched label
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-  </body>,
-  "container": <div>
-    <button
-      class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-    >
-      Click me
-    </button>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`components button > renders with both icons 1`] = `
-{
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk w-full"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Matched label
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-  </body>,
-  "container": <div>
-    <button
-      class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-    >
-      Click me
-    </button>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`components button > renders with end icon 1`] = `
-{
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk w-full"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Matched label
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-  </body>,
-  "container": <div>
-    <button
-      class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-    >
-      Click me
-    </button>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`components button > renders with start icon 1`] = `
-{
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk w-full"
-      >
-        Click me
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Matched label
-      </button>
-    </div>
-    <div>
-      <button
-        class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-      >
-        Click me
-      </button>
-    </div>
-  </body>,
-  "container": <div>
-    <button
-      class="flex items-center justify-center rounded-2 bg-black-500 px-4 py-2 text-sm text-white-500 ring-1 ring-inset ring-black-400 transition-all duration-300 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus md:text-base dark:ring-black-300 dark:hover:bg-black-500 dark:hover:ring-black-200 dark:focus:shadow-focusDrk"
-    >
-      Click me
+        <img
+          alt="im-kofi-24"
+          class="m-auto !h-auto"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=3840&q=75"
+          srcset="/_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=640&q=75 640w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=750&q=75 750w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=828&q=75 828w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2Fim-kofi-24.webp&w=3840&q=75 3840w"
+          style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+        />
+      </div>
+      Kofi me
     </button>
   </div>,
   "debug": [Function],

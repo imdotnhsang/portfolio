@@ -1,5 +1,5 @@
 const App = () => {
-  return <div className='h-[80vh]'>app page</div>;
+  return <div className='h-[1920px]'>app page</div>;
 };
 
 export default App;

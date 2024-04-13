@@ -14,10 +14,6 @@ interface IButtonMomoProps {
 export const ButtonMomo: FC<
   Omit<ButtonHTMLAttributes<Element>, keyof IButtonMomoProps> & IButtonMomoProps
 > = memo(function ButtonMomo({ fullW = false, ...props }) {
-  // const isBiggerMd = useMatchScreen('md');
-
-  // const iconSize = useMemo(() => (isBiggerMd ? 24 : 20), [isBiggerMd]);
-
   return (
     <button
       className={cn(
