@@ -1,8 +1,10 @@
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import type { Preview } from '@storybook/react';
 import { Inter } from 'next/font/google';
 import * as React from 'react';
-import { twMerge } from 'tailwind-merge';
+
+import type { Preview } from '@storybook/react';
+
+import { cn } from '../src/services';
 import '../src/styles/_autoload.scss';
 import { colorsDark, colorsLight } from '../src/theme';
 
@@ -47,7 +49,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <main className={twMerge(inter.variable, 'font-sans')}>
+      <main className={cn(inter.variable, 'font-sans')}>
         <Story />
       </main>
     )

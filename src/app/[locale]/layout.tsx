@@ -6,8 +6,8 @@ import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 
 import { Footer, Header } from '@/layouts';
+import { cn } from '@/services';
 import '@/styles/_autoload.scss';
-import { twMerge } from 'tailwind-merge';
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
@@ -41,7 +41,7 @@ const RootLayout: FC<{ children: ReactNode; params: { locale: string } }> = ({
   return (
     <html
       lang={locale}
-      className={twMerge(
+      className={cn(
         inter.variable,
         fonts[locale] || firaSans.variable,
         'font-sans text-semantic-primary'

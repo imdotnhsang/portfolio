@@ -166,7 +166,11 @@ export const colorsLight = {
     subtle: colorsBase.white[600]
   },
   semantic: {
-    primary: colorsBase.black[500]
+    primary: colorsBase.black[500],
+    secondary: colorsBase.black[300],
+    active: colorsBase.blue[500]
+    // negative: '',
+    // positive: ''
   }
 };
 
@@ -179,6 +183,10 @@ export const colorsDark = {
     subtle: colorsBase.black[900]
   },
   semantic: {
-    primary: colorsBase.white[500]
+    primary: colorsBase.white[500],
+    secondary: colorsBase.white[600],
+    active: colorsBase.blue[600]
+    // negative: '',
+    // positive: ''
   }
 };
