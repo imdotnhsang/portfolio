@@ -7,7 +7,7 @@ import { useEventListener } from '@/hooks';
 import { cn } from '@/services';
 import { X } from '@phosphor-icons/react';
 
-interface IModalProps {
+interface IModalBaseProps {
   onClose?: () => void;
   open?: boolean;
   noKeyboard?: boolean;
@@ -15,7 +15,7 @@ interface IModalProps {
   children: ReactNode;
 }
 
-export const Modal: FC<IModalProps> = memo(function Modal({
+export const ModalBase: FC<IModalBaseProps> = memo(function ModalBase({
   open: externalOpen = false,
   noKeyboard = false,
   showCloseBtn = false,
@@ -61,15 +61,17 @@ export const Modal: FC<IModalProps> = memo(function Modal({
     >
       {showCloseBtn && (
         <button
-          className='center absolute right-4 top-4 z-2 size-10'
+          className='center transition-300 absolute right-4 top-4 z-2 size-10 text-semantic-negative hover:text-semantic-negative xl:text-semantic-primary'
           onClick={handleClose}
         >
-          <X size={24} />
+          <X size={28} />
         </button>
       )}
-      <div className='absolute left-0 top-0 h-full w-full bg-group/70 backdrop-blur-md' />
-      <div className='center z-1 w-full p-4'>
-        <div className='absolute h-full w-full' onClick={handleClose} />
+      <div className='center z-1 h-full w-full p-4'>
+        <div
+          className='absolute left-0 top-0 h-full w-full bg-group/70 backdrop-blur-md'
+          onClick={handleClose}
+        />
         {children}
       </div>
     </div>,

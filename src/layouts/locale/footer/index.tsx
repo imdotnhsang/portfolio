@@ -36,7 +36,7 @@ export const Footer: FC = memo(function Footer() {
       <div className='container flex flex-col justify-between gap-4 py-4 md:gap-3 md:py-6 lg:flex-row lg:items-center xl:gap-0'>
         <div className='w-fulls flex flex-col justify-between md:gap-1 lg:justify-normal'>
           <p className='text-xl-rps font-mono font-bold'>
-            Design by: imdotnhsang
+            Design by: {CEnv.USERNAME}
           </p>
           <div className='flex justify-between'>
             <Link

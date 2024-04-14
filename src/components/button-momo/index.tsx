@@ -9,7 +9,7 @@ import { cn } from '@/services';
 
 import { useBoolean } from '@/hooks';
 
-import { Modal } from '..';
+import { ModalBase } from '../modal-base';
 
 interface IButtonMomoProps {
   fullW?: boolean;
@@ -41,11 +41,11 @@ export const ButtonMomo: FC<
       </button>
 
       {showMomoQr && (
-        <Modal open={showMomoQr} onClose={onHideMomoQr} showCloseBtn>
+        <ModalBase open={showMomoQr} onClose={onHideMomoQr} showCloseBtn>
           <div className='relative aspect-[199/235] h-[75vh] max-h-[292px] 2xs:max-h-[340px] sm:max-h-[425px]'>
             <ImageMomoQr />
           </div>
-        </Modal>
+        </ModalBase>
       )}
     </>
   );

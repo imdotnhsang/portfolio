@@ -1,5 +1,6 @@
 {
-  "app": {
-    "title": "Hello world!"
+  "footer": {
+    "designBy": "Design by",
+    "contactMeByEmail": "Contact me by email"
   }
 }

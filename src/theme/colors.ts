@@ -168,8 +168,8 @@ export const colorsLight = {
   semantic: {
     primary: colorsBase.black[500],
     secondary: colorsBase.black[300],
-    active: colorsBase.blue[500]
-    // negative: '',
+    active: colorsBase.blue[500],
+    negative: colorsBase.red[500]
     // positive: ''
   }
 };
@@ -185,8 +185,8 @@ export const colorsDark = {
   semantic: {
     primary: colorsBase.white[500],
     secondary: colorsBase.white[600],
-    active: colorsBase.blue[600]
-    // negative: '',
+    active: colorsBase.blue[600],
+    negative: colorsBase.red[600]
     // positive: ''
   }
 };
