@@ -44,16 +44,16 @@ const RootLayout: FC<{ children: ReactNode; params: { locale: string } }> = ({
       className={cn(
         inter.variable,
         fonts[locale] || firaSans.variable,
-        'font-sans text-semantic-primary'
+        'relative font-sans text-semantic-primary'
       )}
       suppressHydrationWarning
     >
       <head>
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
-      <body>
+      <body className='relative'>
         <ThemeProvider>
-          <div className='bg-group'>
+          <div id='root' className='bg-group'>
             <Header />
             {children}
             <Footer />

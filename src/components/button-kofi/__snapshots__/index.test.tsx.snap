@@ -6,10 +6,10 @@ exports[`components button kofi > renders as full width 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus gap-2"
+        class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus"
       >
         <div
-          class="relative flex size-5 md:size-6"
+          class="relative mr-2 flex size-5 md:size-6"
         >
           <img
             alt="im-kofi-24"
@@ -28,10 +28,10 @@ exports[`components button kofi > renders as full width 1`] = `
     </div>
     <div>
       <button
-        class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus w-full gap-2"
+        class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus w-full"
       >
         <div
-          class="relative flex size-5 md:size-6"
+          class="relative mr-2 flex size-5 md:size-6"
         >
           <img
             alt="im-kofi-24"
@@ -51,10 +51,10 @@ exports[`components button kofi > renders as full width 1`] = `
   </body>,
   "container": <div>
     <button
-      class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus w-full gap-2"
+      class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus w-full"
     >
       <div
-        class="relative flex size-5 md:size-6"
+        class="relative mr-2 flex size-5 md:size-6"
       >
         <img
           alt="im-kofi-24"
@@ -131,10 +131,10 @@ exports[`components button kofi > renders correctly 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus gap-2"
+        class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus"
       >
         <div
-          class="relative flex size-5 md:size-6"
+          class="relative mr-2 flex size-5 md:size-6"
         >
           <img
             alt="im-kofi-24"
@@ -154,10 +154,10 @@ exports[`components button kofi > renders correctly 1`] = `
   </body>,
   "container": <div>
     <button
-      class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus gap-2"
+      class="center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus"
     >
       <div
-        class="relative flex size-5 md:size-6"
+        class="relative mr-2 flex size-5 md:size-6"
       >
         <img
           alt="im-kofi-24"

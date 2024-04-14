@@ -15,12 +15,14 @@ const ForkAndStarRepo: FC = memo(function ForkAndStarRepo() {
       <Link
         className='text-sm-rps middle link gap-1.5'
         href={CEnv.STAR_REPO_URL}
+        target='_blank'
       >
         <Star weight='fill' /> Star
       </Link>
       <Link
         className='text-sm-rps middle link gap-1.5'
         href={CEnv.FORK_REPO_URL}
+        target='_blank'
       >
         <GitBranch weight='fill' /> Fork
       </Link>

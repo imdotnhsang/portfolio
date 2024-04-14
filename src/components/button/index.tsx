@@ -32,7 +32,7 @@ export const Button: FC<
   return (
     <button
       className={cn(
-        'center focus-shadow text-sm-rps ring-border transition-300 gap-2 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus',
+        'center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-black-500 px-4 py-2.5 text-white-500 outline-none ring-black-400 hover:bg-black-700 hover:ring-black-500 focus:shadow-focus',
         { 'w-full': fullW },
         props.className
       )}

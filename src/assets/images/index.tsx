@@ -21,4 +21,4 @@ const _genImg = (
 };
 
 export const ImageKofi24 = _genImg('im-kofi-24.webp', { fill: true });
-export const ImageQrMomo = _genImg('im-qr-momo.webp', { fill: true });
+export const ImageMomoQr = _genImg('im-momo-qr.webp', { fill: true });
