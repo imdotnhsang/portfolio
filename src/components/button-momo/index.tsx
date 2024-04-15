@@ -4,7 +4,7 @@ import { memo } from 'react';
 
 import type { ButtonHTMLAttributes, FC } from 'react';
 
-import { IconMomo24, ImageMomoQr } from '@/assets';
+import { ImageMomoQr } from '@/assets';
 import { cn } from '@/services';
 
 import { useBoolean } from '@/hooks';
@@ -35,7 +35,7 @@ export const ButtonMomo: FC<
         {...props}
       >
         <div className='mr-2 w-5 scale-[83.275%] md:w-6 md:scale-100'>
-          <IconMomo24 />
+          {/* <IconMomo24 /> */}
         </div>
         Momo me
       </button>
