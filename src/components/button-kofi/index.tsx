@@ -4,7 +4,7 @@ import { memo } from 'react';
 
 import type { ButtonHTMLAttributes, FC } from 'react';
 
-import { ImageKofi24 } from '@/assets';
+import { ImageKofiLogo } from '@/assets';
 
 import { Button } from '..';
 
@@ -18,7 +18,7 @@ export const ButtonKofi: FC<
   return (
     <Button {...props}>
       <div className='relative mr-2 flex size-5 md:size-6'>
-        <ImageKofi24 className='m-auto !h-auto' />
+        <ImageKofiLogo className='m-auto !h-auto' />
       </div>
       Kofi me
     </Button>

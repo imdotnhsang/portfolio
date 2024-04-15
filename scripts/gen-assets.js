@@ -9,7 +9,8 @@ const getFilenames = (folderPath) => {
 
 const convertComponentName = ({ filename, prefix }) => {
   const camelCasedFilename = filename
-    .replace('i-', '')
+    .replace('i-', '') // remove prefix if icons
+    .replace('lt-', '') // remove prefix if lotties
     .replaceAll(/-./g, (replacedStr) => replacedStr[1].toUpperCase());
 
   const capitalizedFilename =
@@ -41,8 +42,8 @@ const generate = ({ folderPath, targetFilepath, ext, prefix }) => {
 };
 
 generate({
-  folderPath: 'src/assets/svgs',
-  targetFilepath: 'src/assets/svgs/index.ts',
+  folderPath: 'src/assets/icons',
+  targetFilepath: 'src/assets/icons/index.ts',
   ext: 'svg',
   prefix: 'Icon'
 });
