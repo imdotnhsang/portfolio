@@ -13,7 +13,8 @@
     "test:coverage": "VITE_CJS_IGNORE_WARNING=true vitest run --coverage ",
     "doc": "storybook dev -p 6006",
     "format": "prettier --write .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "gen-assets": "node scripts/gen-assets.js"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.4",
