@@ -22,10 +22,10 @@ const _genImg = (
 
 export const ImageKofi24 = _genImg('im-kofi-24.webp', {
   fill: true,
-  sizes: '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"',
+  sizes: '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
   priority: true
 });
 export const ImageMomoQr = _genImg('im-momo-qr.webp', {
   fill: true,
-  sizes: '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"'
+  sizes: '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 });

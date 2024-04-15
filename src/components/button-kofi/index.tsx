@@ -17,7 +17,7 @@ export const ButtonKofi: FC<
 > = memo(function ButtonKofi({ ...props }) {
   return (
     <Button {...props}>
-      <div className='relative mr-2 flex size-5 outline-none md:size-6'>
+      <div className='relative mr-2 flex size-5 md:size-6'>
         <ImageKofi24 className='m-auto !h-auto' />
       </div>
       Kofi me

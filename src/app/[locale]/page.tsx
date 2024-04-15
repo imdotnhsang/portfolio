@@ -1,11 +1,9 @@
-import { useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 const LocalePage = () => {
-  const locale = useLocale();
+  const t = useTranslations();
 
-  console.log({ locale });
-
-  return <div className='h-[1920px]'>locale page</div>;
+  return <div className='h-[1920px]'>locale page {t('footer.designBy')}</div>;
 };
 
 export default LocalePage;

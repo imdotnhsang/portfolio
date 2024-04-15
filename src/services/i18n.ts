@@ -2,10 +2,10 @@ import { IntlErrorCode } from 'next-intl';
 import { getRequestConfig } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-const locales = ['en', 'vi'];
+export const LOCALES = ['en', 'vi'];
 
 export default getRequestConfig(async ({ locale }: { locale: string }) => {
-  if (!locales.includes(locale)) {
+  if (!LOCALES.includes(locale)) {
     return notFound();
   }
 
