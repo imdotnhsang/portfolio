@@ -44,7 +44,7 @@ const genExport = ({ componentName, fileName }) => {
   return `export { default as ${componentName} } from './${fileName}';\n`;
 };
 
-const generate = ({ folderPath, targetFilepath }) => {
+const generateAssetComponents = ({ folderPath, targetFilepath }) => {
   const normalizedFiles = normalizeFileInfos(folderPath);
 
   const exportsCode = normalizedFiles.map(({ filename, ext }) =>
@@ -59,12 +59,12 @@ const generate = ({ folderPath, targetFilepath }) => {
   fs.writeFileSync(targetFilepath, prettiedCode);
 };
 
-generate({
+generateAssetComponents({
   folderPath: 'src/assets/svgs',
   targetFilepath: 'src/assets/svgs/index.ts'
 });
 
-generate({
+generateAssetComponents({
   folderPath: 'src/assets/lotties',
   targetFilepath: 'src/assets/lotties/index.ts'
 });
