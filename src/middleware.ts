@@ -1,17 +1,20 @@
-import createMiddleware from 'next-intl/middleware';
-import { NextResponse } from 'next/server';
+import createIntlMiddleware from 'next-intl/middleware';
 
 import type { NextRequest } from 'next/server';
 
-export default createMiddleware({
-  locales: ['en', 'vi'],
-  defaultLocale: 'en'
-});
+import { LOCALES } from './services';
 
 export const config = {
-  matcher: ['/', '/(en|vi)/:path*']
+  matcher: ['/((?!api|_next/static|_next/image|images|favicon.ico).*)']
 };
 
-export function middleware(req: NextRequest) {
-  return NextResponse.rewrite(req.nextUrl);
+export default async function middleware(req: NextRequest) {
+  const handleI18nRouting = createIntlMiddleware({
+    locales: LOCALES,
+    defaultLocale: LOCALES[0]
+  });
+
+  const response = handleI18nRouting(req);
+
+  return response;
 }

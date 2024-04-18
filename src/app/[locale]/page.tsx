@@ -1,5 +1,5 @@
-const App = () => {
-  return <div>app page</div>;
+const LocalePage = () => {
+  return <div className='h-[120vh]'>locale page</div>;
 };
 
-export default App;
+export default LocalePage;

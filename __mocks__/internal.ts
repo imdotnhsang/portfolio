@@ -4,6 +4,7 @@ vi.mock('@/hooks', async (importOriginal) => {
   const mod = await importOriginal<typeof import('@/hooks')>();
 
   return {
-    ...mod
+    ...mod,
+    useMatchScreen: vi.fn()
   };
 });

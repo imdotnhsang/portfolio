@@ -1,3 +1,4 @@
+export * from './useBoolean';
 export * from './useEventListener';
 export * from './useIsClient';
 export * from './useIsomorphicLayoutEffect';

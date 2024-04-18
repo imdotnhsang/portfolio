@@ -1,5 +1,9 @@
 {
-  "app": {
-    "title": "Xin chào thế giới!"
+  "common": {
+    "or": "Hoặc"
+  },
+  "footer": {
+    "designBy": "Thiết kế bởi",
+    "contactMeByEmail": "Liên hệ tôi qua email"
   }
 }

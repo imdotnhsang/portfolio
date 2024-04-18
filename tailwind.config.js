@@ -14,14 +14,14 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     screens: {
-      '2xs': sizesScreen['2XS'] + 'px',
-      xs: sizesScreen['XS'] + 'px',
-      sm: sizesScreen['SM'] + 'px',
-      md: sizesScreen['MD'] + 'px',
-      lg: sizesScreen['LG'] + 'px',
-      xl: sizesScreen['XL'] + 'px',
-      '2xl': sizesScreen['2XL'] + 'px',
-      '3xl': sizesScreen['3XL'] + 'px'
+      '2xs': sizesScreen['2xs'] + 'px',
+      xs: sizesScreen['xs'] + 'px',
+      sm: sizesScreen['sm'] + 'px',
+      md: sizesScreen['md'] + 'px',
+      lg: sizesScreen['lg'] + 'px',
+      xl: sizesScreen['xl'] + 'px',
+      '2xl': sizesScreen['2xl'] + 'px',
+      '3xl': sizesScreen['3xl'] + 'px'
     },
     extend: {
       borderRadius: sizesSpacing,
@@ -29,6 +29,7 @@ module.exports = {
       zIndex: sizesDeep,
       inset: sizesSpacing,
       colors: colorsBase,
+      spacing: sizesSpacing,
       boxShadow: {
         focus: `1px 1px 3px 0px ${colorsBase.cyan[300]}, -1px -1px 3px 0px ${colorsBase.cyan[300]}`,
         focusDrk: `1px 1px 3px 0px ${colorsBase.cyan[600]}, -1px -1px 3px 0px ${colorsBase.cyan[600]}`
@@ -36,6 +37,9 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)'],
         mono: ['var(--font-fira)']
+      },
+      maxWidth: {
+        container: sizesScreen['2xl'] + 32 + 'px' // 32px is the padding x
       }
     }
   },

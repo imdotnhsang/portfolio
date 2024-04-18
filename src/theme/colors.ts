@@ -162,8 +162,16 @@ export const colorsLight = {
   blue: colorsBase.blue[500],
   green: colorsBase.green[600],
   group: colorsBase.white[500],
+  line: {
+    subtle: colorsBase.white[600],
+    strong: colorsBase.black[300]
+  },
   semantic: {
-    primary: colorsBase.black[500]
+    primary: colorsBase.black[500],
+    secondary: colorsBase.black[300],
+    active: colorsBase.blue[500],
+    negative: colorsBase.red[500]
+    // positive: ''
   }
 };
 
@@ -172,7 +180,15 @@ export const colorsDark = {
   blue: colorsBase.blue[400],
   green: colorsBase.green[400],
   group: colorsBase.black[500],
+  line: {
+    subtle: colorsBase.black[900],
+    strong: colorsBase.white[700]
+  },
   semantic: {
-    primary: colorsBase.white[500]
+    primary: colorsBase.white[500],
+    secondary: colorsBase.white[600],
+    active: colorsBase.blue[600],
+    negative: colorsBase.red[600]
+    // positive: ''
   }
 };
