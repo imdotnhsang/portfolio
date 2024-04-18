@@ -1,4 +1,7 @@
 {
+  "common": {
+    "or": "Hoặc"
+  },
   "footer": {
     "designBy": "Thiết kế bởi",
     "contactMeByEmail": "Liên hệ tôi qua email"

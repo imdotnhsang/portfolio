@@ -1,4 +1,7 @@
 {
+  "common": {
+    "or": "Or"
+  },
   "footer": {
     "designBy": "Design by",
     "contactMeByEmail": "Contact me by email"

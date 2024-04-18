@@ -29,6 +29,7 @@ module.exports = {
       zIndex: sizesDeep,
       inset: sizesSpacing,
       colors: colorsBase,
+      spacing: sizesSpacing,
       boxShadow: {
         focus: `1px 1px 3px 0px ${colorsBase.cyan[300]}, -1px -1px 3px 0px ${colorsBase.cyan[300]}`,
         focusDrk: `1px 1px 3px 0px ${colorsBase.cyan[600]}, -1px -1px 3px 0px ${colorsBase.cyan[600]}`

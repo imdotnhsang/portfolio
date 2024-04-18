@@ -163,7 +163,8 @@ export const colorsLight = {
   green: colorsBase.green[600],
   group: colorsBase.white[500],
   line: {
-    subtle: colorsBase.white[600]
+    subtle: colorsBase.white[600],
+    strong: colorsBase.black[300]
   },
   semantic: {
     primary: colorsBase.black[500],
@@ -180,7 +181,8 @@ export const colorsDark = {
   green: colorsBase.green[400],
   group: colorsBase.black[500],
   line: {
-    subtle: colorsBase.black[900]
+    subtle: colorsBase.black[900],
+    strong: colorsBase.white[700]
   },
   semantic: {
     primary: colorsBase.white[500],

@@ -8,6 +8,7 @@ import type { FC } from 'react';
 
 import { ButtonKofi, ButtonMomo } from '@/components';
 import { CEnv } from '@/constants';
+import { useTranslations } from 'next-intl';
 
 const ForkAndStarRepo: FC = memo(function ForkAndStarRepo() {
   return (
@@ -31,19 +32,21 @@ const ForkAndStarRepo: FC = memo(function ForkAndStarRepo() {
 });
 
 export const Footer: FC = memo(function Footer() {
+  const t = useTranslations();
+
   return (
     <div className='border-t border-line-subtle bg-group'>
       <div className='container flex flex-col justify-between gap-4 py-4 md:gap-3 md:py-6 lg:flex-row lg:items-center xl:gap-0'>
         <div className='w-fulls flex flex-col justify-between md:gap-1 lg:justify-normal'>
           <p className='text-xl-rps font-mono font-bold'>
-            Design by: {CEnv.USERNAME}
+            {t('footer.designBy')}: {CEnv.USERNAME}
           </p>
           <div className='flex justify-between'>
             <Link
               href='mailto:im.nhsang@gmail.com'
               className='text-sm-rps middle link gap-1 font-medium underline'
             >
-              Contact me by email
+              {t('footer.contactMeByEmail')}
               <ArrowUpRight />
             </Link>
             <div className='hidden md:block lg:hidden'>
@@ -58,7 +61,7 @@ export const Footer: FC = memo(function Footer() {
             </div>
             <div className='center relative w-full xs:w-auto'>
               <span className='text-xs-rps z-1 bg-group px-1 text-semantic-secondary'>
-                Or
+                {t('common.or')}
               </span>
               <div className='absolute left-0 top-1/2 h-[1px] w-full -translate-y-1/2 bg-line-subtle' />
             </div>

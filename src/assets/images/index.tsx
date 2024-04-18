@@ -1,8 +1,9 @@
-import { UFile } from '@/utils';
 import Image from 'next/image';
+import { omit } from 'ramda';
 
 import type { ImageProps } from 'next/image';
-import { omit } from 'ramda';
+
+import { UFile } from '@/utils';
 
 const _genImg = (
   filename: string,

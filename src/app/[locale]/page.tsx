@@ -1,9 +1,5 @@
-import { useTranslations } from 'next-intl';
-
 const LocalePage = () => {
-  const t = useTranslations();
-
-  return <div className='h-[1920px]'>locale page {t('footer.designBy')}</div>;
+  return <div className='h-[120vh]'>locale page</div>;
 };
 
 export default LocalePage;
