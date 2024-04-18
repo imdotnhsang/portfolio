@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server';
 import { LOCALES } from './services';
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']
+  matcher: ['/((?!api|_next/static|_next/image|images|favicon.ico).*)']
 };
 
 export default async function middleware(req: NextRequest) {
