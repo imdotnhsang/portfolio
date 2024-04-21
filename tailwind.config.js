@@ -40,6 +40,9 @@ module.exports = {
       },
       maxWidth: {
         container: sizesScreen['2xl'] + 32 + 'px' // 32px is the padding x
+      },
+      transitionDuration: {
+        400: '400ms'
       }
     }
   },

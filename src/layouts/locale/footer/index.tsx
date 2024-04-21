@@ -1,32 +1,29 @@
 'use client';
 
 import { ArrowUpRight, GitBranch, Star } from '@phosphor-icons/react';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { memo } from 'react';
 
 import type { FC } from 'react';
 
-import { ButtonKofi, ButtonMomo } from '@/components';
+import { ButtonKofi, ButtonMomo, ExternalLink } from '@/components';
 import { CEnv } from '@/constants';
-import { useTranslations } from 'next-intl';
 
 const ForkAndStarRepo: FC = memo(function ForkAndStarRepo() {
   return (
     <div className='flex items-center gap-5'>
-      <Link
-        className='text-sm-rps middle link gap-1.5'
+      <ExternalLink
+        className='text-sm-rps middle gap-1.5'
         href={CEnv.STAR_REPO_URL}
-        target='_blank'
       >
         <Star weight='fill' /> Star
-      </Link>
-      <Link
-        className='text-sm-rps middle link gap-1.5'
+      </ExternalLink>
+      <ExternalLink
+        className='text-sm-rps middle gap-1.5'
         href={CEnv.FORK_REPO_URL}
-        target='_blank'
       >
         <GitBranch weight='fill' /> Fork
-      </Link>
+      </ExternalLink>
     </div>
   );
 });
@@ -42,13 +39,14 @@ export const Footer: FC = memo(function Footer() {
             {t('footer.designBy')}: {CEnv.USERNAME}
           </p>
           <div className='flex justify-between'>
-            <Link
-              href='mailto:im.nhsang@gmail.com'
-              className='text-sm-rps middle link gap-1 font-medium underline'
+            <ExternalLink
+              href={`mailto:${CEnv.EMAIL}`}
+              className='text-sm-rps middle gap-1 font-medium underline'
+              target='_self'
             >
               {t('footer.contactMeByEmail')}
               <ArrowUpRight />
-            </Link>
+            </ExternalLink>
             <div className='hidden md:block lg:hidden'>
               <ForkAndStarRepo />
             </div>

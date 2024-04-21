@@ -1,6 +1,6 @@
-import { CSite } from '@/constants';
+import { CCore } from '@/constants';
 import { useEffect, useLayoutEffect } from 'react';
 
-export const useIsomorphicLayoutEffect = CSite.IS_SERVER
+export const useIsomorphicLayoutEffect = CCore.IS_SERVER
   ? useEffect
   : useLayoutEffect;

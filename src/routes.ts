@@ -1,18 +1,32 @@
-export const router = {
+export const routesConfig = Object.freeze({
   home: {
-    name: 'Home',
-    path: '/'
+    pathname: {
+      en: '/' as const,
+      vi: '/'
+    }
   },
   about: {
-    name: 'About',
-    path: '/about'
+    pathname: {
+      en: '/about' as const,
+      vi: '/gioi-thieu'
+    }
   },
   projects: {
-    name: 'Projects',
-    path: '/projects'
+    pathname: {
+      en: '/projects' as const,
+      vi: '/du-an'
+    }
   },
   blog: {
-    name: 'Blog',
-    path: '/blog'
+    pathname: {
+      en: '/blog' as const,
+      vi: '/bai-viet'
+    }
   }
-};
+});
+
+export const pathnames = Object.freeze(
+  Object.values(routesConfig).map((route) => route.pathname.en)
+);
+
+export type TPathnames = (typeof pathnames)[number];

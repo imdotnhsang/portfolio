@@ -45,3 +45,7 @@
 .text-8xl-rps {
   @apply text-8xl md:text-9xl;
 }
+
+.link {
+  @apply transition-300 hover:text-semantic-active;
+}

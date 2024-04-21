@@ -1,14 +1,17 @@
 'use client';
 
-import { IconLogoLight36 } from '@/assets';
 import { useTheme } from 'next-themes';
-import Link from 'next/link';
-import { memo, useMemo } from 'react';
+import { useParams } from 'next/navigation';
+import { memo, useCallback, useMemo, useTransition } from 'react';
 
 import type { FC } from 'react';
 
-import { router } from '@/routes';
+import { IconFlagUk24, IconFlagVn24, IconLogoLight36 } from '@/assets';
+import { routesConfig } from '@/routes';
+import { cn, usePathname, useRouter } from '@/services';
 
+import { InternalLink } from '@/components';
+import { useLocale } from '@/hooks';
 import type { IObject } from '@/interfaces';
 import type { TSvgComp } from '@/types';
 
@@ -32,28 +35,70 @@ const Logo: FC = memo(function Logo() {
 });
 
 export const Header: FC = memo(function Header() {
+  const pathname = usePathname();
+  const locale = useLocale();
+  const params = useParams();
+  const router = useRouter();
+
+  const [isPending, startTransition] = useTransition();
+
+  const handleToggleLocale = useCallback(() => {
+    const oppositeLocale = {
+      en: 'vi',
+      vi: 'en'
+    };
+
+    startTransition(() => {
+      // @ts-expect-error -- TypeScript will validate that only known `params`
+      router.replace({ pathname, params }, { locale: oppositeLocale[locale] });
+    });
+  }, [locale, params, pathname, router]);
+
   return (
     <div className='container flex w-full items-center justify-between py-5'>
       <div className='flex items-center gap-16'>
-        <Link href={router.home.path}>
+        <InternalLink href={routesConfig.home.pathname.en}>
           <Logo />
-        </Link>
+        </InternalLink>
         <div className='flex h-12.5 items-center gap-16 rounded-full border border-line-strong px-8'>
-          {Object.values(router)
-            .filter((route) => route.path !== '/')
-            .map((route) => (
-              <Link
-                key={route.name}
-                href={route.path}
-                className='link font-mono font-bold'
-                locale='/en'
+          {Object.entries(routesConfig)
+            .filter(([, route]) => route.pathname.en !== '/')
+            .map(([key, route]) => (
+              <InternalLink
+                key={key}
+                href={route.pathname.en}
+                className='font-mono font-bold'
               >
-                {route.name}
-              </Link>
+                {key}
+              </InternalLink>
             ))}
         </div>
       </div>
-      <div>right</div>
+      <div className='flex gap-2.5'>
+        <button
+          className={cn(
+            'transition-300 relative size-9 rounded-full border border-line-subtle hover:border-line-strong',
+            {
+              'cursor-not-allowed': isPending
+            }
+          )}
+          disabled={isPending}
+          onClick={handleToggleLocale}
+        >
+          <IconFlagVn24
+            className={cn('transform-center transition-300', {
+              'opacity-100': locale === 'en',
+              'opacity-0': locale !== 'en'
+            })}
+          />
+          <IconFlagUk24
+            className={cn('transform-center transition-300', {
+              'opacity-100': locale === 'vi',
+              'opacity-0': locale !== 'vi'
+            })}
+          />
+        </button>
+      </div>
     </div>
   );
 });

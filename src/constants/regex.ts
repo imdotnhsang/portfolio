@@ -1,1 +1,1 @@
-export const CRegex = {};
+export const CRegex = Object.freeze({});

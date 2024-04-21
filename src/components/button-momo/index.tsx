@@ -42,7 +42,11 @@ export const ButtonMomo: FC<
 
       {showMomoQr && (
         <ModalBase open={showMomoQr} onClose={onHideMomoQr} showCloseBtn>
-          <div className='relative aspect-[199/235] h-[75vh] max-h-[292px] 2xs:max-h-[340px] sm:max-h-[425px]'>
+          <div
+            className={
+              'relative aspect-[199/235] h-[75vh] max-h-[292px] 2xs:max-h-[340px] sm:max-h-[425px]'
+            }
+          >
             <ImageMomoQr />
           </div>
         </ModalBase>

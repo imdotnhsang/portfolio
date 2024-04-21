@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "aaron-bond.better-comments",
+    "lokalise.i18n-ally",
+    "ChakrounAnas.turbo-console-log",
+    "bradlc.vscode-tailwindcss",
+    "vitest.explorer",
+    "pflannery.vscode-versionlens",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
+  ]
+}

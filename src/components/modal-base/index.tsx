@@ -53,9 +53,9 @@ export const ModalBase: FC<IModalBaseProps> = memo(function ModalBase({
   return createPortal(
     <div
       className={cn(
-        'center transition-300 fixed left-0 top-0 z-[9999] h-screen w-screen scale-0 opacity-0',
+        'center transition-400 fixed left-0 top-0 z-[9999] h-screen w-screen opacity-0',
         {
-          'scale-100 opacity-100': isOpen
+          'opacity-100': isOpen
         }
       )}
     >
