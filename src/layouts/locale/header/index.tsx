@@ -14,6 +14,7 @@ import { InternalLink } from '@/components';
 import { useLocale } from '@/hooks';
 import type { IObject } from '@/interfaces';
 import type { TSvgComp } from '@/types';
+import { useTranslations } from 'next-intl';
 
 const LogoConfig: IObject<TSvgComp> = {
   light: IconLogoLight36,
@@ -35,10 +36,11 @@ const Logo: FC = memo(function Logo() {
 });
 
 export const Header: FC = memo(function Header() {
-  const pathname = usePathname();
   const locale = useLocale();
   const params = useParams();
   const router = useRouter();
+  const t = useTranslations();
+  const pathname = usePathname();
 
   const [isPending, startTransition] = useTransition();
 
@@ -69,7 +71,7 @@ export const Header: FC = memo(function Header() {
                 href={route.pathname.en}
                 className='font-mono font-bold'
               >
-                {key}
+                {t(`page.${key}.title`)}
               </InternalLink>
             ))}
         </div>

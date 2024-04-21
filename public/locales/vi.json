@@ -5,5 +5,19 @@
   "footer": {
     "designBy": "Thiết kế bởi",
     "contactMeByEmail": "Liên hệ tôi qua email"
+  },
+  "page": {
+    "home": {
+      "title": "Home"
+    },
+    "about": {
+      "title": "Giới thiệu"
+    },
+    "projects": {
+      "title": "Dự án"
+    },
+    "blog": {
+      "title": "Bài viết"
+    }
   }
 }

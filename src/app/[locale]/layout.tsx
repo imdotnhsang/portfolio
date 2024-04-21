@@ -59,6 +59,7 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
       <head>
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
+
       <body>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
