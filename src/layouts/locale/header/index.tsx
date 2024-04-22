@@ -1,39 +1,47 @@
 'use client';
 
+import { Moon, SunDim } from '@phosphor-icons/react';
+import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useParams } from 'next/navigation';
 import { memo, useCallback, useMemo, useTransition } from 'react';
 
 import type { FC } from 'react';
 
-import { IconFlagUk24, IconFlagVn24, IconLogoLight36 } from '@/assets';
+import {
+  IconFlagUk24,
+  IconFlagVn24,
+  IconLogoDark36,
+  IconLogoLight36
+} from '@/assets';
+import { InternalLink } from '@/components';
+import { useIsClient, useLocale } from '@/hooks';
 import { routesConfig } from '@/routes';
 import { cn, usePathname, useRouter } from '@/services';
 
-import { InternalLink } from '@/components';
-import { useLocale } from '@/hooks';
-import type { IObject } from '@/interfaces';
-import type { TSvgComp } from '@/types';
-import { useTranslations } from 'next-intl';
+import type { TPhosphorIcon, TSvgComp, TTheme } from '@/types';
 
-const LogoConfig: IObject<TSvgComp> = {
-  light: IconLogoLight36,
-  dark: IconLogoLight36
+const THEME_CONFIG: {
+  [key in TTheme]: {
+    ThemeIcon: TPhosphorIcon;
+
+    Logo: TSvgComp;
+    nextTheme: TTheme;
+  };
+} = {
+  light: {
+    ThemeIcon: Moon,
+
+    Logo: IconLogoLight36,
+    nextTheme: 'dark'
+  },
+  dark: {
+    ThemeIcon: SunDim,
+
+    Logo: IconLogoDark36,
+    nextTheme: 'light'
+  }
 };
-
-const Logo: FC = memo(function Logo() {
-  const { theme } = useTheme();
-
-  const Icon: TSvgComp = useMemo(() => {
-    if (!theme) {
-      return IconLogoLight36;
-    }
-
-    return LogoConfig[theme];
-  }, [theme]);
-
-  return <Icon />;
-});
 
 export const Header: FC = memo(function Header() {
   const locale = useLocale();
@@ -41,8 +49,19 @@ export const Header: FC = memo(function Header() {
   const router = useRouter();
   const t = useTranslations();
   const pathname = usePathname();
+  const isClient = useIsClient();
+
+  const { theme, setTheme } = useTheme();
 
   const [isPending, startTransition] = useTransition();
+
+  const { Logo, ThemeIcon, nextTheme } = useMemo(() => {
+    if (!theme || !isClient) {
+      return THEME_CONFIG.light;
+    }
+
+    return THEME_CONFIG[theme as TTheme];
+  }, [isClient, theme]);
 
   const handleToggleLocale = useCallback(() => {
     const oppositeLocale = {
@@ -79,7 +98,7 @@ export const Header: FC = memo(function Header() {
       <div className='flex gap-2.5'>
         <button
           className={cn(
-            'transition-300 relative size-9 rounded-full border border-line-subtle hover:border-line-strong',
+            'transition-300 focus-shadow relative size-9 rounded-full border border-line-strong hover:border-line-bold',
             {
               'cursor-not-allowed': isPending
             }
@@ -97,6 +116,27 @@ export const Header: FC = memo(function Header() {
             className={cn('transform-center transition-300', {
               'opacity-100': locale === 'vi',
               'opacity-0': locale !== 'vi'
+            })}
+          />
+        </button>
+        <button
+          className={cn(
+            'transition-300 center focus-shadow size-9 rounded-full border',
+            {
+              'border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100':
+                theme === 'light' && isClient,
+              'border-gray-500 bg-gray-300 hover:border-gray-600 hover:bg-gray-400':
+                theme === 'dark' && isClient
+            }
+          )}
+          onClick={() => setTheme(nextTheme)}
+        >
+          <ThemeIcon
+            weight='fill'
+            size={24}
+            className={cn({
+              'text-gray-200': theme === 'light' && isClient,
+              'text-gray-900': theme === 'dark' && isClient
             })}
           />
         </button>

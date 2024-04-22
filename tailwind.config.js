@@ -31,8 +31,8 @@ module.exports = {
       colors: colorsBase,
       spacing: sizesSpacing,
       boxShadow: {
-        focus: `1px 1px 3px 0px ${colorsBase.cyan[300]}, -1px -1px 3px 0px ${colorsBase.cyan[300]}`,
-        focusDrk: `1px 1px 3px 0px ${colorsBase.cyan[600]}, -1px -1px 3px 0px ${colorsBase.cyan[600]}`
+        focus: '1px 1px 3px 0px #54d2e2, -1px -1px 3px 0px #54d2e2',
+        focusDrk: '1px 1px 3px 0px #00abc1, -1px -1px 3px 0px #00abc1'
       },
       fontFamily: {
         sans: ['var(--font-inter)'],

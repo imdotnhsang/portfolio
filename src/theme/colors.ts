@@ -1,196 +1,124 @@
-export const colorsBase = {
-  white: {
-    50: '#ffffff',
-    100: '#ffffff',
-    200: '#ffffff',
-    300: '#ffffff',
-    400: '#ffffff',
-    500: '#ffffff',
-    600: '#E8E8E8',
-    700: '#B5B5B5',
-    800: '#8C8C8C',
-    900: '#6B6B6B'
-  },
-  black: {
-    50: '#e9e9ea',
-    100: '#bbbbbe',
-    200: '#9a9b9e',
-    300: '#6c6d72',
-    400: '#505157',
-    500: '#24252d',
-    600: '#212229',
-    700: '#1a1a20',
-    800: '#141419',
-    900: '#0f1013'
-  },
-  red: {
-    50: '#feeceb',
-    100: '#fcd9d7',
-    200: '#faa9a3',
-    300: '#f88178',
-    400: '#f6695e',
-    500: '#f44336',
-    600: '#de3d31',
-    700: '#ad3026',
-    800: '#86251e',
-    900: '#661c17'
-  },
-  pink: {
-    50: '#fde9ef',
-    100: '#f8b9cf',
-    200: '#f598b7',
-    300: '#f06896',
-    400: '#ed4b82',
-    500: '#e91e63',
-    600: '#d41b5a',
-    700: '#a51546',
-    800: '#801136',
-    900: '#620d2a'
-  },
-  purple: {
-    50: '#f5e9f7',
-    100: '#e0bce7',
-    200: '#d19cdb',
-    300: '#bd6eca',
-    400: '#b052c0',
-    500: '#9c27b0',
-    600: '#8e23a0',
-    700: '#6f1c7d',
-    800: '#561561',
-    900: '#42104a'
-  },
-  blue: {
-    50: '#e9f5fe',
-    100: '#badefb',
-    200: '#99cff9',
-    300: '#6ab9f7',
-    400: '#4dabf5',
-    500: '#2196f3',
-    600: '#1e89dd',
-    700: '#176bad',
-    800: '#125386',
-    900: '#0e3f66'
-  },
-  cyan: {
-    50: '#e6f8fb',
-    100: '#b0eaf2',
-    200: '#8ae0eb',
-    300: '#54d2e2',
-    400: '#33c9dd',
-    500: '#00bcd4',
-    600: '#00abc1',
-    700: '#008597',
-    800: '#006775',
-    900: '#004f59'
-  },
-  green: {
-    50: '#edf7ee',
-    100: '#c8e6c9',
-    200: '#addaaf',
-    300: '#87c98a',
-    400: '#70bf73',
-    500: '#4caf50',
-    600: '#459f49',
-    700: '#367c39',
-    800: '#2a602c',
-    900: '#204a22'
-  },
-  lime: {
-    50: '#fafceb',
-    100: '#f0f4c2',
-    200: '#e8efa4',
-    300: '#dee87a',
-    400: '#d7e361',
-    500: '#cddc39',
-    600: '#bbc834',
-    700: '#929c28',
-    800: '#71791f',
-    9000: '#565c18'
-  },
-  yellow: {
-    50: '#fffdeb',
-    100: '#fff9c2',
-    200: '#fff6a5',
-    300: '#fff27c',
-    400: '#ffef62',
-    500: '#ffeb3b',
-    600: '#e8d636',
-    700: '#b5a72a',
-    800: '#8c8120',
-    900: '#6b6319'
-  },
-  orange: {
-    50: '#fff5e6',
-    100: '#ffdfb0',
-    200: '#ffd08a',
-    300: '#ffba54',
-    400: '#ffad33',
-    500: '#ff9800',
-    600: '#e88a00',
-    700: '#b56c00',
-    800: '#8c5400',
-    900: '#6b4000'
-  },
-  brown: {
-    50: '#f2eeed',
-    100: '#d5cac6',
-    200: '#c1b1ab',
-    300: '#a58d84',
-    400: '#94776d',
-    500: '#795548',
-    600: '#6e4d42',
-    700: '#563c33',
-    800: '#432f28',
-    900: '#33241e'
-  },
+const colorsNeutral = {
+  white: '#FFFFFF',
+  black: '#000000',
   gray: {
-    50: '#f5f5f5',
-    100: '#e1e1e1',
-    200: '#d2d2d2',
-    300: '#bebebe',
-    400: '#b1b1b1',
-    500: '#9e9e9e',
-    600: '#909090',
-    700: '#707070',
-    800: '#575757',
-    900: '#424242'
+    100: '#F8F9FA',
+    200: '#F1F3F4',
+    300: '#E8EAED',
+    400: '#DADCE0',
+    500: '#BDC1C6',
+    600: '#9AA0A6',
+    700: '#80868B',
+    800: '#5F6368',
+    900: '#3C4043',
+    1000: '#2E3134',
+    1100: '#282A2D',
+    1200: '#202124',
+    1300: '#17181B',
+    1400: '#0E1013'
   }
 };
 
 export const colorsLight = {
-  red: colorsBase.red[600],
-  blue: colorsBase.blue[500],
-  green: colorsBase.green[600],
-  group: colorsBase.white[500],
+  ...colorsNeutral,
+  red: '#E51733',
+  rose: '#FF3370',
+  pink: '#FF33A3',
+  sky: '#007DFF',
+  ocean: '#2E52E5',
+  purple: '#6D29CC',
+  cyan: '#14CCCC',
+  green: '#51CC14',
+  lime: '#A1D916',
+  yellow: '#FFB800',
+  sunset: '#FF771A',
+  volcano: '#FF531A',
+
+  container: '#F1F3F4',
+  group: '#FFFFFF',
+  children: '#F8F9FA',
+  element: '#F1F3F4',
+  slight: 'rgba(154,160,166,0.05)',
+  subtle: 'rgba(154,160,166,0.1)',
+  strong: 'rgba(154,160,166,0.3)',
+  bold: 'rgba(154,160,166,0.5)',
+
   line: {
-    slight: colorsBase.white[600],
-    subtle: 'rgba(181, 181, 181, 0.5)',
-    strong: colorsBase.black[300]
+    slight: 'rgba(154,160,166,0.1)',
+    subtle: 'rgba(154,160,166,0.2)',
+    strong: 'rgba(154,160,166,0.6)',
+    bold: '#9AA0A6',
+    interactive: '#0070E5',
+    success: '#47B212',
+    warning: '#E5A600',
+    error: '#CC142D'
   },
+
   semantic: {
-    primary: colorsBase.black[500],
-    secondary: colorsBase.black[300],
-    active: colorsBase.blue[500],
-    negative: colorsBase.red[500]
-    // positive: ''
-  }
+    active: '#007DFF',
+    notice: '#FFB800',
+    negative: '#E51733',
+    positive: '#51CC14'
+  },
+
+  primary: '#0E1013',
+  secondary: '#80868B',
+  tertiary: 'rgba(154,160,166,0.8)',
+  quaternary: 'rgba(154,160,166,0.4)',
+  success: '#47B212',
+  warning: '#E5A600',
+  error: '#CC142D',
+  link: '#0070E5'
 };
 
 export const colorsDark = {
-  red: colorsBase.red[500],
-  blue: colorsBase.blue[400],
-  green: colorsBase.green[400],
-  group: colorsBase.black[500],
+  ...colorsNeutral,
+  red: '#E55C6E',
+  rose: '#FF80A6',
+  pink: '#FF4DAE',
+  sky: '#1A8AFF',
+  ocean: '#4564E5',
+  purple: '#793DCC',
+  cyan: '#29CCCC',
+  green: '#5FCC29',
+  lime: '#A8D92B',
+  yellow: '#FFBF1A',
+  sunset: '#FF8633',
+  volcano: '#FF6633',
+
+  container: '#202124',
+  group: '#282A2D',
+  children: '#2E3134',
+  element: '#3C4043',
+  slight: 'rgba(255,255,255,0.02)',
+  subtle: 'rgba(255,255,255,0.05)',
+  strong: 'rgba(255,255,255,0.15)',
+  bold: 'rgba(255,255,255,0.25)',
+
   line: {
-    slight: colorsBase.black[900],
-    subtle: 'rgba(36, 37, 45, 0.5)',
-    strong: colorsBase.white[700]
+    slight: 'rgba(255,255,255,0.05)',
+    subtle: 'rgba(255,255,255,0.1)',
+    strong: 'rgba(255,255,255,0.2)',
+    bold: 'rgba(255,255,255,0.4)',
+    interactive: '#4DA4FF',
+    success: '#7ACC52',
+    warning: '#FFCD4D',
+    error: '#E55C6E'
   },
+
   semantic: {
-    primary: colorsBase.white[500],
-    secondary: colorsBase.white[600],
-    active: colorsBase.blue[600],
-    negative: colorsBase.red[600]
-    // positive: ''
-  }
+    active: '#1A8AFF',
+    notice: '#FFBF1A',
+    negative: '#E52E47',
+    positive: '#5FCC29'
+  },
+
+  primary: '#FFFFFF',
+  secondary: 'rgba(255,255,255,0.6)',
+  tertiary: 'rgba(255,255,255,0.4)',
+  quaternary: 'rgba(255,255,255,0.2)',
+  success: '#7ACC52',
+  warning: '#FFCD4D',
+  error: '#E55C6E',
+  link: '#4DA4FF'
 };

@@ -52,14 +52,13 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
       className={cn(
         inter.variable,
         fonts[locale] || firaSans.variable,
-        'font-base relative font-sans text-semantic-primary'
+        'font-base text-semantic-primary relative font-sans'
       )}
       suppressHydrationWarning
     >
       <head>
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
-
       <body>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>

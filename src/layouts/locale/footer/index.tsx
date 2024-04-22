@@ -58,7 +58,7 @@ export const Footer: FC = memo(function Footer() {
               <ButtonMomo fullW />
             </div>
             <div className='center relative w-full xs:w-auto'>
-              <span className='text-xs-rps z-1 bg-group px-1 text-semantic-secondary'>
+              <span className='text-xs-rps z-1 bg-group px-1 text-secondary'>
                 {t('common.or')}
               </span>
               <div className='absolute left-0 top-1/2 h-[1px] w-full -translate-y-1/2 bg-line-subtle' />

@@ -61,7 +61,7 @@ export const ModalBase: FC<IModalBaseProps> = memo(function ModalBase({
     >
       {showCloseBtn && (
         <button
-          className='center transition-300 absolute right-4 top-4 z-2 size-10 text-semantic-negative hover:text-semantic-negative xl:text-semantic-primary'
+          className='center transition-300 absolute right-4 top-4 z-2 size-10 text-semantic-negative hover:text-semantic-negative xl:text-primary'
           onClick={handleClose}
         >
           <X size={28} />

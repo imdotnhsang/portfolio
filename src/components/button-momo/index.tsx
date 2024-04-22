@@ -28,7 +28,7 @@ export const ButtonMomo: FC<
     <>
       <button
         className={cn(
-          'center text-sm-rps transition-300 focus-shadow ring-border h-10 rounded-2 bg-[#D82D8B] px-4 py-2.5 text-white-500 outline-none ring-[#C5297E] hover:bg-[#C1177C] md:h-11',
+          'center text-sm-rps transition-300 focus-shadow ring-border h-10 rounded-2 bg-[#D82D8B] px-4 py-2.5 text-white outline-none ring-[#C5297E] hover:bg-[#C1177C] md:h-11',
           { 'w-full': fullW }
         )}
         onClick={onShowMomoQr}
