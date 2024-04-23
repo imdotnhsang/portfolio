@@ -1,1 +1,1 @@
-export type TTheme = 'light' | 'dark';
+export type TBasicTheme = 'light' | 'dark';

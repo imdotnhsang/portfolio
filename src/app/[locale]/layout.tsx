@@ -61,7 +61,7 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>
+          <ThemeProvider attribute='class'>
             <div id='root' className='bg-group'>
               <Header />
               {children}

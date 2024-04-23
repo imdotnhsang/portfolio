@@ -1,6 +1,6 @@
 'use client';
 
-import { Moon, SunDim } from '@phosphor-icons/react';
+import { Monitor, MoonStars, SunDim } from '@phosphor-icons/react';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useParams } from 'next/navigation';
@@ -19,28 +19,16 @@ import { useIsClient, useLocale } from '@/hooks';
 import { routesConfig } from '@/routes';
 import { cn, usePathname, useRouter } from '@/services';
 
-import type { TPhosphorIcon, TSvgComp, TTheme } from '@/types';
+import type { TBasicTheme, TPhosphorIcon } from '@/types';
 
-const THEME_CONFIG: {
-  [key in TTheme]: {
-    ThemeIcon: TPhosphorIcon;
+type TTheme = TBasicTheme | 'system';
 
-    Logo: TSvgComp;
-    nextTheme: TTheme;
-  };
+const THEME_ICON: {
+  [key in TTheme | 'system']: TPhosphorIcon;
 } = {
-  light: {
-    ThemeIcon: Moon,
-
-    Logo: IconLogoLight36,
-    nextTheme: 'dark'
-  },
-  dark: {
-    ThemeIcon: SunDim,
-
-    Logo: IconLogoDark36,
-    nextTheme: 'light'
-  }
+  light: MoonStars,
+  dark: SunDim,
+  system: Monitor
 };
 
 export const Header: FC = memo(function Header() {
@@ -50,18 +38,38 @@ export const Header: FC = memo(function Header() {
   const t = useTranslations();
   const pathname = usePathname();
   const isClient = useIsClient();
-
-  const { theme, setTheme } = useTheme();
+  const { systemTheme, theme, setTheme } = useTheme();
 
   const [isPending, startTransition] = useTransition();
 
-  const { Logo, ThemeIcon, nextTheme } = useMemo(() => {
-    if (!theme || !isClient) {
-      return THEME_CONFIG.light;
+  const currTheme = useMemo(() => {
+    if (theme === 'system') {
+      return systemTheme;
     }
 
-    return THEME_CONFIG[theme as TTheme];
-  }, [isClient, theme]);
+    return theme || 'light';
+  }, [systemTheme, theme]);
+
+  const { ThemeIcon, Logo, nextTheme } = useMemo(() => {
+    const LogoByTheme = {
+      light: IconLogoLight36,
+      dark: IconLogoDark36
+    };
+    const oppositeTheme = {
+      light: 'dark',
+      dark: 'system',
+      system: 'light'
+    };
+
+    const nextTheme = oppositeTheme[theme as TTheme];
+    const ThemeIcon = THEME_ICON[theme as TTheme];
+
+    return {
+      ThemeIcon,
+      Logo: LogoByTheme[currTheme as TBasicTheme],
+      nextTheme
+    };
+  }, [currTheme, theme]);
 
   const handleToggleLocale = useCallback(() => {
     const oppositeLocale = {
@@ -124,9 +132,9 @@ export const Header: FC = memo(function Header() {
             'transition-300 center focus-shadow size-9 rounded-full border',
             {
               'border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100':
-                theme === 'light' && isClient,
+                currTheme === 'light' && isClient,
               'border-gray-500 bg-gray-300 hover:border-gray-600 hover:bg-gray-400':
-                theme === 'dark' && isClient
+                currTheme === 'dark' && isClient
             }
           )}
           onClick={() => setTheme(nextTheme)}
@@ -135,8 +143,8 @@ export const Header: FC = memo(function Header() {
             weight='fill'
             size={24}
             className={cn({
-              'text-gray-200': theme === 'light' && isClient,
-              'text-gray-900': theme === 'dark' && isClient
+              'text-gray-200': currTheme === 'light' && isClient,
+              'text-gray-900': currTheme === 'dark' && isClient
             })}
           />
         </button>

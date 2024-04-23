@@ -12,6 +12,7 @@ import {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  darkMode: 'class',
   theme: {
     screens: {
       '2xs': sizesScreen['2xs'] + 'px',
