@@ -4,6 +4,7 @@ import {
   colorsBase,
   colorsDark,
   colorsLight,
+  shadows,
   sizesDeep,
   sizesScreen,
   sizesSpacing
@@ -31,10 +32,7 @@ module.exports = {
       inset: sizesSpacing,
       colors: colorsBase,
       spacing: sizesSpacing,
-      boxShadow: {
-        focus: '1px 1px 3px 0px #54d2e2, -1px -1px 3px 0px #54d2e2',
-        focusDrk: '1px 1px 3px 0px #00abc1, -1px -1px 3px 0px #00abc1'
-      },
+      boxShadow: shadows,
       fontFamily: {
         sans: ['var(--font-inter)'],
         mono: ['var(--font-fira)']
