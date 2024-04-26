@@ -48,11 +48,33 @@ export const Header: FC = memo(function Header() {
   const t = useTranslations();
   const pathname = usePathname();
   const isClient = useIsClient();
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
   const [isPending, startTransition] = useTransition();
-
   const [scrollOverMenu, setScrollOverMenu] = useState(false);
+
+  const { ThemeIcon, nextTheme } = useMemo(() => {
+    if (!theme) {
+      return {
+        ThemeIcon: Monitor,
+        nextTheme: 'light'
+      };
+    }
+
+    const oppositeTheme = {
+      light: 'dark',
+      dark: 'system',
+      system: 'light'
+    };
+
+    const nextTheme = oppositeTheme[theme as TTheme];
+    const ThemeIcon = THEME_ICON[theme as TTheme];
+
+    return {
+      ThemeIcon,
+      nextTheme
+    };
+  }, [theme]);
 
   const handleScroll = useCallback(() => {
     if (CCore.IS_SERVER) {
@@ -72,43 +94,6 @@ export const Header: FC = memo(function Header() {
     handleScroll();
   });
 
-  const currTheme = useMemo(() => {
-    if (theme === 'system') {
-      return systemTheme;
-    }
-
-    return theme || 'light';
-  }, [systemTheme, theme]);
-
-  const { ThemeIcon, Logo, nextTheme } = useMemo(() => {
-    if (!theme) {
-      return {
-        ThemeIcon: Monitor,
-        Logo: IconLogoLight36,
-        nextTheme: 'light'
-      };
-    }
-
-    const LogoByTheme = {
-      light: IconLogoLight36,
-      dark: IconLogoDark36
-    };
-    const oppositeTheme = {
-      light: 'dark',
-      dark: 'system',
-      system: 'light'
-    };
-
-    const nextTheme = oppositeTheme[theme as TTheme];
-    const ThemeIcon = THEME_ICON[theme as TTheme];
-
-    return {
-      ThemeIcon,
-      Logo: LogoByTheme[currTheme as TBasicTheme],
-      nextTheme
-    };
-  }, [currTheme, theme]);
-
   const handleToggleLocale = useCallback(() => {
     const oppositeLocale = {
       en: 'vi',
@@ -122,7 +107,7 @@ export const Header: FC = memo(function Header() {
   }, [locale, params, pathname, router]);
 
   return (
-    <div className='sticky top-0 bg-group'>
+    <div className='sticky top-0 bg-color-secondary'>
       <div className='container'>
         <div
           className={cn(
@@ -132,7 +117,11 @@ export const Header: FC = memo(function Header() {
         >
           <div className='flex items-center gap-16'>
             <InternalLink href={routesConfig.home.pathname.en}>
-              <Logo />
+              {resolvedTheme === 'light' && isClient ? (
+                <IconLogoLight36 />
+              ) : (
+                <IconLogoDark36 />
+              )}
             </InternalLink>
             <div
               className={cn('h-12.5 transition-[padding] duration-300', {
@@ -146,7 +135,7 @@ export const Header: FC = memo(function Header() {
                     scrollOverMenu
                 })}
               />
-              <div className='z-1 flex h-full items-center gap-16'>
+              <div className='relative z-1 flex h-full items-center gap-16'>
                 {Object.entries(routesConfig)
                   .filter(([, route]) => route.pathname.en !== '/')
                   .map(([key, route]) => (
@@ -190,9 +179,9 @@ export const Header: FC = memo(function Header() {
                 'transition-300 center focus-shadow size-9 rounded-full border',
                 {
                   'border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100':
-                    currTheme === 'light' && isClient,
+                    resolvedTheme === 'light' && isClient,
                   'border-gray-500 bg-gray-300 hover:border-gray-600 hover:bg-gray-400':
-                    currTheme === 'dark' && isClient
+                    resolvedTheme === 'dark' && isClient
                 }
               )}
               onClick={() => setTheme(nextTheme)}
@@ -201,8 +190,8 @@ export const Header: FC = memo(function Header() {
                 weight='fill'
                 size={24}
                 className={cn({
-                  'text-gray-200': currTheme === 'light' && isClient,
-                  'text-gray-900': currTheme === 'dark' && isClient
+                  'text-gray-200': resolvedTheme === 'light' && isClient,
+                  'text-gray-900': resolvedTheme === 'dark' && isClient
                 })}
               />
             </button>

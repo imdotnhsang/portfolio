@@ -52,7 +52,7 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
       className={cn(
         inter.variable,
         fonts[locale] || firaSans.variable,
-        'font-base text-semantic-primary relative font-sans'
+        'font-base relative font-sans text-primary'
       )}
       suppressHydrationWarning
     >
@@ -62,7 +62,7 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
       <body>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute='class'>
-            <div id='root' className='bg-group'>
+            <div id='root' className='bg-color-secondary'>
               <Header />
               {children}
               <Footer />

@@ -69,7 +69,7 @@ export const ModalBase: FC<IModalBaseProps> = memo(function ModalBase({
       )}
       <div className='center z-1 h-full w-full p-4'>
         <div
-          className='absolute left-0 top-0 h-full w-full bg-group/70 backdrop-blur-md'
+          className='absolute left-0 top-0 h-full w-full bg-color-secondary/70 backdrop-blur-md'
           onClick={handleClose}
         />
         {children}

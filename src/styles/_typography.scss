@@ -47,5 +47,5 @@
 }
 
 .link {
-  @apply transition-300 hover:text-semantic-active;
+  @apply transition-300 hover:text-link active:text-link-visited;
 }

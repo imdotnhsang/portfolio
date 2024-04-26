@@ -32,7 +32,7 @@ export const Footer: FC = memo(function Footer() {
   const t = useTranslations();
 
   return (
-    <div className='border-t border-line-subtle bg-group'>
+    <div className='border-t border-line-subtle bg-color-secondary'>
       <div className='container flex flex-col justify-between gap-4 py-4 md:gap-3 md:py-6 lg:flex-row lg:items-center xl:gap-0'>
         <div className='w-fulls flex flex-col justify-between md:gap-1 lg:justify-normal'>
           <p className='text-xl-rps font-mono font-bold'>
@@ -58,7 +58,7 @@ export const Footer: FC = memo(function Footer() {
               <ButtonMomo fullW />
             </div>
             <div className='center relative w-full xs:w-auto'>
-              <span className='text-xs-rps z-1 bg-group px-1 text-secondary'>
+              <span className='text-xs-rps z-1 bg-color-secondary px-1 text-secondary'>
                 {t('common.or')}
               </span>
               <div className='absolute left-0 top-1/2 h-[1px] w-full -translate-y-1/2 bg-line-subtle' />

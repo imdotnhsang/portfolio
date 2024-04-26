@@ -1,4 +1,4 @@
-const colorsNeutral = {
+export const colorsNeutral = {
   white: '#FFFFFF',
   black: '#000000',
   gray: {
@@ -19,8 +19,7 @@ const colorsNeutral = {
   }
 };
 
-export const colorsLight = {
-  ...colorsNeutral,
+export const colorsLightAccentColors = {
   red: '#E51733',
   rose: '#FF3370',
   pink: '#FF33A3',
@@ -32,18 +31,97 @@ export const colorsLight = {
   lime: '#A1D916',
   yellow: '#FFB800',
   sunset: '#FF771A',
-  volcano: '#FF531A',
+  volcano: '#FF531A'
+};
 
-  container: '#F1F3F4',
-  group: '#FFFFFF',
-  children: '#F8F9FA',
-  element: '#F1F3F4',
-  slight: 'rgba(154,160,166,0.05)',
-  subtle: 'rgba(154,160,166,0.1)',
-  strong: 'rgba(154,160,166,0.3)',
-  bold: 'rgba(154,160,166,0.5)',
+export const colorsLightAccessibleColors = {
+  red: '#CC142D',
+  rose: '#E52E65',
+  pink: '#E52E92',
+  sky: '#0070E5',
+  ocean: '#2949CC',
+  purple: '#5F24B2',
+  cyan: '#11B2B2',
+  green: '#47B212',
+  lime: '#8EBF13',
+  yellow: '#E5A600',
+  sunset: '#E56B17',
+  volcano: '#E54B17'
+};
 
+export const colorsDarkAccentColors = {
+  red: '#E52E47',
+  rose: '#FF4D82',
+  pink: '#FF4DAE',
+  sky: '#1A8AFF',
+  ocean: '#4564E5',
+  purple: '#793DCC',
+  cyan: '#29CCCC',
+  green: '#5FCC29',
+  lime: '#A8D92B',
+  yellow: '#FFBF1A',
+  sunset: '#FF8633',
+  volcano: '#FF6633'
+};
+
+export const colorsDarkAccessibleColors = {
+  red: '#E55C6E',
+  rose: '#FF80A6',
+  pink: '#FF80C5',
+  sky: '#4DA4FF',
+  ocean: '#7389E5',
+  purple: '#9166CC',
+  cyan: '#52CCCC',
+  green: '#7ACC52',
+  lime: '#B4D957',
+  yellow: '#FFCD4D',
+  sunset: '#FFA466',
+  volcano: '#FF8D66'
+};
+
+export const colorsLight = {
+  ...colorsNeutral,
+
+  /**
+   * Text light colors
+   */
+  ...colorsLightAccentColors,
+  ...colorsLightAccessibleColors,
+  primary: '#0E1013',
+  secondary: '#80868B',
+  tertiary: 'rgba(154,160,166,0.8)',
+  quaternary: 'rgba(154,160,166,0.4)',
+  inverse: {
+    primary: '#FFFFFF',
+    secondary: 'rgba(255,255,255,0.6)'
+  },
+  'on-color': {
+    white: '#FFFFFF',
+    gray: '#0E1013'
+  },
+  success: '#47B212',
+  warning: '#E5A600',
+  error: '#CC142D',
+  link: '#0070E5',
+  'link-visited': '#5F24B2',
+  semantic: {
+    active: '#007DFF',
+    positive: '#51CC14',
+    notice: '#FFB800',
+    negative: '#E51733',
+    a: {
+      active: '#0070E5',
+      positive: '#47B212',
+      notice: '#E5A600',
+      negative: '#CC142D'
+    }
+  },
+
+  /**
+   * Border light colors
+   */
   line: {
+    ...colorsLightAccessibleColors,
     slight: 'rgba(154,160,166,0.1)',
     subtle: 'rgba(154,160,166,0.2)',
     strong: 'rgba(154,160,166,0.6)',
@@ -54,48 +132,70 @@ export const colorsLight = {
     error: '#CC142D'
   },
 
-  semantic: {
-    active: '#007DFF',
-    notice: '#FFB800',
-    negative: '#E51733',
-    positive: '#51CC14'
-  },
-
-  primary: '#0E1013',
-  secondary: '#80868B',
-  tertiary: 'rgba(154,160,166,0.8)',
-  quaternary: 'rgba(154,160,166,0.4)',
-  success: '#47B212',
-  warning: '#E5A600',
-  error: '#CC142D',
-  link: '#0070E5'
+  /**
+   * Background light colors
+   */
+  color: {
+    ...colorsDarkAccentColors,
+    ...colorsDarkAccessibleColors,
+    primary: '#F1F3F4',
+    secondary: '#FFFFFF',
+    tertiary: '#F8F9FA',
+    quaternary: '#F1F3F4',
+    slight: 'rgba(154,160,166,0.05)',
+    subtle: 'rgba(154,160,166,0.1)',
+    strong: 'rgba(154,160,166,0.3)',
+    bold: 'rgba(154,160,166,0.5)',
+    inverse: {
+      primary: '#202124',
+      secondary: '#282A2D'
+    }
+  }
 };
 
 export const colorsDark = {
   ...colorsNeutral,
-  red: '#E55C6E',
-  rose: '#FF80A6',
-  pink: '#FF4DAE',
-  sky: '#1A8AFF',
-  ocean: '#4564E5',
-  purple: '#793DCC',
-  cyan: '#29CCCC',
-  green: '#5FCC29',
-  lime: '#A8D92B',
-  yellow: '#FFBF1A',
-  sunset: '#FF8633',
-  volcano: '#FF6633',
 
-  container: '#202124',
-  group: '#282A2D',
-  children: '#2E3134',
-  element: '#3C4043',
-  slight: 'rgba(255,255,255,0.02)',
-  subtle: 'rgba(255,255,255,0.05)',
-  strong: 'rgba(255,255,255,0.15)',
-  bold: 'rgba(255,255,255,0.25)',
+  /**
+   * Text dark colors
+   */
+  ...colorsDarkAccentColors,
+  ...colorsDarkAccessibleColors,
+  primary: '#FFFFFF',
+  secondary: 'rgba(255,255,255,0.6)',
+  tertiary: 'rgba(255,255,255,0.4)',
+  quaternary: 'rgba(255,255,255,0.2)',
+  inverse: {
+    primary: '#0E1013',
+    secondary: '#80868B'
+  },
+  'on-color': {
+    white: '#FFFFFF',
+    gray: '#0E1013'
+  },
+  success: '#7ACC52',
+  warning: '#FFCD4D',
+  error: '#E55C6E',
+  link: '#4DA4FF',
+  'link-visited': '#A373E5',
+  semantic: {
+    active: '#1A8AFF',
+    positive: '#5FCC29',
+    notice: '#FFBF1A',
+    negative: '#E52E47',
+    a: {
+      active: '#4DA4FF',
+      positive: '#7ACC52',
+      notice: '#FFCD4D',
+      negative: '#E55C6E'
+    }
+  },
 
+  /**
+   * Border dark colors
+   */
   line: {
+    ...colorsDarkAccessibleColors,
     slight: 'rgba(255,255,255,0.05)',
     subtle: 'rgba(255,255,255,0.1)',
     strong: 'rgba(255,255,255,0.2)',
@@ -106,19 +206,23 @@ export const colorsDark = {
     error: '#E55C6E'
   },
 
-  semantic: {
-    active: '#1A8AFF',
-    notice: '#FFBF1A',
-    negative: '#E52E47',
-    positive: '#5FCC29'
-  },
-
-  primary: '#FFFFFF',
-  secondary: 'rgba(255,255,255,0.6)',
-  tertiary: 'rgba(255,255,255,0.4)',
-  quaternary: 'rgba(255,255,255,0.2)',
-  success: '#7ACC52',
-  warning: '#FFCD4D',
-  error: '#E55C6E',
-  link: '#4DA4FF'
+  /**
+   * Background dark colors
+   */
+  color: {
+    ...colorsDarkAccentColors,
+    ...colorsDarkAccessibleColors,
+    primary: '#202124',
+    secondary: '#282A2D',
+    tertiary: '#2E3134',
+    quaternary: '#3C4043',
+    slight: 'rgba(255,255,255,0.02)',
+    subtle: 'rgba(255,255,255,0.05)',
+    strong: 'rgba(255,255,255,0.15)',
+    bold: 'rgba(255,255,255,0.25)',
+    inverse: {
+      primary: '#F1F3F4',
+      secondary: '#FFFFFF'
+    }
+  }
 };
