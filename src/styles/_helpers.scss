@@ -1,5 +1,5 @@
 .container {
-  @apply mx-auto max-w-container px-4;
+  @apply mx-auto w-full max-w-container px-4 md:px-7;
 }
 
 .transition-300 {

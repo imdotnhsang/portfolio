@@ -38,7 +38,7 @@ module.exports = {
         mono: ['var(--font-fira)']
       },
       maxWidth: {
-        container: sizesScreen['2xl'] + 32 + 'px' // 32px is the padding x
+        container: sizesScreen['2xl'] + 56 + 'px' // 32px is the padding x
       },
       transitionDuration: {
         400: '400ms'

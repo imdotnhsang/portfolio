@@ -22,11 +22,12 @@ import {
   IconLogoLight36
 } from '@/assets';
 import { InternalLink } from '@/components';
+import { CCore } from '@/constants';
 import { useEventListener, useIsClient, useLocale } from '@/hooks';
 import { routesConfig } from '@/routes';
 import { cn, usePathname, useRouter } from '@/services';
 
-import { CCore } from '@/constants';
+import { IObject } from '@/interfaces';
 import type { TBasicTheme, TPhosphorIcon } from '@/types';
 
 type TTheme = TBasicTheme | 'system';
@@ -50,31 +51,50 @@ export const Header: FC = memo(function Header() {
   const isClient = useIsClient();
   const { theme, setTheme, resolvedTheme } = useTheme();
 
+  const { isLightTheme, isDarkTheme, isLangEn, isLangVi } = useMemo(
+    () => ({
+      isLightTheme: resolvedTheme === 'light' && isClient,
+      isDarkTheme: resolvedTheme === 'dark' && isClient,
+      isLangVi: locale === 'vi',
+      isLangEn: locale === 'en'
+    }),
+    [isClient, locale, resolvedTheme]
+  );
+
   const [isPending, startTransition] = useTransition();
   const [scrollOverMenu, setScrollOverMenu] = useState(false);
 
-  const { ThemeIcon, nextTheme } = useMemo(() => {
-    if (!theme) {
+  const { ThemeIcon, nextTheme, Logo } = useMemo(() => {
+    let ThemeIcon: TPhosphorIcon = Monitor;
+    let nextTheme: TTheme = 'light';
+
+    if (!isClient) {
       return {
-        ThemeIcon: Monitor,
-        nextTheme: 'light'
+        ThemeIcon,
+        nextTheme,
+        Logo: IconLogoLight36
       };
     }
 
-    const oppositeTheme = {
+    const oppositeTheme: IObject<TTheme> = {
       light: 'dark',
       dark: 'system',
       system: 'light'
     };
 
-    const nextTheme = oppositeTheme[theme as TTheme];
-    const ThemeIcon = THEME_ICON[theme as TTheme];
+    nextTheme = oppositeTheme[theme as TTheme];
+    ThemeIcon = THEME_ICON[theme as TTheme];
 
     return {
       ThemeIcon,
-      nextTheme
+      nextTheme,
+      Logo: isLightTheme
+        ? IconLogoLight36
+        : isDarkTheme
+          ? IconLogoDark36
+          : IconLogoLight36
     };
-  }, [theme]);
+  }, [isClient, isDarkTheme, isLightTheme, theme]);
 
   const handleScroll = useCallback(() => {
     if (CCore.IS_SERVER) {
@@ -116,11 +136,19 @@ export const Header: FC = memo(function Header() {
           )}
         >
           <div className='flex items-center gap-16'>
-            <InternalLink href={routesConfig.home.pathname.en}>
-              {resolvedTheme === 'light' && isClient ? (
-                <IconLogoLight36 />
-              ) : (
-                <IconLogoDark36 />
+            <InternalLink
+              className={cn('relative z-1 ', {
+                'h-7.5 w-[27px]': scrollOverMenu
+              })}
+              href={routesConfig.home.pathname.en}
+            >
+              {Logo && (
+                <Logo
+                  className={cn('transition-300', {
+                    'scale-100': !scrollOverMenu,
+                    '-ml-1 -mt-1 scale-75': scrollOverMenu
+                  })}
+                />
               )}
             </InternalLink>
             <div
@@ -163,14 +191,14 @@ export const Header: FC = memo(function Header() {
             >
               <IconFlagVn24
                 className={cn('transform-center transition-300', {
-                  'opacity-100': locale === 'en',
-                  'opacity-0': locale !== 'en'
+                  'opacity-100': isLangEn,
+                  'opacity-0': isLangVi
                 })}
               />
               <IconFlagUk24
                 className={cn('transform-center transition-300', {
-                  'opacity-100': locale === 'vi',
-                  'opacity-0': locale !== 'vi'
+                  'opacity-100': isLangVi,
+                  'opacity-0': isLangEn
                 })}
               />
             </button>
@@ -179,21 +207,23 @@ export const Header: FC = memo(function Header() {
                 'transition-300 center focus-shadow size-9 rounded-full border',
                 {
                   'border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100':
-                    resolvedTheme === 'light' && isClient,
+                    isLightTheme,
                   'border-gray-500 bg-gray-300 hover:border-gray-600 hover:bg-gray-400':
-                    resolvedTheme === 'dark' && isClient
+                    isDarkTheme
                 }
               )}
               onClick={() => setTheme(nextTheme)}
             >
-              <ThemeIcon
-                weight='fill'
-                size={24}
-                className={cn({
-                  'text-gray-200': resolvedTheme === 'light' && isClient,
-                  'text-gray-900': resolvedTheme === 'dark' && isClient
-                })}
-              />
+              {ThemeIcon && (
+                <ThemeIcon
+                  weight='fill'
+                  size={24}
+                  className={cn({
+                    'text-gray-200': isLightTheme,
+                    'text-gray-900': isDarkTheme
+                  })}
+                />
+              )}
             </button>
           </div>
         </div>
