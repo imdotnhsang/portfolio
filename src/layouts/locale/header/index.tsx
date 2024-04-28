@@ -287,46 +287,6 @@ export const Header: FC = memo(function Header() {
                     </InternalLink>
                   ))}
 
-                {/* <div className='absolute bottom-3 right-4 flex gap-2.5 md:hidden'>
-                  <button
-                    className={cn(
-                      'transition-300 focus-shadow relative size-9 rounded-full border border-line-strong bg-color-secondary hover:border-line-bold',
-                      {
-                        'cursor-not-allowed': isPending
-                      }
-                    )}
-                    disabled={isPending}
-                    onClick={handleToggleLocale}
-                  >
-                    <IconFlagVn24
-                      className={cn('transform-center transition-300', {
-                        'opacity-100': isLangEn,
-                        'opacity-0': isLangVi
-                      })}
-                    />
-                    <IconFlagUk24
-                      className={cn('transform-center transition-300', {
-                        'opacity-100': isLangVi,
-                        'opacity-0': isLangEn
-                      })}
-                    />
-                  </button>
-                  <button
-                    className='transition-300 center focus-shadow size-9 rounded-full border border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100 dark:border-gray-500 dark:bg-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-400'
-                    onClick={() => setTheme(nextTheme)}
-                  >
-                    {ThemeIcon && (
-                      <ThemeIcon
-                        weight='fill'
-                        size={24}
-                        className={cn({
-                          'text-gray-200': isLightTheme,
-                          'text-gray-900': isDarkTheme
-                        })}
-                      />
-                    )}
-                  </button>
-                </div> */}
                 <div className='absolute bottom-3 right-4 md:hidden'>
                   <Appearance />
                 </div>
@@ -364,46 +324,6 @@ export const Header: FC = memo(function Header() {
               />
             </button>
 
-            {/* <div className='hidden gap-2.5 md:flex'>
-              <button
-                className={cn(
-                  'transition-300 focus-shadow relative size-9 rounded-full border border-line-strong bg-color-secondary hover:border-line-bold',
-                  {
-                    'cursor-not-allowed': isPending
-                  }
-                )}
-                disabled={isPending}
-                onClick={handleToggleLocale}
-              >
-                <IconFlagVn24
-                  className={cn('transform-center transition-300', {
-                    'opacity-100': isLangEn,
-                    'opacity-0': isLangVi
-                  })}
-                />
-                <IconFlagUk24
-                  className={cn('transform-center transition-300', {
-                    'opacity-100': isLangVi,
-                    'opacity-0': isLangEn
-                  })}
-                />
-              </button>
-              <button
-                className='transition-300 center focus-shadow size-9 rounded-full border border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100 dark:border-gray-500 dark:bg-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-400'
-                onClick={() => setTheme(nextTheme)}
-              >
-                {ThemeIcon && (
-                  <ThemeIcon
-                    weight='fill'
-                    size={24}
-                    className={cn({
-                      'text-gray-200': isLightTheme,
-                      'text-gray-900': isDarkTheme
-                    })}
-                  />
-                )}
-              </button>
-            </div> */}
             <div className='hidden md:block'>
               <Appearance />
             </div>
