@@ -30,7 +30,7 @@ export const InternalLink: FC<IInternalLinkProps> = memo(function InternalLink({
       aria-current={pathname === href ? 'page' : undefined}
       href={href}
       locale={locale}
-      className={cn('link', className)}
+      className={cn('link transition-300', className)}
       {...props}
     >
       {children}

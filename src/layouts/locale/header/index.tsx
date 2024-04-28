@@ -22,8 +22,13 @@ import {
   IconLogoLight36
 } from '@/assets';
 import { InternalLink } from '@/components';
-import { CCore } from '@/constants';
-import { useEventListener, useIsClient, useLocale } from '@/hooks';
+import {
+  useBoolean,
+  useEventListener,
+  useIsClient,
+  useLocale,
+  useMatchScreen
+} from '@/hooks';
 import { routesConfig } from '@/routes';
 import { cn, usePathname, useRouter } from '@/services';
 
@@ -42,11 +47,13 @@ const THEME_ICON: {
 
 const HEADER_HEIGHT = 90;
 
-export const Header: FC = memo(function Header() {
+interface IAppearanceProps {}
+
+const Appearance: FC<IAppearanceProps> = memo(function Appearance() {
   const locale = useLocale();
   const params = useParams();
   const router = useRouter();
-  const t = useTranslations();
+
   const pathname = usePathname();
   const isClient = useIsClient();
   const { theme, setTheme, resolvedTheme } = useTheme();
@@ -62,17 +69,15 @@ export const Header: FC = memo(function Header() {
   );
 
   const [isPending, startTransition] = useTransition();
-  const [scrollOverMenu, setScrollOverMenu] = useState(false);
 
-  const { ThemeIcon, nextTheme, Logo } = useMemo(() => {
+  const { ThemeIcon, nextTheme } = useMemo(() => {
     let ThemeIcon: TPhosphorIcon = Monitor;
     let nextTheme: TTheme = 'light';
 
     if (!isClient) {
       return {
         ThemeIcon,
-        nextTheme,
-        Logo: IconLogoLight36
+        nextTheme
       };
     }
 
@@ -87,32 +92,9 @@ export const Header: FC = memo(function Header() {
 
     return {
       ThemeIcon,
-      nextTheme,
-      Logo: isLightTheme
-        ? IconLogoLight36
-        : isDarkTheme
-          ? IconLogoDark36
-          : IconLogoLight36
+      nextTheme
     };
-  }, [isClient, isDarkTheme, isLightTheme, theme]);
-
-  const handleScroll = useCallback(() => {
-    if (CCore.IS_SERVER) {
-      return;
-    }
-
-    setScrollOverMenu(window.scrollY > HEADER_HEIGHT / 2);
-  }, []);
-
-  useEffect(() => {
-    handleScroll();
-
-    return () => {};
-  }, [handleScroll]);
-
-  useEventListener('scroll', () => {
-    handleScroll();
-  });
+  }, [isClient, theme]);
 
   const handleToggleLocale = useCallback(() => {
     const oppositeLocale = {
@@ -125,106 +107,306 @@ export const Header: FC = memo(function Header() {
       router.replace({ pathname, params }, { locale: oppositeLocale[locale] });
     });
   }, [locale, params, pathname, router]);
+  return (
+    <div className='flex gap-2.5'>
+      <button
+        className={cn(
+          'transition-300 focus-shadow relative size-9 rounded-full border border-line-strong bg-color-secondary hover:border-line-bold',
+          {
+            'cursor-not-allowed': isPending
+          }
+        )}
+        disabled={isPending}
+        onClick={handleToggleLocale}
+      >
+        <IconFlagVn24
+          className={cn('transform-center transition-300', {
+            'opacity-100': isLangEn,
+            'opacity-0': isLangVi
+          })}
+        />
+        <IconFlagUk24
+          className={cn('transform-center transition-300', {
+            'opacity-100': isLangVi,
+            'opacity-0': isLangEn
+          })}
+        />
+      </button>
+      <button
+        className='transition-300 center focus-shadow size-9 rounded-full border border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100 dark:border-gray-500 dark:bg-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-400'
+        onClick={() => setTheme(nextTheme)}
+      >
+        {ThemeIcon && (
+          <ThemeIcon
+            weight='fill'
+            size={24}
+            className={cn({
+              'text-gray-200': isLightTheme,
+              'text-gray-900': isDarkTheme
+            })}
+          />
+        )}
+      </button>{' '}
+    </div>
+  );
+});
+
+export const Header: FC = memo(function Header() {
+  const t = useTranslations();
+  const isClient = useIsClient();
+  const { resolvedTheme } = useTheme();
+  const isUnderMd = useMatchScreen('md', 'max');
+
+  const [scrollOverMenu, setScrollOverMenu] = useState(false);
+  const {
+    value: openMenu,
+    toggle: onToggleMenu,
+    setFalse: onHideMenu
+  } = useBoolean(false);
+
+  const Logo = useMemo(() => {
+    if (!isClient) {
+      return IconLogoLight36;
+    }
+
+    const logoByTheme = {
+      light: IconLogoLight36,
+      dark: IconLogoDark36
+    };
+
+    return logoByTheme[resolvedTheme as TBasicTheme];
+  }, [isClient, resolvedTheme]);
+
+  const handleScroll = useCallback(() => {
+    if (isUnderMd) {
+      return;
+    }
+
+    setScrollOverMenu(window.scrollY > HEADER_HEIGHT / 2);
+  }, [isUnderMd]);
+
+  useEffect(() => {
+    /**
+     * * When the page is refreshed and the scroll position is not at the top
+     * ! This is a workaround for the issue that the `scroll` event is not triggered. DO NOT REMOVE THIS.
+     */
+    handleScroll();
+  }, [handleScroll]);
+
+  useEventListener('scroll', () => {
+    handleScroll();
+  });
+
+  const handleToggleMenu = useCallback(() => {
+    onToggleMenu();
+
+    document.body.style.overflow = openMenu ? 'auto' : 'hidden';
+  }, [onToggleMenu, openMenu]);
+
+  const handleCloseMenu = useCallback(() => {
+    onHideMenu();
+    document.body.style.overflow = 'auto';
+  }, [onHideMenu]);
+
+  useEventListener('resize', () => {
+    /**
+     * * Close the menu when the screen size is greater than `md`
+     * ! This is a workaround for the issue that the menu is not closed when the screen size is greater than `md`. DO NOT REMOVE THIS.
+     */
+    if (!isUnderMd && openMenu) {
+      handleCloseMenu();
+    }
+  });
 
   return (
-    <div className='sticky top-0 bg-color-secondary'>
+    <div className='dark:shadow-d-lg sticky top-0 z-2 bg-color-secondary shadow-lg md:shadow-none'>
       <div className='container'>
         <div
           className={cn(
-            'relative flex items-center justify-between py-5 transition-[padding] duration-300',
-            { 'pl-10 pr-4': scrollOverMenu }
+            'relative flex items-center justify-between py-4 transition-[padding] duration-300 md:py-5',
+            { 'md:pl-10 md:pr-4': scrollOverMenu }
           )}
         >
           <div className='flex items-center gap-16'>
             <InternalLink
-              className={cn('relative z-1 ', {
-                'h-7.5 w-[27px]': scrollOverMenu
+              className={cn('relative z-2 h-7.5 w-[27px] md:h-auto md:w-auto', {
+                'md:h-7.5 md:w-[27px]': scrollOverMenu
               })}
               href={routesConfig.home.pathname.en}
+              onClick={handleCloseMenu}
             >
               {Logo && (
                 <Logo
-                  className={cn('transition-300', {
-                    'scale-100': !scrollOverMenu,
-                    '-ml-1 -mt-1 scale-75': scrollOverMenu
-                  })}
+                  className={cn(
+                    'transition-300 -ml-1 -mt-1 scale-75 md:ml-0 md:mt-0',
+                    {
+                      'md:scale-100': !scrollOverMenu,
+                      'md:-ml-1 md:-mt-1 md:scale-75': scrollOverMenu
+                    }
+                  )}
                 />
               )}
             </InternalLink>
+
             <div
-              className={cn('h-12.5 transition-[padding] duration-300', {
-                'relative px-8': !scrollOverMenu
-              })}
+              className={cn(
+                'transition-300 absolute -left-4 top-0 w-[calc(100%+32px)] bg-color-secondary transition-[padding] duration-300 md:static md:left-0 md:h-12.5 md:w-auto',
+                {
+                  'md:relative md:px-8': !scrollOverMenu,
+                  'translate-y-0 md:transform-none': openMenu,
+                  '-translate-y-[calc(100%+25vh)] md:transform-none': !openMenu
+                }
+              )}
             >
               <div
-                className={cn('absolute left-0 w-full rounded-full border', {
-                  'top-0 h-12.5 border-line-strong': !scrollOverMenu,
-                  'dark:shadow-d-md top-3.5 h-15.5 border-line-subtle shadow-md':
-                    scrollOverMenu
-                })}
+                className={cn(
+                  'absolute left-0 top-0 z-1 h-screen w-full bg-black/40 backdrop-blur-xl md:block md:rounded-full md:border md:bg-transparent md:backdrop-blur-none',
+                  {
+                    'md:top-0 md:h-12.5 md:border-line-strong': !scrollOverMenu,
+                    'md:dark:shadow-d-md shadow-md md:top-3.5 md:h-15.5 md:border-line-subtle':
+                      scrollOverMenu
+                  }
+                )}
+                onClick={handleToggleMenu}
               />
-              <div className='relative z-1 flex h-full items-center gap-16'>
+              <div
+                className={cn(
+                  'dark:shadow-d-md relative z-1 flex h-[75vh] flex-col items-center gap-6 bg-color-secondary pt-[102px] shadow-md md:h-full md:flex-row md:gap-16 md:bg-transparent md:pt-0 md:shadow-none'
+                )}
+              >
                 {Object.entries(routesConfig)
                   .filter(([, route]) => route.pathname.en !== '/')
                   .map(([key, route]) => (
                     <InternalLink
                       key={key}
                       href={route.pathname.en}
-                      className='font-mono font-bold'
+                      className='font-mono text-2xl font-bold md:text-base'
+                      onClick={handleCloseMenu}
                     >
                       {t(`page.${key}.title`)}
                     </InternalLink>
                   ))}
+
+                {/* <div className='absolute bottom-3 right-4 flex gap-2.5 md:hidden'>
+                  <button
+                    className={cn(
+                      'transition-300 focus-shadow relative size-9 rounded-full border border-line-strong bg-color-secondary hover:border-line-bold',
+                      {
+                        'cursor-not-allowed': isPending
+                      }
+                    )}
+                    disabled={isPending}
+                    onClick={handleToggleLocale}
+                  >
+                    <IconFlagVn24
+                      className={cn('transform-center transition-300', {
+                        'opacity-100': isLangEn,
+                        'opacity-0': isLangVi
+                      })}
+                    />
+                    <IconFlagUk24
+                      className={cn('transform-center transition-300', {
+                        'opacity-100': isLangVi,
+                        'opacity-0': isLangEn
+                      })}
+                    />
+                  </button>
+                  <button
+                    className='transition-300 center focus-shadow size-9 rounded-full border border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100 dark:border-gray-500 dark:bg-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-400'
+                    onClick={() => setTheme(nextTheme)}
+                  >
+                    {ThemeIcon && (
+                      <ThemeIcon
+                        weight='fill'
+                        size={24}
+                        className={cn({
+                          'text-gray-200': isLightTheme,
+                          'text-gray-900': isDarkTheme
+                        })}
+                      />
+                    )}
+                  </button>
+                </div> */}
+                <div className='absolute bottom-3 right-4 md:hidden'>
+                  <Appearance />
+                </div>
               </div>
             </div>
           </div>
-          <div className='z-1 flex gap-2.5'>
+          <div className='z-1'>
             <button
-              className={cn(
-                'transition-300 focus-shadow relative size-9 rounded-full border border-line-strong hover:border-line-bold',
-                {
-                  'cursor-not-allowed': isPending
-                }
-              )}
-              disabled={isPending}
-              onClick={handleToggleLocale}
+              className='relative flex size-6 flex-col items-end justify-center gap-1.5 md:hidden'
+              onClick={handleToggleMenu}
             >
-              <IconFlagVn24
-                className={cn('transform-center transition-300', {
-                  'opacity-100': isLangEn,
-                  'opacity-0': isLangVi
-                })}
+              <div
+                className={cn(
+                  'transition-400 h-0.5 w-4 rounded-full bg-gray-900 dark:bg-gray-300',
+                  {
+                    'absolute top-[11px] w-6 rotate-45': openMenu
+                  }
+                )}
               />
-              <IconFlagUk24
-                className={cn('transform-center transition-300', {
-                  'opacity-100': isLangVi,
-                  'opacity-0': isLangEn
-                })}
+              <div
+                className={cn(
+                  'transition-300 h-0.5 w-6 rounded-full bg-gray-900 dark:bg-gray-300',
+                  {
+                    'opacity-0': openMenu
+                  }
+                )}
+              />
+              <div
+                className={cn(
+                  'transition-400 h-0.5 w-4 rounded-full bg-gray-900 dark:bg-gray-300',
+                  {
+                    'absolute bottom-[11px] w-6 -rotate-45': openMenu
+                  }
+                )}
               />
             </button>
-            <button
-              className={cn(
-                'transition-300 center focus-shadow size-9 rounded-full border',
-                {
-                  'border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100':
-                    isLightTheme,
-                  'border-gray-500 bg-gray-300 hover:border-gray-600 hover:bg-gray-400':
-                    isDarkTheme
-                }
-              )}
-              onClick={() => setTheme(nextTheme)}
-            >
-              {ThemeIcon && (
-                <ThemeIcon
-                  weight='fill'
-                  size={24}
-                  className={cn({
-                    'text-gray-200': isLightTheme,
-                    'text-gray-900': isDarkTheme
+
+            {/* <div className='hidden gap-2.5 md:flex'>
+              <button
+                className={cn(
+                  'transition-300 focus-shadow relative size-9 rounded-full border border-line-strong bg-color-secondary hover:border-line-bold',
+                  {
+                    'cursor-not-allowed': isPending
+                  }
+                )}
+                disabled={isPending}
+                onClick={handleToggleLocale}
+              >
+                <IconFlagVn24
+                  className={cn('transform-center transition-300', {
+                    'opacity-100': isLangEn,
+                    'opacity-0': isLangVi
                   })}
                 />
-              )}
-            </button>
+                <IconFlagUk24
+                  className={cn('transform-center transition-300', {
+                    'opacity-100': isLangVi,
+                    'opacity-0': isLangEn
+                  })}
+                />
+              </button>
+              <button
+                className='transition-300 center focus-shadow size-9 rounded-full border border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100 dark:border-gray-500 dark:bg-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-400'
+                onClick={() => setTheme(nextTheme)}
+              >
+                {ThemeIcon && (
+                  <ThemeIcon
+                    weight='fill'
+                    size={24}
+                    className={cn({
+                      'text-gray-200': isLightTheme,
+                      'text-gray-900': isDarkTheme
+                    })}
+                  />
+                )}
+              </button>
+            </div> */}
+            <div className='hidden md:block'>
+              <Appearance />
+            </div>
           </div>
         </div>
       </div>

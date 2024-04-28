@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import { CCore } from '@/constants';
 import type { RefObject } from 'react';
 import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 
@@ -64,6 +65,10 @@ function useEventListener<
   }, [handler]);
 
   useEffect(() => {
+    if (CCore.IS_SERVER) {
+      return;
+    }
+
     const targetElement: T | Window = element?.current ?? window;
 
     if (!(targetElement && targetElement.addEventListener)) return;
