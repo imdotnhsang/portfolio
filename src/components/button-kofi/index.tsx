@@ -40,8 +40,13 @@ export const ButtonKofi: FC<
               src='https://ko-fi.com/imdotnhsang/?hidefeed=true&widget=true&embed=true&preview=true'
               title='imdotnhsang'
               width='100%'
-              height={430}
-              style={{ borderRadius: '8px' }}
+              height='100%'
+              style={{
+                borderRadius: '8px',
+                border: 'none',
+                minHeight: 720,
+                minWidth: 360
+              }}
             />
           </div>
         </ModalBase>

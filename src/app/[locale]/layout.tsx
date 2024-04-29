@@ -67,7 +67,7 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
               className='flex min-h-screen flex-col bg-color-secondary'
             >
               <Header />
-              {children}
+              <div className='flex-1'>{children}</div>
               <Footer />
             </div>
           </ThemeProvider>
