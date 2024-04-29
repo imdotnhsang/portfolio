@@ -1,0 +1,26 @@
+{
+  "common": {
+    "or": "Hoặc"
+  },
+  "footer": {
+    "designBy": "Thiết kế bởi",
+    "contactMeByEmail": "Liên hệ tôi qua email"
+  },
+  "comingSoon": {
+    "description": "Trang này đang được xây dựng..."
+  },
+  "page": {
+    "home": {
+      "name": "Trang chủ"
+    },
+    "about": {
+      "name": "Giới thiệu"
+    },
+    "projects": {
+      "name": "Dự án"
+    },
+    "blog": {
+      "name": "Bài viết"
+    }
+  }
+}

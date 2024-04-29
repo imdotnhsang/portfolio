@@ -1,0 +1,26 @@
+{
+  "common": {
+    "or": "Or"
+  },
+  "footer": {
+    "designBy": "Design by",
+    "contactMeByEmail": "Contact me by email"
+  },
+  "comingSoon": {
+    "description": "This page is still under construction..."
+  },
+  "page": {
+    "home": {
+      "name": "Home"
+    },
+    "about": {
+      "name": "About"
+    },
+    "projects": {
+      "name": "Projects"
+    },
+    "blog": {
+      "name": "Blog"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.container {
+  @apply mx-auto w-full max-w-container px-4 md:px-7;
+}
+
+.transition-300 {
+  @apply transition-all duration-300;
+}
+
+.transition-400 {
+  @apply transition-all duration-400;
+}
+
+.transition-500 {
+  @apply transition-all duration-500;
+}
+
+.focus-shadow {
+  @apply focus:shadow-focus dark:focus:shadow-focusDrk;
+}
+
+.ring-border {
+  @apply ring-1 ring-inset;
+}
+
+.transform-center {
+  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform;
+}

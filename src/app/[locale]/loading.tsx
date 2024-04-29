@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-const Loading: FC = () => {
-  return <div>app loading</div>;
+const LocaleLoading: FC = () => {
+  return <div>locale loading</div>;
 };
 
-export default Loading;
+export default LocaleLoading;

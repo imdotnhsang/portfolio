@@ -1,8 +1,17 @@
-import { redirect } from 'next/navigation';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
-const App = () => {
-  redirect('/vi/coming-soon');
-  // return <div>app page</div>;
+import type { FC } from 'react';
+
+import { UnderConstruction } from '@/partials';
+
+import type { IPageProps } from '@/interfaces';
+
+interface ILocalePageProps extends IPageProps {}
+
+const LocalePage: FC<ILocalePageProps> = ({ params: { locale } }) => {
+  unstable_setRequestLocale(locale);
+
+  return <UnderConstruction />;
 };
 
-export default App;
+export default LocalePage;

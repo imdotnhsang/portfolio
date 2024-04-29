@@ -1,5 +1,5 @@
-const NotFound = () => {
-  return <div>app not found</div>;
+const LocaleNotFound = () => {
+  return <div>locale not found</div>;
 };
 
-export default NotFound;
+export default LocaleNotFound;

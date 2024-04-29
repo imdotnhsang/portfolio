@@ -1,44 +1,46 @@
 'use client';
 
-import { memo } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { useMatchScreen } from '@/hooks';
+import { omit } from 'ramda';
+import { memo, useMemo } from 'react';
 
+import type { IconProps } from '@phosphor-icons/react';
 import type { ButtonHTMLAttributes, FC, ReactNode } from 'react';
+
+import { cn } from '@/services';
 
 interface IButtonProps {
   children: ReactNode;
-  variant?: 'primary' | 'ghost';
-  color?: 'brown' | 'black';
   fullW?: boolean;
+  startIcon?: FC<IconProps>;
+  endIcon?: FC<IconProps>;
 }
 
 export const Button: FC<
   Omit<ButtonHTMLAttributes<Element>, keyof IButtonProps> & IButtonProps
 > = memo(function Button({
-  variant = 'primary',
-  color = 'brown',
   fullW = false,
+  startIcon: StartIcon,
+  endIcon: EndIcon,
   children,
   ...props
 }) {
+  const isBiggerMd = useMatchScreen('md');
+
+  const iconSize = useMemo(() => (isBiggerMd ? 24 : 20), [isBiggerMd]);
+
   return (
     <button
-      className={twMerge(
-        'flex items-center justify-center rounded-2 px-3.5 py-2.5 text-sm outline-none transition-all duration-200 ease-in-out focus:ring-2 focus:ring-offset-1',
-        variant === 'primary' && '',
-        variant === 'primary' &&
-          color === 'brown' &&
-          'bg-brown text-black-bold shadow-border-brown hover:bg-brown/90 focus:ring-brown/20 focus:ring-offset-brown/10',
-        variant === 'primary' &&
-          color === 'black' &&
-          'bg-black-slight text-white shadow-border-black-slight hover:bg-black-slight/90 focus:ring-black-slight/20 focus:ring-offset-black-slight/10',
-        variant === 'ghost' &&
-          'bg-transparent text-white shadow-border-white hover:bg-white/5 focus:ring-white/20 focus:ring-offset-white/10',
-        fullW && 'w-full'
+      className={cn(
+        'center focus-shadow text-sm-rps ring-border transition-300 rounded-2 bg-gray-1000 px-4 py-2.5 text-white outline-none ring-gray-1100 hover:bg-gray-1100 hover:ring-gray-1200 focus:shadow-focus dark:bg-gray-1200 dark:ring-gray-1300 dark:hover:bg-gray-1300 dark:hover:ring-gray-1400',
+        { 'w-full': fullW },
+        props.className
       )}
-      {...props}
+      {...omit(['className'], props)}
     >
+      {StartIcon && <StartIcon className='mr-2' size={iconSize} />}
       {children}
+      {EndIcon && <EndIcon className='ml-2' size={iconSize} />}
     </button>
   );
 });

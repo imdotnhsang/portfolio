@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react';
 
-export const useMergeState = <T>(
+export function useMergeState<T>(
   initialState: T = {} as T
-): [T, (patch: Partial<T> | ((prevState: T) => Partial<T>)) => void] => {
+): [T, (patch: Partial<T> | ((prevState: T) => Partial<T>)) => void] {
   const [state, setState] = useState<T>(initialState);
 
   const setMergeState = useCallback(
@@ -16,4 +16,4 @@ export const useMergeState = <T>(
   );
 
   return [state, setMergeState];
-};
+}
