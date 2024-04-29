@@ -17,7 +17,7 @@ export const UnderConstruction: FC = memo(function UnderConstruction() {
   const routeName = useMemo(() => URouter.getRouteName(pathname), [pathname]);
 
   return (
-    <div className='container flex-1 py-8 md:py-16'>
+    <div className='container py-8 md:py-16'>
       <h1 className='mb-4 font-mono text-3xl font-bold text-primary md:mb-6 md:text-4xl'>
         {t(`page.${routeName || 'home'}.name`)}
       </h1>

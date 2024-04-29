@@ -206,7 +206,11 @@ export const Header: FC = memo(function Header() {
   const handleToggleMenu = useCallback(() => {
     onToggleMenu();
 
-    document.body.style.overflow = openMenu ? 'auto' : 'hidden';
+    if (!openMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.removeProperty('overflow');
+    }
   }, [onToggleMenu, openMenu]);
 
   const handleCloseMenu = useCallback(() => {

@@ -53,7 +53,7 @@ export const Footer: FC = memo(function Footer() {
           </div>
         </div>
         <div className='flex flex-col-reverse items-center justify-center gap-4 md:flex-row lg:gap-12 xl:gap-16'>
-          <div className='flex flex-col items-center gap-1 xs:flex-row xs:gap-3 md:gap-5'>
+          <div className='flex flex-col items-center gap-2 xs:flex-row xs:gap-3 md:gap-5'>
             <div className='w-[140px]'>
               <ButtonMomo fullW />
             </div>
