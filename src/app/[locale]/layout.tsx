@@ -3,9 +3,10 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
 import { Fira_Code, Fira_Sans, Inter } from 'next/font/google';
+import { ToastContainer } from 'react-toastify';
 
 import type { Metadata } from 'next';
-import type { FC } from 'react';
+import { type FC } from 'react';
 
 import { ILayoutProps } from '@/interfaces';
 import { Footer, Header } from '@/layouts';
@@ -70,6 +71,8 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
               <div className='flex-1'>{children}</div>
               <Footer />
             </div>
+
+            <ToastContainer />
           </ThemeProvider>
         </NextIntlClientProvider>
 
