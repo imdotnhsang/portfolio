@@ -62,7 +62,10 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
       <body>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute='class'>
-            <div id='root' className='bg-color-secondary'>
+            <div
+              id='root'
+              className='flex min-h-screen flex-col bg-color-secondary'
+            >
               <Header />
               {children}
               <Footer />

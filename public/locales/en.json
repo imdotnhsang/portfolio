@@ -6,18 +6,21 @@
     "designBy": "Design by",
     "contactMeByEmail": "Contact me by email"
   },
+  "comingSoon": {
+    "description": "This page is still under construction..."
+  },
   "page": {
     "home": {
-      "title": "Home"
+      "name": "Home"
     },
     "about": {
-      "title": "About"
+      "name": "About"
     },
     "projects": {
-      "title": "Projects"
+      "name": "Projects"
     },
     "blog": {
-      "title": "Blog"
+      "name": "Blog"
     }
   }
 }

@@ -53,10 +53,10 @@ const Appearance: FC<IAppearanceProps> = memo(function Appearance() {
   const locale = useLocale();
   const params = useParams();
   const router = useRouter();
-
   const pathname = usePathname();
   const isClient = useIsClient();
   const { theme, setTheme, resolvedTheme } = useTheme();
+  const isUnderMd = useMatchScreen('md', 'max');
 
   const { isLightTheme, isDarkTheme, isLangEn, isLangVi } = useMemo(
     () => ({
@@ -111,7 +111,7 @@ const Appearance: FC<IAppearanceProps> = memo(function Appearance() {
     <div className='flex gap-2.5'>
       <button
         className={cn(
-          'transition-300 focus-shadow relative size-9 rounded-full border border-line-strong bg-color-secondary hover:border-line-bold',
+          'transition-300 focus-shadow relative size-10 rounded-full border border-line-strong bg-color-secondary hover:border-line-bold md:size-9',
           {
             'cursor-not-allowed': isPending
           }
@@ -120,26 +120,32 @@ const Appearance: FC<IAppearanceProps> = memo(function Appearance() {
         onClick={handleToggleLocale}
       >
         <IconFlagVn24
-          className={cn('transform-center transition-300', {
-            'opacity-100': isLangEn,
-            'opacity-0': isLangVi
-          })}
+          className={cn(
+            'transform-center transition-300 scale-[1.125] md:scale-100',
+            {
+              'opacity-100': isLangEn,
+              'opacity-0': isLangVi
+            }
+          )}
         />
         <IconFlagUk24
-          className={cn('transform-center transition-300', {
-            'opacity-100': isLangVi,
-            'opacity-0': isLangEn
-          })}
+          className={cn(
+            'transform-center transition-300 scale-[1.125] md:scale-100',
+            {
+              'opacity-100': isLangVi,
+              'opacity-0': isLangEn
+            }
+          )}
         />
       </button>
       <button
-        className='transition-300 center focus-shadow size-9 rounded-full border border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100 dark:border-gray-500 dark:bg-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-400'
+        className='transition-300 center focus-shadow size-10 rounded-full border border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100 dark:border-gray-500 dark:bg-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-400 md:size-9'
         onClick={() => setTheme(nextTheme)}
       >
         {ThemeIcon && (
           <ThemeIcon
             weight='fill'
-            size={24}
+            size={isUnderMd ? 27 : 24}
             className={cn({
               'text-gray-200': isLightTheme,
               'text-gray-900': isDarkTheme
@@ -219,12 +225,16 @@ export const Header: FC = memo(function Header() {
   });
 
   return (
-    <div className='dark:shadow-d-lg sticky top-0 z-2 bg-color-secondary shadow-lg md:shadow-none'>
+    <div className='dark:shadow-d-lg sticky top-0 z-2 bg-color-secondary shadow-lg md:bg-transparent md:shadow-none'>
       <div className='container'>
+        <div className='absolute left-0 top-0 hidden h-19 w-full bg-[linear-gradient(to_top,rgba(255,255,255,0)_0%,rgba(255,255,255,0.92)_50%)] dark:bg-[linear-gradient(to_top,rgba(40,42,45,0)_0%,rgba(40,42,45,0.92)_50%)] md:block' />
         <div
           className={cn(
-            'relative flex items-center justify-between py-4 transition-[padding] duration-300 md:py-5',
-            { 'md:pl-10 md:pr-4': scrollOverMenu }
+            'relative flex items-center justify-between py-4 transition-[padding] duration-300 md:pt-5',
+            {
+              'rounded-b-full md:pb-1.5 md:pl-10 md:pr-4': scrollOverMenu,
+              'mb:pb-5': !scrollOverMenu
+            }
           )}
         >
           <div className='flex items-center gap-16'>
@@ -250,7 +260,7 @@ export const Header: FC = memo(function Header() {
 
             <div
               className={cn(
-                'transition-300 absolute -left-4 top-0 w-[calc(100%+32px)] bg-color-secondary transition-[padding] duration-300 md:static md:left-0 md:h-12.5 md:w-auto',
+                'transition-300 absolute -left-4 top-0 w-[calc(100%+32px)] rounded-full bg-color-secondary transition-[padding] duration-300 md:static md:left-0 md:h-12.5 md:w-auto',
                 {
                   'md:relative md:px-8': !scrollOverMenu,
                   'translate-y-0 md:transform-none': openMenu,
@@ -260,7 +270,7 @@ export const Header: FC = memo(function Header() {
             >
               <div
                 className={cn(
-                  'absolute left-0 top-0 z-1 h-screen w-full bg-black/40 backdrop-blur-xl md:block md:rounded-full md:border md:bg-transparent md:backdrop-blur-none',
+                  'absolute left-0 top-0 z-1 h-screen w-full bg-black/10 backdrop-blur-xl md:block md:rounded-full md:border md:bg-color-secondary md:backdrop-blur-none',
                   {
                     'md:top-0 md:h-12.5 md:border-line-strong': !scrollOverMenu,
                     'md:dark:shadow-d-md shadow-md md:top-3.5 md:h-15.5 md:border-line-subtle':
@@ -283,7 +293,7 @@ export const Header: FC = memo(function Header() {
                       className='font-mono text-2xl font-bold md:text-base'
                       onClick={handleCloseMenu}
                     >
-                      {t(`page.${key}.title`)}
+                      {t(`page.${key}.name`)}
                     </InternalLink>
                   ))}
 

@@ -6,18 +6,21 @@
     "designBy": "Thiết kế bởi",
     "contactMeByEmail": "Liên hệ tôi qua email"
   },
+  "comingSoon": {
+    "description": "Trang này đang được xây dựng..."
+  },
   "page": {
     "home": {
-      "title": "Home"
+      "name": "Trang chủ"
     },
     "about": {
-      "title": "Giới thiệu"
+      "name": "Giới thiệu"
     },
     "projects": {
-      "title": "Dự án"
+      "name": "Dự án"
     },
     "blog": {
-      "title": "Bài viết"
+      "name": "Bài viết"
     }
   }
 }

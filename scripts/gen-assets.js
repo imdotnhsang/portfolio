@@ -4,7 +4,7 @@ const DEFAULT_PREFIX = 'Other';
 
 const ComponentPrefix = {
   i: 'Icon',
-  lt: 'Lottie'
+  lt: 'Animation'
 };
 
 const normalizeFileInfos = (folderPath) => {

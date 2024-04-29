@@ -1,13 +1,17 @@
-import { IPageProps } from '@/interfaces';
 import { unstable_setRequestLocale } from 'next-intl/server';
-import { FC } from 'react';
+
+import type { FC } from 'react';
+
+import { UnderConstruction } from '@/partials';
+
+import type { IPageProps } from '@/interfaces';
 
 interface ILocalePageProps extends IPageProps {}
 
 const LocalePage: FC<ILocalePageProps> = ({ params: { locale } }) => {
   unstable_setRequestLocale(locale);
 
-  return <div className='h-[120vh]'>locale page</div>;
+  return <UnderConstruction />;
 };
 
 export default LocalePage;
