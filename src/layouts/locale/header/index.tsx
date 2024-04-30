@@ -159,6 +159,8 @@ export const Header: FC = memo(function Header() {
   const isUnderMd = useMatchScreen('md', 'max');
   const Logo = useGetLogo();
 
+  console.log('color red', `hsl(var(--red))`);
+
   const [scrollOverMenu, setScrollOverMenu] = useState(false);
   const {
     value: openMenu,

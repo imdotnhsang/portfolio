@@ -23,6 +23,7 @@
     "next": "latest",
     "next-intl": "^3.11.3",
     "next-themes": "^0.3.0",
+    "nextjs-toploader": "^1.6.12",
     "ramda": "^0.29.1",
     "react": "latest",
     "react-dom": "latest",

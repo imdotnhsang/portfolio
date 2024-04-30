@@ -2,6 +2,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import { Fira_Code, Fira_Sans, Inter } from 'next/font/google';
+import NextTopLoader from 'nextjs-toploader';
 import { ToastContainer } from 'react-toastify';
 
 import type { Metadata } from 'next';
@@ -62,6 +63,12 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
       <body>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute='class'>
+            <NextTopLoader
+              showSpinner={false}
+              shadow={false}
+              template='<div class="bar !bg-sky" role="bar"><div class="peg"></div></div><div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
+            />
+
             <div
               id='root'
               className='flex min-h-screen flex-col bg-color-secondary'
