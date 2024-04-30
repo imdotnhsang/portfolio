@@ -14,10 +14,6 @@ export const PagePreLoader: FC = memo(function PagePreLoader() {
 
   useEffect(() => {
     setIsLoadedWeb(true);
-
-    return () => {
-      setIsLoadedWeb(false);
-    };
   }, []);
 
   return (
