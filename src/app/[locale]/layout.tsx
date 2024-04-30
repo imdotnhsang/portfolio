@@ -1,15 +1,18 @@
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
 import { Fira_Code, Fira_Sans, Inter } from 'next/font/google';
+import { Suspense } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 import type { Metadata } from 'next';
 import type { FC } from 'react';
 
-import { ILayoutProps } from '@/interfaces';
 import { Footer, Header } from '@/layouts';
+import { PagePreLoader } from '@/partials';
 import { LOCALES, cn } from '@/services';
+
+import type { ILayoutProps } from '@/interfaces';
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
@@ -37,8 +40,6 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
   children,
   params: { locale }
 }) => {
-  unstable_setRequestLocale(locale);
-
   const fonts: { [key in string]: string } = {
     en: firaCode.variable,
     vi: firaSans.variable
@@ -59,9 +60,14 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
       <head>
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
+
       <body>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute='class'>
+            <Suspense fallback={null}>
+              <PagePreLoader />
+            </Suspense>
+
             <div
               id='root'
               className='flex min-h-screen flex-col bg-color-secondary'
@@ -70,6 +76,8 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
               <div className='flex-1'>{children}</div>
               <Footer />
             </div>
+
+            <ToastContainer />
           </ThemeProvider>
         </NextIntlClientProvider>
 
