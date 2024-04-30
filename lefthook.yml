@@ -3,7 +3,7 @@ pre-commit:
   commands:
     prettier:
       glob: '*.{js,ts,jsx,tsx,css,scss,json,md}'
-      run: npm run format {staged_files} && git add .
+      run: npx prettier --write {staged_files} && git add .
     eslint:
       glob: '*.{js,ts,jsx,tsx}'
-      run: npm run lint:fix {staged_files}
+      run: npx eslint {staged_files} --quiet
