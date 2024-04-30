@@ -2,14 +2,12 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import { Fira_Code, Fira_Sans, Inter } from 'next/font/google';
-import { Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 
 import type { Metadata } from 'next';
 import type { FC } from 'react';
 
 import { Footer, Header } from '@/layouts';
-import { PagePreLoader } from '@/partials';
 import { LOCALES, cn } from '@/services';
 
 import type { ILayoutProps } from '@/interfaces';
@@ -64,10 +62,6 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
       <body>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute='class'>
-            <Suspense fallback={null}>
-              <PagePreLoader />
-            </Suspense>
-
             <div
               id='root'
               className='flex min-h-screen flex-col bg-color-secondary'
