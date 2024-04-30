@@ -1,5 +1,6 @@
 export * from './useBoolean';
 export * from './useEventListener';
+export * from './useGetLogo';
 export * from './useIsClient';
 export * from './useIsomorphicLayoutEffect';
 export * from './useLocale';

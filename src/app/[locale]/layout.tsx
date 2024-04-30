@@ -2,6 +2,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import { Fira_Code, Fira_Sans, Inter } from 'next/font/google';
+import { Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 
 import type { Metadata } from 'next';
@@ -60,17 +61,13 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
 
-      {/* <Suspense fallback={null}> */}
-      <PagePreLoader />
-      {/* </Suspense> */}
-
       <body>
-        {/* <Suspense fallback={null}>
-          <PagePreLoader />
-        </Suspense> */}
-
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute='class'>
+            <Suspense fallback={null}>
+              <PagePreLoader />
+            </Suspense>
+
             <div
               id='root'
               className='flex min-h-screen flex-col bg-color-secondary'

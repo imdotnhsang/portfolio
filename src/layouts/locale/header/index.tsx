@@ -15,16 +15,12 @@ import {
 
 import type { FC } from 'react';
 
-import {
-  IconFlagUk24,
-  IconFlagVn24,
-  IconLogoDark36,
-  IconLogoLight36
-} from '@/assets';
+import { IconFlagUk24, IconFlagVn24 } from '@/assets';
 import { InternalLink } from '@/components';
 import {
   useBoolean,
   useEventListener,
+  useGetLogo,
   useIsClient,
   useLocale,
   useMatchScreen
@@ -33,6 +29,7 @@ import { routesConfig } from '@/routes';
 import { cn, usePathname, useRouter } from '@/services';
 
 import { IObject } from '@/interfaces';
+
 import type { TBasicTheme, TPhosphorIcon } from '@/types';
 
 type TTheme = TBasicTheme | 'system';
@@ -159,9 +156,8 @@ const Appearance: FC<IAppearanceProps> = memo(function Appearance() {
 
 export const Header: FC = memo(function Header() {
   const t = useTranslations();
-  const isClient = useIsClient();
-  const { resolvedTheme } = useTheme();
   const isUnderMd = useMatchScreen('md', 'max');
+  const Logo = useGetLogo();
 
   const [scrollOverMenu, setScrollOverMenu] = useState(false);
   const {
@@ -169,19 +165,6 @@ export const Header: FC = memo(function Header() {
     toggle: onToggleMenu,
     setFalse: onHideMenu
   } = useBoolean(false);
-
-  const Logo = useMemo(() => {
-    if (!isClient) {
-      return IconLogoLight36;
-    }
-
-    const logoByTheme = {
-      light: IconLogoLight36,
-      dark: IconLogoDark36
-    };
-
-    return logoByTheme[resolvedTheme as TBasicTheme];
-  }, [isClient, resolvedTheme]);
 
   const handleScroll = useCallback(() => {
     if (isUnderMd) {
