@@ -1,15 +1,18 @@
 'use client';
 
-import { cn, usePathname } from '@/services';
-import { URouter } from '@/utils';
 import { useSearchParams } from 'next/navigation';
-import { memo, useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
 import type { FC } from 'react';
+
+import { cn, usePathname } from '@/services';
+import { URouter } from '@/utils';
 
 export const PagePreLoader: FC = memo(function PagePreLoader() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  const lastPartRef = useRef<HTMLDivElement>(null);
 
   const [isLoadedPage, setIsLoadedPage] = useState(false);
 
@@ -78,7 +81,7 @@ export const PagePreLoader: FC = memo(function PagePreLoader() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoadedPage(true);
-    }, 775);
+    }, 1000);
 
     return () => {
       setIsLoadedPage(false);
@@ -89,11 +92,13 @@ export const PagePreLoader: FC = memo(function PagePreLoader() {
     <>
       {Array.from({ length: 6 }).map((_, index) => (
         <div
+          ref={index === 5 ? lastPartRef : null}
           key={index}
           className={cn(
-            'transition-200 absolute top-0 z-3 h-full w-1/6 translate-y-0 bg-color-quaternary',
+            'transition-500 absolute top-0 z-3 h-full w-1/6 bg-color-quaternary',
             {
-              '-translate-y-full': isLoadedPage
+              '-translate-y-full': isLoadedPage,
+              'translate-y-0': !isLoadedPage
             }
           )}
           style={{
