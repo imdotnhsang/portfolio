@@ -214,9 +214,13 @@ export const Header: FC = memo(function Header() {
   }, [onToggleMenu, openMenu]);
 
   const handleCloseMenu = useCallback(() => {
+    if (!isUnderMd) {
+      return;
+    }
+
     onHideMenu();
     document.body.style.overflow = 'auto';
-  }, [onHideMenu]);
+  }, [isUnderMd, onHideMenu]);
 
   useEventListener('resize', () => {
     /**
