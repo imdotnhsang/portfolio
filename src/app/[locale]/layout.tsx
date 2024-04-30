@@ -62,12 +62,12 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
       </head>
 
       <body>
+        <Suspense fallback={null}>
+          <PagePreLoader />
+        </Suspense>
+
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute='class'>
-            <Suspense fallback={null}>
-              <PagePreLoader />
-            </Suspense>
-
             <div
               id='root'
               className='flex min-h-screen flex-col bg-color-secondary'
