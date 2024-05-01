@@ -1,4 +1,3 @@
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import { Fira_Code, Fira_Sans, Inter } from 'next/font/google';
@@ -9,6 +8,7 @@ import type { Metadata } from 'next';
 import type { FC } from 'react';
 
 import { Footer, Header } from '@/layouts';
+import { Metrics } from '@/partials';
 import { LOCALES, cn } from '@/services';
 
 import type { ILayoutProps } from '@/interfaces';
@@ -82,7 +82,7 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
           </ThemeProvider>
         </NextIntlClientProvider>
 
-        <SpeedInsights />
+        <Metrics />
       </body>
     </html>
   );
