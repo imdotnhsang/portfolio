@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
 import { memo } from 'react';
@@ -7,6 +8,8 @@ import type { FC } from 'react';
 export const Metrics: FC = memo(function Metrics() {
   return (
     <>
+      <Analytics />
+
       <SpeedInsights />
 
       <Script
