@@ -53,7 +53,7 @@ export const ModalBase: FC<IModalBaseProps> = memo(function ModalBase({
   return createPortal(
     <div
       className={cn(
-        'center transition-400 fixed left-0 top-0 z-[9999] h-screen w-screen opacity-0',
+        'center transition-all-400 fixed left-0 top-0 z-[9999] h-screen w-screen opacity-0',
         {
           'opacity-100': isOpen
         }
@@ -61,7 +61,7 @@ export const ModalBase: FC<IModalBaseProps> = memo(function ModalBase({
     >
       {showCloseBtn && (
         <button
-          className='center transition-300 absolute right-4 top-4 z-2 size-10 text-semantic-negative hover:text-semantic-negative xl:text-primary'
+          className='center transition-all-300 absolute right-4 top-4 z-2 size-10 text-semantic-negative hover:text-semantic-negative xl:text-primary'
           onClick={handleClose}
         >
           <X size={28} />
@@ -69,7 +69,7 @@ export const ModalBase: FC<IModalBaseProps> = memo(function ModalBase({
       )}
       <div className='center z-1 h-full w-full p-4'>
         <div
-          className='absolute left-0 top-0 h-full w-full bg-color-secondary/70 backdrop-blur-md'
+          className='absolute left-0 top-0 h-full w-full bg-fill-secondary/70 backdrop-blur-md'
           onClick={handleClose}
         />
         {children}

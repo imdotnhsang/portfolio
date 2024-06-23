@@ -1,12 +1,12 @@
-import { sizesScreen } from '@/theme';
+import { screens } from '@/theme';
 import { useMediaQuery } from './useMediaQuery';
 
 export function useMatchScreen(
-  size: keyof typeof sizesScreen = 'sm',
+  size: keyof typeof screens = 'sm',
   compare: 'min' | 'max' = 'min'
 ) {
   const isMatch = useMediaQuery(
-    `(${compare}-width: ${sizesScreen[size] + (compare === 'max' ? -1 : 0)}px)`
+    `(${compare}-width: ${screens[size] + (compare === 'max' ? -1 : 0)}px)`
   );
 
   return isMatch;

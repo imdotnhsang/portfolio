@@ -108,7 +108,7 @@ const Appearance: FC<IAppearanceProps> = memo(function Appearance() {
     <div className='flex gap-2.5'>
       <button
         className={cn(
-          'transition-300 focus-shadow relative size-10 rounded-full border border-line-strong bg-color-secondary hover:border-line-bold md:size-9',
+          'transition-all-300 focus-shadow relative size-10 rounded-full border border-stroke-strong bg-fill-secondary hover:border-stroke-bold md:size-9',
           {
             'cursor-not-allowed': isPending
           }
@@ -118,7 +118,7 @@ const Appearance: FC<IAppearanceProps> = memo(function Appearance() {
       >
         <IconFlagVn24
           className={cn(
-            'transform-center transition-300 scale-[1.125] md:scale-100',
+            'transform-center transition-all-300 scale-[1.125] md:scale-100',
             {
               'opacity-100': isLangEn,
               'opacity-0': isLangVi
@@ -127,7 +127,7 @@ const Appearance: FC<IAppearanceProps> = memo(function Appearance() {
         />
         <IconFlagUk24
           className={cn(
-            'transform-center transition-300 scale-[1.125] md:scale-100',
+            'transform-center transition-all-300 scale-[1.125] md:scale-100',
             {
               'opacity-100': isLangVi,
               'opacity-0': isLangEn
@@ -136,7 +136,7 @@ const Appearance: FC<IAppearanceProps> = memo(function Appearance() {
         />
       </button>
       <button
-        className='transition-300 center focus-shadow size-10 rounded-full border border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100 dark:border-gray-500 dark:bg-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-400 md:size-9'
+        className='transition-all-300 center focus-shadow size-10 rounded-full border border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100 dark:border-gray-500 dark:bg-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-400 md:size-9'
         onClick={() => setTheme(nextTheme)}
       >
         {ThemeIcon && (
@@ -149,7 +149,7 @@ const Appearance: FC<IAppearanceProps> = memo(function Appearance() {
             })}
           />
         )}
-      </button>{' '}
+      </button>
     </div>
   );
 });
@@ -216,7 +216,7 @@ export const Header: FC = memo(function Header() {
   });
 
   return (
-    <div className='dark:shadow-d-lg sticky top-0 z-2 bg-color-secondary shadow-lg md:bg-transparent md:shadow-none'>
+    <div className='dark:shadow-d-lg sticky top-0 z-2 bg-fill-secondary shadow-lg md:bg-transparent md:shadow-none'>
       <div className='container'>
         <div className='absolute left-0 top-0 hidden h-19 w-full bg-[linear-gradient(to_top,rgba(255,255,255,0)_0%,rgba(255,255,255,0.92)_50%)] dark:bg-[linear-gradient(to_top,rgba(40,42,45,0)_0%,rgba(40,42,45,0.92)_50%)] md:block' />
         <div
@@ -239,7 +239,7 @@ export const Header: FC = memo(function Header() {
               {Logo && (
                 <Logo
                   className={cn(
-                    'transition-300 -ml-1 -mt-1 scale-75 md:ml-0 md:mt-0',
+                    'transition-all-300 -ml-1 -mt-1 scale-75 md:ml-0 md:mt-0',
                     {
                       'md:scale-100': !scrollOverMenu,
                       'md:-ml-1 md:-mt-1 md:scale-75': scrollOverMenu
@@ -251,7 +251,7 @@ export const Header: FC = memo(function Header() {
 
             <div
               className={cn(
-                'transition-300 absolute -left-4 top-0 w-[calc(100%+32px)] rounded-full bg-color-secondary transition-[padding] duration-300 md:static md:left-0 md:h-12.5 md:w-auto',
+                'transition-all-300 absolute -left-4 top-0 w-[calc(100%+32px)] rounded-full bg-fill-secondary transition-[padding] duration-300 md:static md:left-0 md:h-12.5 md:w-auto',
                 {
                   'md:relative md:px-8': !scrollOverMenu,
                   'translate-y-0 md:transform-none': openMenu,
@@ -261,10 +261,11 @@ export const Header: FC = memo(function Header() {
             >
               <div
                 className={cn(
-                  'absolute left-0 top-0 z-1 h-screen w-full bg-black/10 backdrop-blur-xl md:block md:rounded-full md:border md:bg-color-secondary md:backdrop-blur-none',
+                  'absolute left-0 top-0 z-1 h-screen w-full bg-black/10 backdrop-blur-xl md:block md:rounded-full md:border md:bg-fill-secondary md:backdrop-blur-none',
                   {
-                    'md:top-0 md:h-12.5 md:border-line-strong': !scrollOverMenu,
-                    'md:dark:shadow-d-md shadow-md md:top-3.5 md:h-15.5 md:border-line-subtle':
+                    'md:top-0 md:h-12.5 md:border-stroke-strong':
+                      !scrollOverMenu,
+                    'md:dark:shadow-d-md shadow-md md:top-3.5 md:h-15.5 md:border-stroke-subtle':
                       scrollOverMenu
                   }
                 )}
@@ -272,7 +273,7 @@ export const Header: FC = memo(function Header() {
               />
               <div
                 className={cn(
-                  'dark:shadow-d-md relative z-1 flex h-[75vh] flex-col items-center gap-6 bg-color-secondary pt-[102px] shadow-md md:h-full md:flex-row md:gap-16 md:bg-transparent md:pt-0 md:shadow-none'
+                  'dark:shadow-d-md relative z-1 flex h-[75vh] flex-col items-center gap-6 bg-fill-secondary pt-[102px] shadow-md md:h-full md:flex-row md:gap-16 md:bg-transparent md:pt-0 md:shadow-none'
                 )}
               >
                 {Object.entries(routesConfig)
@@ -301,7 +302,7 @@ export const Header: FC = memo(function Header() {
             >
               <div
                 className={cn(
-                  'transition-400 h-0.5 w-4 rounded-full bg-gray-900 dark:bg-gray-300',
+                  'transition-all-400 h-0.5 w-4 rounded-full bg-gray-900 dark:bg-gray-300',
                   {
                     'absolute top-[11px] w-6 rotate-45': openMenu
                   }
@@ -309,7 +310,7 @@ export const Header: FC = memo(function Header() {
               />
               <div
                 className={cn(
-                  'transition-300 h-0.5 w-6 rounded-full bg-gray-900 dark:bg-gray-300',
+                  'transition-all-300 h-0.5 w-6 rounded-full bg-gray-900 dark:bg-gray-300',
                   {
                     'opacity-0': openMenu
                   }
@@ -317,7 +318,7 @@ export const Header: FC = memo(function Header() {
               />
               <div
                 className={cn(
-                  'transition-400 h-0.5 w-4 rounded-full bg-gray-900 dark:bg-gray-300',
+                  'transition-all-400 h-0.5 w-4 rounded-full bg-gray-900 dark:bg-gray-300',
                   {
                     'absolute bottom-[11px] w-6 -rotate-45': openMenu
                   }

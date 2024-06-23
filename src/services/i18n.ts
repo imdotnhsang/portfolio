@@ -3,7 +3,9 @@ import { createLocalizedPathnamesNavigation } from 'next-intl/navigation';
 import { getRequestConfig } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-import { TPathnames, routesConfig } from '@/routes';
+import { routesConfig } from '@/routes';
+
+import type { TPathnames } from '@/routes';
 
 export const LOCALES = ['en', 'vi'] as const;
 
