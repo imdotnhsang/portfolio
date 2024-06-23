@@ -1,13 +1,12 @@
 import { createThemes } from 'tw-colors';
 
 import {
-  colorsBase,
-  colorsDark,
-  colorsLight,
-  shadows,
-  sizesDeep,
-  sizesScreen,
-  sizesSpacing
+  boxShadow,
+  nestedColorsDark,
+  nestedColorsLight,
+  screens,
+  spacing,
+  zIndex
 } from './src/theme';
 
 /** @type {import('tailwindcss').Config} */
@@ -16,29 +15,28 @@ module.exports = {
   darkMode: 'class',
   theme: {
     screens: {
-      '2xs': sizesScreen['2xs'] + 'px',
-      xs: sizesScreen['xs'] + 'px',
-      sm: sizesScreen['sm'] + 'px',
-      md: sizesScreen['md'] + 'px',
-      lg: sizesScreen['lg'] + 'px',
-      xl: sizesScreen['xl'] + 'px',
-      '2xl': sizesScreen['2xl'] + 'px',
-      '3xl': sizesScreen['3xl'] + 'px'
+      '2xs': screens['2xs'] + 'px',
+      xs: screens['xs'] + 'px',
+      sm: screens['sm'] + 'px',
+      md: screens['md'] + 'px',
+      lg: screens['lg'] + 'px',
+      xl: screens['xl'] + 'px',
+      '2xl': screens['2xl'] + 'px',
+      '3xl': screens['3xl'] + 'px'
     },
     extend: {
-      borderRadius: sizesSpacing,
-      borderWidth: sizesSpacing,
-      zIndex: sizesDeep,
-      inset: sizesSpacing,
-      colors: colorsBase,
-      spacing: sizesSpacing,
-      boxShadow: shadows,
+      zIndex,
+      spacing,
+      boxShadow,
+      inset: spacing,
+      borderWidth: spacing,
+      borderRadius: spacing,
       fontFamily: {
         sans: ['var(--font-inter)'],
         mono: ['var(--font-fira)']
       },
       maxWidth: {
-        container: sizesScreen['2xl'] + 56 + 'px' // 32px is the padding x
+        container: screens['2xl'] + 56 + 'px' // 28px is the padding x
       },
       transitionDuration: {
         400: '400ms'
@@ -47,8 +45,8 @@ module.exports = {
   },
   plugins: [
     createThemes({
-      light: colorsLight,
-      dark: colorsDark
+      light: nestedColorsLight,
+      dark: nestedColorsDark
     })
   ]
 };

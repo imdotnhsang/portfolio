@@ -71,7 +71,7 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
 
             <div
               id='root'
-              className='flex min-h-screen flex-col bg-color-secondary'
+              className='flex min-h-screen flex-col bg-fill-secondary'
             >
               <Header />
               <div className='flex-1'>{children}</div>
