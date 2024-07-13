@@ -25,7 +25,7 @@ import {
   useLocale,
   useMatchScreen
 } from '@/hooks';
-import { routesConfig } from '@/routes';
+import { routes } from '@/routes';
 import { cn, usePathname, useRouter } from '@/services';
 
 import { IObject } from '@/interfaces';
@@ -233,7 +233,7 @@ export const Header: FC = memo(function Header() {
               className={cn('relative z-2 h-7.5 w-[27px] md:h-auto md:w-auto', {
                 'md:h-7.5 md:w-[27px]': scrollOverMenu
               })}
-              href={routesConfig.home.pathname.en}
+              href={routes.home.pathname.en}
               onClick={handleCloseMenu}
             >
               {Logo && (
@@ -276,7 +276,7 @@ export const Header: FC = memo(function Header() {
                   'dark:shadow-d-md relative z-1 flex h-[75vh] flex-col items-center gap-6 bg-fill-secondary pt-[102px] shadow-md md:h-full md:flex-row md:gap-16 md:bg-transparent md:pt-0 md:shadow-none'
                 )}
               >
-                {Object.entries(routesConfig)
+                {Object.entries(routes)
                   .filter(([, route]) => route.pathname.en !== '/')
                   .map(([key, route]) => (
                     <InternalLink

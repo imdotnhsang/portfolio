@@ -1,4 +1,4 @@
-export const routesConfig = Object.freeze({
+export const routes = Object.freeze({
   home: {
     pathname: {
       en: '/' as const,
@@ -26,7 +26,7 @@ export const routesConfig = Object.freeze({
 });
 
 export const pathnames = Object.freeze(
-  Object.values(routesConfig).map((route) => route.pathname.en)
+  Object.values(routes).map((route) => route.pathname.en)
 );
 
 export type TPathnames = (typeof pathnames)[number];
