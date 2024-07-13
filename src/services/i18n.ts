@@ -3,7 +3,7 @@ import { createLocalizedPathnamesNavigation } from 'next-intl/navigation';
 import { getRequestConfig } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-import { routesConfig } from '@/routes';
+import { routes } from '@/routes';
 
 import type { TPathnames } from '@/routes';
 
@@ -12,10 +12,7 @@ export const LOCALES = ['en', 'vi'] as const;
 export type TLocale = (typeof LOCALES)[number];
 
 export const intlPathnamesConfig = Object.fromEntries(
-  Object.values(routesConfig).map((route) => [
-    route.pathname.en,
-    route.pathname
-  ])
+  Object.values(routes).map((route) => [route.pathname.en, route.pathname])
 ) as {
   [key in TPathnames]: {
     en: string;
