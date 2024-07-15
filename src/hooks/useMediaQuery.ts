@@ -1,5 +1,7 @@
-import { CCore } from '@/constants';
 import { useState } from 'react';
+
+import { CCore } from '@/constants';
+
 import { useIsomorphicLayoutEffect } from '.';
 
 interface IUseMediaQueryOptions {

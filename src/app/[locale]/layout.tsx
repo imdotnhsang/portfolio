@@ -1,31 +1,18 @@
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
-import { Fira_Code, Fira_Sans, Inter } from 'next/font/google';
+
 import NextTopLoader from 'nextjs-toploader';
 import { ToastContainer } from 'react-toastify';
 
 import type { Metadata } from 'next';
 import type { FC } from 'react';
 
+import { CfgFonts } from '@/configs';
 import { Footer, Header } from '@/layouts';
 import { Metrics } from '@/partials';
 import { LOCALES, cn } from '@/services';
 
 import type { ILayoutProps } from '@/interfaces';
-
-const firaCode = Fira_Code({
-  subsets: ['latin'],
-  variable: '--font-fira'
-});
-const firaSans = Fira_Sans({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  subsets: ['latin'],
-  variable: '--font-fira'
-});
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter'
-});
 
 export const metadata: Metadata = {
   title: 'Portfolio | Nguyen Hoang Sang (Leo)',
@@ -40,8 +27,8 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
   params: { locale }
 }) => {
   const fonts: { [key in string]: string } = {
-    en: firaCode.variable,
-    vi: firaSans.variable
+    en: CfgFonts.firaCode.variable,
+    vi: CfgFonts.firaSans.variable
   };
 
   const messages = useMessages();
@@ -50,8 +37,8 @@ const LocaleLayout: FC<ILocaleLayoutProps> = ({
     <html
       lang={locale}
       className={cn(
-        inter.variable,
-        fonts[locale] || firaSans.variable,
+        CfgFonts.inter.variable,
+        fonts[locale] || CfgFonts.firaSans.variable,
         'font-base relative font-sans text-primary'
       )}
       suppressHydrationWarning

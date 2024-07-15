@@ -1,8 +1,10 @@
-import { cn } from '@/services';
-import { ClassValue } from 'clsx';
+import { withErrorBoundary } from '@/hocs';
 import { memo } from 'react';
 
+import type { ClassValue } from 'clsx';
 import type { AnchorHTMLAttributes, FC, ReactNode } from 'react';
+
+import { cn } from '@/services';
 
 interface IExternalLinkProps {
   children: ReactNode;
@@ -12,15 +14,17 @@ interface IExternalLinkProps {
 export const ExternalLink: FC<
   Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof IExternalLinkProps> &
     IExternalLinkProps
-> = memo(function ExternalLink({ children, className, ...props }) {
-  return (
-    <a
-      className={cn('link', className)}
-      rel='noreferrer'
-      target='_blank'
-      {...props}
-    >
-      {children}
-    </a>
-  );
-});
+> = withErrorBoundary(
+  memo(function ExternalLink({ children, className, ...props }) {
+    return (
+      <a
+        className={cn('link', className)}
+        rel='noreferrer'
+        target='_blank'
+        {...props}
+      >
+        {children}
+      </a>
+    );
+  })
+);

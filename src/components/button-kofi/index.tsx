@@ -1,15 +1,14 @@
 'use client';
 
 import { memo } from 'react';
-import { withErrorBoundary } from 'react-error-boundary';
 
 import type { ButtonHTMLAttributes, FC } from 'react';
 
 import { ImageKofiLogo } from '@/assets';
+import { withErrorBoundary } from '@/hocs';
 import { useBoolean } from '@/hooks';
 
 import { Button } from '../button';
-import { FallbackErrorBoundary } from '../fallback-error-boundary';
 import { ModalBase } from '../modal-base';
 
 interface IButtonKofiProps {
@@ -60,11 +59,5 @@ export const ButtonKofi: FC<
         )}
       </>
     );
-  }),
-  {
-    FallbackComponent: FallbackErrorBoundary,
-    onError(error, info) {
-      console.error(error, info);
-    }
-  }
+  })
 );
