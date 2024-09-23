@@ -59,7 +59,7 @@ export const Footer: FC = withErrorBoundary(
           <div className='flex flex-col-reverse items-center justify-center gap-4 md:flex-row lg:gap-12 xl:gap-16'>
             <div className='flex flex-col items-center gap-2 xs:flex-row xs:gap-3 md:gap-5'>
               <div className='w-[140px]'>
-                <ButtonMomo fullW />
+                <ButtonMomo />
               </div>
               <div className='center relative w-full xs:w-auto'>
                 <span className='text-xs-rps z-1 bg-fill-secondary px-1 text-secondary'>
@@ -68,7 +68,7 @@ export const Footer: FC = withErrorBoundary(
                 <div className='bg-line-subtle absolute left-0 top-1/2 h-[1px] w-full -translate-y-1/2' />
               </div>
               <div className='w-[140px]'>
-                <ButtonKofi fullW />
+                <ButtonKofi />
               </div>
             </div>
             <div className='md:hidden lg:block'>

@@ -11,9 +11,7 @@ import { useBoolean } from '@/hooks';
 import { Button } from '../button';
 import { ModalBase } from '../modal-base';
 
-interface IButtonKofiProps {
-  fullW?: boolean;
-}
+interface IButtonKofiProps {}
 
 export const ButtonKofi: FC<
   Omit<ButtonHTMLAttributes<Element>, keyof IButtonKofiProps> & IButtonKofiProps

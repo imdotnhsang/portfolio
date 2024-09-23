@@ -8,7 +8,7 @@ import { useIsClient } from '@/hooks';
 
 import type { TBasicTheme, TSvgComp } from '@/types';
 
-export function useGetLogo(): TSvgComp {
+export function useLogo(): TSvgComp {
   const isClient = useIsClient();
   const { resolvedTheme } = useTheme();
 

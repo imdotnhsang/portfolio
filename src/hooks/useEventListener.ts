@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react';
 
-import { CCore } from '@/constants';
 import type { RefObject } from 'react';
+
+import { CCore } from '@/constants';
+
 import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 
 function useEventListener<K extends keyof MediaQueryListEventMap>(

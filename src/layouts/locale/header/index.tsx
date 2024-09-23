@@ -21,9 +21,9 @@ import { InternalLink } from '@/components';
 import {
   useBoolean,
   useEventListener,
-  useGetLogo,
   useIsClient,
   useLocale,
+  useLogo,
   useMatchScreen
 } from '@/hooks';
 import { routes } from '@/routes';
@@ -165,7 +165,7 @@ export const Header: FC = withErrorBoundary(
   memo(function Header() {
     const t = useTranslations();
     const isUnderMd = useMatchScreen('md', 'max');
-    const Logo = useGetLogo();
+    const Logo = useLogo();
 
     const [scrollOverMenu, setScrollOverMenu] = useState(false);
     const {
@@ -283,7 +283,7 @@ export const Header: FC = withErrorBoundary(
                   )}
                   onClick={handleToggleMenu}
                 />
-                <div
+                <ul
                   className={cn(
                     'dark:shadow-d-md relative z-1 flex h-[75vh] flex-col items-center gap-6 bg-fill-secondary pt-[102px] shadow-md md:h-full md:flex-row md:gap-16 md:bg-transparent md:pt-0 md:shadow-none'
                   )}
@@ -291,20 +291,21 @@ export const Header: FC = withErrorBoundary(
                   {Object.entries(routes)
                     .filter(([, route]) => route.pathname.en !== '/')
                     .map(([key, route]) => (
-                      <InternalLink
-                        key={key}
-                        href={route.pathname.en}
-                        className='font-mono text-2xl font-bold md:text-base'
-                        onClick={handleCloseMenu}
-                      >
-                        {t(`page.${key}.name`)}
-                      </InternalLink>
+                      <li key={key}>
+                        <InternalLink
+                          href={route.pathname.en}
+                          className='font-mono text-2xl font-bold md:text-base'
+                          onClick={handleCloseMenu}
+                        >
+                          {t(`page.${key}.name`)}
+                        </InternalLink>
+                      </li>
                     ))}
 
                   <div className='absolute bottom-3 right-4 md:hidden'>
                     <Appearance />
                   </div>
-                </div>
+                </ul>
               </div>
             </div>
             <div className='z-1'>

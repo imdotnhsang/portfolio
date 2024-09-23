@@ -1,10 +1,11 @@
 import { render } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
+import { Smiley } from '@phosphor-icons/react';
 import { Button } from '.';
 
 describe('components button', () => {
-  const Icon = vi.fn();
+  const Icon = Smiley;
 
   afterEach(() => {
     vi.restoreAllMocks();
@@ -12,12 +13,6 @@ describe('components button', () => {
 
   it('renders correctly', () => {
     const result = render(<Button>Click me</Button>);
-
-    expect(result).toMatchSnapshot();
-  });
-
-  it('renders as full width', () => {
-    const result = render(<Button fullW>Click me</Button>);
 
     expect(result).toMatchSnapshot();
   });

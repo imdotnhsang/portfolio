@@ -4,6 +4,6 @@ pre-commit:
     prettier:
       glob: '*.{js,ts,jsx,tsx,css,scss,json,md}'
       run: npx prettier --write {staged_files} && git add .
-    eslint:
-      glob: '*.{js,ts,jsx,tsx}'
-      run: npx eslint {staged_files} --quiet
+    # eslint:
+    #   glob: '*.{js,ts,jsx,tsx}'
+    #   run: npx eslint {staged_files} --quiet

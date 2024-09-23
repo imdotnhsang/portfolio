@@ -12,7 +12,6 @@ import { cn } from '@/services';
 
 interface IButtonProps {
   children: ReactNode;
-  fullW?: boolean;
   startIcon?: Icon;
   endIcon?: Icon;
 }
@@ -21,7 +20,6 @@ export const Button: FC<
   Omit<ButtonHTMLAttributes<Element>, keyof IButtonProps> & IButtonProps
 > = withErrorBoundary(
   memo(function Button({
-    fullW = false,
     startIcon: StartIcon,
     endIcon: EndIcon,
     children,
@@ -35,7 +33,6 @@ export const Button: FC<
       <button
         className={cn(
           'center focus-shadow text-sm-rps ring-border transition-all-300 rounded-2 bg-gray-1000 px-4 py-2.5 text-white outline-none ring-gray-1100 hover:bg-gray-1100 hover:ring-gray-1200 focus:shadow-focus dark:bg-gray-1200 dark:ring-gray-1300 dark:hover:bg-gray-1300 dark:hover:ring-gray-1400',
-          { 'w-full': fullW },
           props.className
         )}
         {...omit(['className'], props)}
