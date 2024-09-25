@@ -62,7 +62,7 @@ const generateExportLine = ({ type, data }) => {
       return `export { default as ${formatComponentName(data.name)} } from './${data.filename}';\n`;
     default:
       console.log(`Invalid export type: ${type}`);
-      return;
+      return null;
   }
 };
 
@@ -95,9 +95,17 @@ const generateIndexFile = ({ relativePath, deep, type, ext }) => {
     }
 
     const { name, ext } = normalizedFileInfo(filename);
-    exportLines.push(
-      generateExportLine({ type, data: { name, filename, ext } })
-    );
+
+    const generatedExportLine = generateExportLine({
+      type,
+      data: { name, filename, ext }
+    });
+
+    if (!generatedExportLine) {
+      return;
+    }
+
+    exportLines.push(generatedExportLine);
   });
 
   const content = `${NOTE}${exportLines.join('')}`;
