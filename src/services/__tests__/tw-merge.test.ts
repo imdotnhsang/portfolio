@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { cn } from './tw-merge';
+
+import { cn } from '../tw-merge';
 
 describe('services tw merge', () => {
   it('should merge tailwind classes', () => {

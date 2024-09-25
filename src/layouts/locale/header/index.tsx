@@ -46,9 +46,7 @@ const THEME_ICON: {
 
 const HEADER_HEIGHT = 90;
 
-interface IAppearanceProps {}
-
-const Appearance: FC<IAppearanceProps> = withErrorBoundary(
+const Appearance: FC = withErrorBoundary(
   memo(function Appearance() {
     const locale = useLocale();
     const params = useParams();

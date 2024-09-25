@@ -1,6 +1,6 @@
 import { screens } from '@/theme';
 
-import { useMediaQuery } from './useMediaQuery';
+import { useMediaQuery } from './use-media-query';
 
 export function useMatchScreen(
   size: keyof typeof screens = 'sm',

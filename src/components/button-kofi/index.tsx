@@ -8,14 +8,9 @@ import { ImageKofiLogo } from '@/assets';
 import { withErrorBoundary } from '@/hocs';
 import { useBoolean } from '@/hooks';
 
-import { Button } from '../button';
-import { ModalBase } from '../modal-base';
+import { Button, ModalBase } from '../base';
 
-interface IButtonKofiProps {}
-
-export const ButtonKofi: FC<
-  Omit<ButtonHTMLAttributes<Element>, keyof IButtonKofiProps> & IButtonKofiProps
-> = withErrorBoundary(
+export const ButtonKofi: FC<ButtonHTMLAttributes<Element>> = withErrorBoundary(
   memo(function ButtonKofi({ ...props }) {
     const {
       value: showKofiPanel,

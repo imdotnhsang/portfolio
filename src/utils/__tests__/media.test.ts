@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { UMedia } from '.';
+import { UMedia } from '..';
 
 describe('media utils', () => {
   test('should remove last slash in domain', () => {

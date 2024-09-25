@@ -20,12 +20,7 @@ export const metadata: Metadata = {
     'I am a software engineer who loves to build things. I am passionate about web development and mobile development, and I am always looking for new opportunities to learn and grow. I am currently working as a software engineer at a company in Vietnam.'
 };
 
-interface ILocaleLayoutProps extends ILayoutProps {}
-
-const LocaleLayout: FC<ILocaleLayoutProps> = ({
-  children,
-  params: { locale }
-}) => {
+const LocaleLayout: FC<ILayoutProps> = ({ children, params: { locale } }) => {
   const fonts: { [key in string]: string } = {
     en: CfgFonts.firaCode.variable,
     vi: CfgFonts.firaSans.variable

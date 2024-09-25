@@ -9,7 +9,7 @@ import { withErrorBoundary } from '@/hocs';
 import { useBoolean } from '@/hooks';
 import { cn } from '@/services';
 
-import { ModalBase } from '../modal-base';
+import { ModalBase } from '../base';
 
 interface IButtonMomoProps {
   fullW?: boolean;

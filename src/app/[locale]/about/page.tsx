@@ -6,9 +6,7 @@ import { UnderConstruction } from '@/partials';
 
 import type { IPageProps } from '@/interfaces';
 
-interface IAboutPageProps extends IPageProps {}
-
-const AboutPage: FC<IAboutPageProps> = ({ params: { locale } }) => {
+const AboutPage: FC<IPageProps> = ({ params: { locale } }) => {
   unstable_setRequestLocale(locale);
 
   return <UnderConstruction />;

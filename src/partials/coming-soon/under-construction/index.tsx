@@ -2,11 +2,11 @@
 
 import { useTranslations } from 'next-intl';
 import { memo, useMemo } from 'react';
-import Lottie from 'react-lottie-player';
+import Lottie from 'react-lottie';
 
 import type { FC } from 'react';
 
-import { AnimationComingSoon } from '@/assets';
+import { AmtDataComingSoon } from '@/assets';
 import { withErrorBoundary } from '@/hocs';
 import { usePathname } from '@/services';
 import { URoute } from '@/utils';
@@ -28,10 +28,14 @@ export const UnderConstruction: FC = withErrorBoundary(
         </p>
         <div className='flex items-start justify-center'>
           <Lottie
-            animationData={AnimationComingSoon}
-            loop
-            className='w-full max-w-[500px]'
-            play
+            options={{
+              animationData: AmtDataComingSoon,
+              loop: true,
+              autoplay: true
+            }}
+            isClickToPauseDisabled
+            ariaRole='div'
+            width={500}
           />
         </div>
       </div>
