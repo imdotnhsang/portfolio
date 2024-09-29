@@ -2,12 +2,12 @@ import type { FC, ReactNode } from 'react';
 
 import '@/styles/_autoload.scss';
 
-interface IAppLayoutProps {
+interface ILayoutProps {
   children: ReactNode;
 }
 
-const AppLayout: FC<IAppLayoutProps> = ({ children }) => {
+const Layout: FC<ILayoutProps> = ({ children }) => {
   return children;
 };
 
-export default AppLayout;
+export default Layout;

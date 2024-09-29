@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-const AboutLoading: FC = () => {
+const Loading: FC = () => {
   return <div>About loading</div>;
 };
 
-export default AboutLoading;
+export default Loading;

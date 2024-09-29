@@ -1,11 +1,11 @@
-const AppNotFound = () => {
+const NotFound = () => {
   return (
     <html>
       <body>
-        <div>app not found</div>
+        <div>App not found</div>
       </body>
     </html>
   );
 };
 
-export default AppNotFound;
+export default NotFound;

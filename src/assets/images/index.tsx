@@ -23,10 +23,9 @@ const _genImg = (
 
 export const ImageKofiLogo = _genImg('im-kofi-logo.webp', {
   fill: true,
-  sizes: '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
-  priority: true
+  sizes: '(max-width: 768px) 100vw, 100vw'
 });
 export const ImageMomoQr = _genImg('im-momo-qr.webp', {
   fill: true,
-  sizes: '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+  sizes: '(max-width: 768px) 100vw, 100vw'
 });

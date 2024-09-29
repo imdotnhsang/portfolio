@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio (Updating...)
 
-## Getting Started
+## Structure
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+├── __mocks__
+├── .github
+├── .storybook
+├── .vscode
+├── e2e
+│   └── tests
+├── public
+│   ├── images
+│   └── locales
+├── scrips
+├── src
+│   ├── app
+│   ├── assets
+│   ├── components
+│   │   ├── atoms
+│   │   └── molecules
+│   ├── configs
+│   ├── constants
+│   ├── contexts
+│   ├── helpers
+│   ├── hocs
+│   ├── hooks
+│   ├── layouts
+│   ├── organisms
+│   ├── services
+│   ├── stores
+│   ├── styles
+│   ├── templates
+│   ├── types
+│   └── utils
+└── types
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Note:** I follow the structure of [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) to organize the components.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- e2e
+  - tests: contains all the end-to-end tests with [Playwright](https://playwright.dev/)
+- public
+  - images: contains all the images (e.g. .png, .webp, etc.)
+  - locales: contains all the translations (e.g. en.json, vi.json, etc.)
+- scripts: ...
+- src
+  - app: follow the structure of [App Router of Next.js](https://nextjs.org/docs)
+  - assets: ...
+  - components
+    - atoms: contains the smallest components
+    - molecules: contains the components that are made up of atoms
+  - configs: ...
+  - constants: ...
+  - contexts: ...
+  - helpers: provide support or aid to other parts of the program
+  - hocs:...
+  - hooks: contains all the custom hooks
+  - layouts: ...
+  - organisms: contains the components that are made up of molecules and atoms
+  - services: ...
+  - stores: contains the global state management
+  - styles: ...
+  - templates: contains the components that are made up of organisms to create a page
+  - theme: ...
+  - types: ...
+  - utils: perform common or generic operations that are not tied to any specific part of the program
+- types: contains all the typescript types from the third-party libraries
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Set up
 
-## Learn More
+```bash
+npm setup
+npm run start:dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Notice
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Always update all the dependencies to the latest version.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm run up-to-date:pkg
+```
 
-## Deploy on Vercel
+- Always use the command to update exports in the index file.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm run up-to-date:index
+```
