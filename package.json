@@ -14,7 +14,9 @@
     "test:coverage": "VITE_CJS_IGNORE_WARNING=true vitest run --coverage ",
     "doc": "storybook dev -p 6006",
     "typecheck": "tsc --noEmit",
-    "gen:index": "node scripts/generate-index.mjs"
+    "up-to-date:index": "node scripts/generate-index.mjs",
+    "up-to-date:pkg": "npm update",
+    "setup": "npm install"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
