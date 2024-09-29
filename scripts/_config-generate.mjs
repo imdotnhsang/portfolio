@@ -41,8 +41,8 @@ export const GENERATED_INDEX_FOLDERS = [
   { relativePath: 'src/interfaces', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/layouts', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/organisms', deep: 2, type: '*', ext: 'ts' },
-  { relativePath: 'src/templates', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/services', deep: 1, type: '*', ext: 'ts' },
+  { relativePath: 'src/templates', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/theme', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/types', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/utils', deep: 1, type: '*', ext: 'ts' }

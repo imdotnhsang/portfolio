@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import { cn } from '../tw-merge';
 
-describe('services tw merge', () => {
+describe('services tw-merge', () => {
   it('should merge tailwind classes', () => {
     const result = cn('text-base', 'text-2xl');
 

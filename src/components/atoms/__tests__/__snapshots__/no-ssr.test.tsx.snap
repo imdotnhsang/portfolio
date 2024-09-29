@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components no-ssr > renders correctly 1`] = `
+exports[`components/atoms no-ssr > renders correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
