@@ -2,11 +2,11 @@
 
 import type { FC } from 'react';
 
-interface ILocaleErrorProps {
+interface IErrorProps {
   error: Error & { digest?: string };
 }
 
-const LocaleError: FC<ILocaleErrorProps> = ({ error }) => {
+const Error: FC<IErrorProps> = ({ error }) => {
   return (
     <div>
       <h2>locale error: {error.message}</h2>
@@ -14,4 +14,4 @@ const LocaleError: FC<ILocaleErrorProps> = ({ error }) => {
   );
 };
 
-export default LocaleError;
+export default Error;

@@ -2,14 +2,13 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import type { FC } from 'react';
 
-import { UnderConstruction } from '@/partials';
-
 import type { IPageProps } from '@/interfaces';
+import { LocaleTemplate } from '@/templates';
 
-const LocalePage: FC<IPageProps> = ({ params: { locale } }) => {
+const Page: FC<IPageProps> = ({ params: { locale } }) => {
   unstable_setRequestLocale(locale);
 
-  return <UnderConstruction />;
+  return <LocaleTemplate />;
 };
 
-export default LocalePage;
+export default Page;

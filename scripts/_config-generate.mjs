@@ -9,7 +9,9 @@ export const EXCLUDED_NAMES = [
   'index.tsx',
   '.test.ts',
   '.test.tsx',
-  '__tests__'
+  '__tests__',
+  '.scss',
+  '.stories.tsx'
 ];
 
 export const NOT_FOUND_COMPONENT_ASSET_PREFIX = 'Other';
@@ -29,8 +31,7 @@ export const GENERATED_INDEX_FOLDERS = [
     type: 'default-as',
     ext: 'ts'
   },
-  { relativePath: 'src/components', deep: 1, type: '*', ext: 'ts' },
-  { relativePath: 'src/components/base', deep: 1, type: '*', ext: 'ts' },
+  { relativePath: 'src/components', deep: 2, type: '*', ext: 'ts' },
   { relativePath: 'src/configs', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/constants', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/contexts', deep: 1, type: '*', ext: 'ts' },
@@ -39,7 +40,8 @@ export const GENERATED_INDEX_FOLDERS = [
   { relativePath: 'src/hooks', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/interfaces', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/layouts', deep: 1, type: '*', ext: 'ts' },
-  { relativePath: 'src/partials', deep: 1, type: '*', ext: 'ts' },
+  { relativePath: 'src/organisms', deep: 2, type: '*', ext: 'ts' },
+  { relativePath: 'src/templates', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/services', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/theme', deep: 1, type: '*', ext: 'ts' },
   { relativePath: 'src/types', deep: 1, type: '*', ext: 'ts' },

@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-const BlogLoading: FC = () => {
+const Loading: FC = () => {
   return <div>Blog loading</div>;
 };
 
-export default BlogLoading;
+export default Loading;

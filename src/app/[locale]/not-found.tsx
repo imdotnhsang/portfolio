@@ -1,5 +1,5 @@
-const LocaleNotFound = () => {
-  return <div>locale not found</div>;
+const NotFound = () => {
+  return <div>Locale not found</div>;
 };
 
-export default LocaleNotFound;
+export default NotFound;

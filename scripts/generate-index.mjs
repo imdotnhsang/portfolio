@@ -118,7 +118,8 @@ const generateIndexFile = ({ relativePath, deep, type, ext }) => {
     generateIndexFile({
       relativePath: folderPath,
       deep: deep - 1,
-      type
+      type,
+      ext
     });
   });
 };
