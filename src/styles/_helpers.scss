@@ -1,5 +1,19 @@
+@import './variables.scss';
+
 .container {
   @apply mx-auto w-full max-w-container px-4 md:px-7;
+}
+
+.h-page {
+  height: calc(100vh - #{$top-bar-height-mobile});
+
+  @media (screen(md)) {
+    height: calc(100vh - $top-bar-height-tablet);
+  }
+
+  @media (screen(xl)) {
+    height: calc(100vh - $top-bar-height);
+  }
 }
 
 .focus-shadow {

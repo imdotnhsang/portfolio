@@ -7,7 +7,6 @@ const twMerge = extendTailwindMerge({
   extend: {
     classGroups: {
       'font-size': [
-        'text-xs-rps',
         'text-sm-rps',
         'text-base-rps',
         'text-lg-rps',
@@ -18,7 +17,8 @@ const twMerge = extendTailwindMerge({
         'text-5xl-rps',
         'text-6xl-rps',
         'text-7xl-rps',
-        'text-8xl-rps'
+        'text-8xl-rps',
+        'text-9xl-rps'
       ],
       'ring-w': ['ring-border']
     }
