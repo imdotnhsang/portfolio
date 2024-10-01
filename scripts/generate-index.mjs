@@ -83,7 +83,7 @@ const generateIndexFile = ({ relativePath, deep, type, ext }) => {
       return;
     }
 
-    if (stats.isDirectory() && deep === 2) {
+    if (stats.isDirectory() && deep > 1) {
       foundedFolderDirectories.push(filename);
     }
 

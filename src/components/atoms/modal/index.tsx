@@ -68,7 +68,7 @@ export const Modal: FC<IModalProps> = withErrorBoundary(
             className='center transition-all-300 absolute right-4 top-4 z-2 size-10 text-semantic-negative hover:text-semantic-negative xl:text-primary'
             onClick={handleClose}
           >
-            <X size={28} />
+            <X className='size-7' />
           </button>
         )}
         <div className='center z-1 h-full w-full p-4'>

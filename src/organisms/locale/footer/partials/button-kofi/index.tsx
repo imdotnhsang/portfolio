@@ -5,10 +5,9 @@ import { memo } from 'react';
 import type { ButtonHTMLAttributes, FC } from 'react';
 
 import { ImageKofiLogo } from '@/assets';
+import { Button, Modal } from '@/components';
 import { withErrorBoundary } from '@/hocs';
 import { useBoolean } from '@/hooks';
-
-import { Button, Modal } from '../../atoms';
 
 export const ButtonKofi: FC<ButtonHTMLAttributes<Element>> = withErrorBoundary(
   memo(function ButtonKofi({ ...props }) {

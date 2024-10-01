@@ -54,7 +54,6 @@ const Appearance: FC = withErrorBoundary(
     const pathname = usePathname();
     const isClient = useIsClient();
     const { theme, setTheme, resolvedTheme } = useTheme();
-    const isUnderMd = useMatchScreen('md', 'max');
 
     const { isLightTheme, isDarkTheme, isLangEn, isLangVi } = useMemo(
       () => ({
@@ -108,6 +107,7 @@ const Appearance: FC = withErrorBoundary(
         );
       });
     }, [locale, params, pathname, router]);
+
     return (
       <div className='flex gap-2.5'>
         <button
@@ -148,8 +148,7 @@ const Appearance: FC = withErrorBoundary(
           {ThemeIcon && (
             <ThemeIcon
               weight='fill'
-              size={isUnderMd ? 27 : 24}
-              className={cn({
+              className={cn('size-6.5 md:size-6', {
                 'text-gray-200': isLightTheme,
                 'text-gray-900': isDarkTheme
               })}
@@ -238,12 +237,9 @@ export const LocaleHeader: FC = withErrorBoundary(
           >
             <div className='flex items-center gap-16'>
               <InternalLink
-                className={cn(
-                  'relative z-2 h-7.5 w-[27px] md:h-auto md:w-auto',
-                  {
-                    'md:h-7.5 md:w-[27px]': scrollOverMenu
-                  }
-                )}
+                className={cn('relative z-2 h-7.5 w-6.5 md:h-auto md:w-auto', {
+                  'md:h-7.5 md:w-6.5': scrollOverMenu
+                })}
                 href={routes.home.pathname.en}
                 onClick={handleCloseMenu}
                 aria-label='Go to home'

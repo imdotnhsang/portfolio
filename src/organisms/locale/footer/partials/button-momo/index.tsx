@@ -5,20 +5,13 @@ import { memo } from 'react';
 import type { ButtonHTMLAttributes, FC } from 'react';
 
 import { IconMomo24, ImageMomoQr } from '@/assets';
+import { Modal } from '@/components';
 import { withErrorBoundary } from '@/hocs';
 import { useBoolean } from '@/hooks';
 import { cn } from '@/services';
 
-import { Modal } from '../../atoms';
-
-interface IButtonMomoProps {
-  fullW?: boolean;
-}
-
-export const ButtonMomo: FC<
-  Omit<ButtonHTMLAttributes<Element>, keyof IButtonMomoProps> & IButtonMomoProps
-> = withErrorBoundary(
-  memo(function ButtonMomo({ fullW = false, ...props }) {
+export const ButtonMomo: FC<ButtonHTMLAttributes<Element>> = withErrorBoundary(
+  memo(function ButtonMomo({ ...props }) {
     const {
       value: showMomoQr,
       setTrue: onShowMomoQr,
@@ -31,7 +24,7 @@ export const ButtonMomo: FC<
           {...props}
           className={cn(
             'center text-base-rps transition-all-300 focus-shadow ring-border h-10 rounded-2 bg-[#D82D8B] px-4 py-2.5 text-white outline-none ring-[#C5297E] hover:bg-[#C1177C] md:h-11',
-            { 'w-full': fullW }
+            props.className
           )}
           onClick={onShowMomoQr}
         >

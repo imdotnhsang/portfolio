@@ -1,35 +1,16 @@
 'use client';
 
-import { ArrowUpRight, GitBranch, Star } from '@phosphor-icons/react';
+import { ArrowUpRight } from '@phosphor-icons/react';
 import { useTranslations } from 'next-intl';
 import { memo } from 'react';
 
 import type { FC } from 'react';
 
-import { ButtonKofi, ButtonMomo, ExternalLink } from '@/components';
+import { ExternalLink } from '@/components';
 import { CEnv } from '@/constants';
 import { withErrorBoundary } from '@/hocs';
 
-const ForkAndStarRepo: FC = withErrorBoundary(
-  memo(function ForkAndStarRepo() {
-    return (
-      <div className='flex items-center gap-5'>
-        <ExternalLink
-          className='text-2xl-rps middle gap-1.5'
-          href={CEnv.STAR_REPO_URL}
-        >
-          <Star weight='fill' /> Star
-        </ExternalLink>
-        <ExternalLink
-          className='text-2xl-rps middle gap-1.5'
-          href={CEnv.FORK_REPO_URL}
-        >
-          <GitBranch weight='fill' /> Fork
-        </ExternalLink>
-      </div>
-    );
-  })
-);
+import { ButtonKofi, ButtonMomo, ForkAndStarRepo } from './partials';
 
 export const LocaleFooter: FC = withErrorBoundary(
   memo(function LocaleFooter() {
@@ -58,18 +39,16 @@ export const LocaleFooter: FC = withErrorBoundary(
           </div>
           <div className='flex flex-col-reverse items-center justify-center gap-4 md:flex-row lg:gap-12 xl:gap-16'>
             <div className='flex flex-col items-center gap-2 xs:flex-row xs:gap-3 md:gap-5'>
-              <div className='w-[140px]'>
-                <ButtonMomo />
-              </div>
+              <ButtonMomo className='w-[128px] md:w-[140px]' />
+
               <div className='center relative w-full xs:w-auto'>
                 <span className='text-base-rps z-1 bg-fill-secondary px-1 text-secondary'>
                   {t('common.or')}
                 </span>
                 <div className='bg-line-subtle absolute left-0 top-1/2 h-[1px] w-full -translate-y-1/2' />
               </div>
-              <div className='w-[140px]'>
-                <ButtonKofi />
-              </div>
+
+              <ButtonKofi className='w-[128px] md:w-[140px]' />
             </div>
             <div className='md:hidden lg:block'>
               <ForkAndStarRepo />
