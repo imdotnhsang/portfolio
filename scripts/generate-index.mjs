@@ -14,7 +14,7 @@ const checkEmptyFolder = (relativePath) => {
   const files = fs.readdirSync(relativePath);
 
   const nonNecessaryFiles = files.filter((fileName) =>
-    [...KEEP_NAMES, DUMP_NAMES].includes(fileName)
+    [...KEEP_NAMES, ...DUMP_NAMES].includes(fileName)
   );
 
   if (files.length === 0 || nonNecessaryFiles.length > 0) {
@@ -83,7 +83,7 @@ const generateIndexFile = ({ relativePath, deep, type, ext }) => {
       return;
     }
 
-    if (stats.isDirectory() && deep > 1) {
+    if (stats.isDirectory() && deep === 2) {
       foundedFolderDirectories.push(filename);
     }
 
