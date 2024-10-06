@@ -11,7 +11,11 @@
   },
   "page": {
     "home": {
-      "name": "Home"
+      "name": "Home",
+      "intro": {
+        "keepScrolling": "Keep<br/>scrolling",
+        "currentlyWorkingAt": "Currently working at"
+      }
     },
     "about": {
       "name": "About"

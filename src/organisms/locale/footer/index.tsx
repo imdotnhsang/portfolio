@@ -7,7 +7,6 @@ import { memo } from 'react';
 import type { FC } from 'react';
 
 import { ExternalLink } from '@/components';
-import { CEnv } from '@/constants';
 import { withErrorBoundary } from '@/hocs';
 
 import { ButtonKofi, ButtonMomo, ForkAndStarRepo } from './partials';
@@ -21,11 +20,11 @@ export const LocaleFooter: FC = withErrorBoundary(
         <div className='container flex flex-col justify-between gap-4 py-4 md:gap-3 md:py-6 lg:flex-row lg:items-center xl:gap-0'>
           <div className='w-fulls flex flex-col justify-between md:gap-1 lg:justify-normal'>
             <p className='text-2xl-rps font-mono font-bold'>
-              {t('footer.designBy')}: {CEnv.USERNAME}
+              {t('footer.designBy')}: imdotnhsang
             </p>
             <div className='flex justify-between'>
               <ExternalLink
-                href={`mailto:${CEnv.EMAIL}`}
+                href='mailto:im.nhsang@gmail.com'
                 className='text-base-rps middle gap-1 font-medium underline'
                 target='_self'
               >

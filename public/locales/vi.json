@@ -11,7 +11,11 @@
   },
   "page": {
     "home": {
-      "name": "Trang chủ"
+      "name": "Trang chủ",
+      "intro": {
+        "keepScrolling": "Cuộn<br/>xuống",
+        "currentlyWorkingAt": "Hiện đang làm việc tại"
+      }
     },
     "about": {
       "name": "Giới thiệu"

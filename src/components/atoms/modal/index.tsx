@@ -9,6 +9,7 @@ import type { FC, ReactNode } from 'react';
 import { withErrorBoundary } from '@/hocs';
 import { useEventListener } from '@/hooks';
 import { cn } from '@/services';
+import dynamic from 'next/dynamic';
 
 interface IModalProps {
   onClose?: () => void;
@@ -16,13 +17,15 @@ interface IModalProps {
   noKeyboard?: boolean;
   showCloseBtn?: boolean;
   children: ReactNode;
+  closeOnOverlayClick?: boolean;
 }
 
-export const Modal: FC<IModalProps> = withErrorBoundary(
+const _Modal: FC<IModalProps> = withErrorBoundary(
   memo(function Modal({
     open: externalOpen = false,
     noKeyboard = false,
     showCloseBtn = false,
+    closeOnOverlayClick = true,
     onClose,
     children
   }) {
@@ -43,10 +46,14 @@ export const Modal: FC<IModalProps> = withErrorBoundary(
     }, [isOpen]);
 
     const handleClose = useCallback(() => {
+      if (!closeOnOverlayClick) {
+        return;
+      }
+
       setIsOpen(false);
 
       onClose?.();
-    }, [onClose]);
+    }, [closeOnOverlayClick, onClose]);
 
     useEventListener('keydown', (e) => {
       if (!noKeyboard && e.key === 'Escape') {
@@ -57,29 +64,35 @@ export const Modal: FC<IModalProps> = withErrorBoundary(
     return createPortal(
       <div
         className={cn(
-          'center transition-all-400 fixed left-0 top-0 z-[9999] h-screen w-screen opacity-0',
+          'center transition-all-150 fixed left-0 top-0 z-[-1] h-screen w-screen opacity-0',
           {
-            'opacity-100': isOpen
+            'z-[9999] opacity-100': isOpen
           }
         )}
       >
-        {showCloseBtn && (
-          <button
-            className='center transition-all-300 absolute right-4 top-4 z-2 size-10 text-semantic-negative hover:text-semantic-negative xl:text-primary'
-            onClick={handleClose}
-          >
-            <X className='size-7' />
-          </button>
-        )}
         <div className='center z-1 h-full w-full p-4'>
           <div
             className='absolute left-0 top-0 h-full w-full bg-fill-secondary/70 backdrop-blur-md'
             onClick={handleClose}
           />
-          {children}
+          <div className='relative'>
+            {showCloseBtn && (
+              <button
+                className='center transition-all-300 absolute -right-9 top-0 z-2 size-7 text-semantic-negative hover:text-semantic-negative xl:text-primary'
+                onClick={handleClose}
+              >
+                <X className='size-7' />
+              </button>
+            )}
+            {children}
+          </div>
         </div>
       </div>,
       document.body
     );
   })
 );
+
+export const Modal = dynamic(() => Promise.resolve(_Modal), {
+  ssr: false
+});

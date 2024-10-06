@@ -6,7 +6,6 @@ import { memo } from 'react';
 import type { FC } from 'react';
 
 import { ExternalLink } from '@/components';
-import { CEnv } from '@/constants';
 import { withErrorBoundary } from '@/hocs';
 
 export const ForkAndStarRepo: FC = withErrorBoundary(
@@ -15,13 +14,13 @@ export const ForkAndStarRepo: FC = withErrorBoundary(
       <div className='flex items-center gap-5'>
         <ExternalLink
           className='text-base-rps middle gap-1.5'
-          href={CEnv.STAR_REPO_URL}
+          href='https://github.com/imdotnhsang/portfolio'
         >
           <Star weight='fill' className='size-4' /> Star
         </ExternalLink>
         <ExternalLink
           className='text-base-rps middle gap-1.5'
-          href={CEnv.FORK_REPO_URL}
+          href='https://github.com/imdotnhsang/portfolio/fork'
         >
           <GitBranch weight='fill' className='size-4' /> Fork
         </ExternalLink>
