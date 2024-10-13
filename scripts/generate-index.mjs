@@ -24,8 +24,6 @@ class GenerateIndexExports {
     lt: 'AmtData'
   };
 
-  constructor() {}
-
   #isEmptyFolder(relativePath) {
     const files = fs.readdirSync(relativePath);
 
