@@ -5,7 +5,7 @@ import { NoSsr } from '../no-ssr';
 
 describe('components/atoms no-ssr', () => {
   it('renders correctly', () => {
-    const result = render(<NoSsr>Click me</NoSsr>);
+    const result = render(<NoSsr>no ssr</NoSsr>);
 
     expect(result).toMatchSnapshot();
   });

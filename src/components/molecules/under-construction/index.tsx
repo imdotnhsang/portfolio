@@ -14,7 +14,7 @@ export const UnderConstruction: FC = withErrorBoundary(
     const t = useTranslations();
 
     return (
-      <div className='md::space-y-8 container space-y-6 py-8 md:py-16'>
+      <div className='md::space-y-8 container space-y-6 py-5 md:py-10'>
         <p className='text-base-rps text-secondary'>{t('comingSoon.label')}</p>
         <div className='flex items-start justify-center'>
           <div className='w-full md:w-2/5'>

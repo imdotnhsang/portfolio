@@ -20,17 +20,14 @@ const compat = new FlatCompat({
 export default [
   {
     ignores: [
-      'node_modules',
-      'public',
-      'build',
-      'scripts',
-      '.storybook',
-      'coverage',
-      'postcss.config.js',
-      'tailwind.config.js',
-      'vitest.config.ts',
-      'eslint.config.mjs',
-      'next.config.js'
+      'public/**/*',
+      'build/**/*',
+      '.next/**/*',
+      'node_modules/**/*',
+      'coverage/**/*',
+      '.storybook/**/*',
+      'playwright-report/**/*',
+      '*.config.{js,mjs,cjs,ts}'
     ]
   },
   ...fixupConfigRules(
@@ -48,6 +45,7 @@ export default [
     )
   ),
   {
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     plugins: {
       react: fixupPluginRules(react),
       '@typescript-eslint': fixupPluginRules(typescriptEslint),
@@ -79,7 +77,14 @@ export default [
       'import/default': 'off',
       'import/no-named-as-default-member': 'off',
       'import/no-unresolved': 'off',
-      'react/prop-types': 'off'
+      'react/prop-types': 'off',
+      'array-callback-return': 'warn',
+      'default-case': [
+        'warn',
+        {
+          commentPattern: '^no default$'
+        }
+      ]
     }
   }
 ];

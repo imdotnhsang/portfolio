@@ -4,11 +4,15 @@ import { memo } from 'react';
 
 import type { FC } from 'react';
 
-import { UnderConstruction } from '@/components';
 import { withErrorBoundary } from '@/hocs';
+import { LocaleIntro } from '@/organisms';
 
 export const LocaleTemplate: FC = withErrorBoundary(
   memo(function LocaleTemplate() {
-    return <UnderConstruction />;
+    return (
+      <main className='container'>
+        <LocaleIntro />
+      </main>
+    );
   })
 );

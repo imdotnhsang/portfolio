@@ -54,7 +54,6 @@ const Appearance: FC = withErrorBoundary(
     const pathname = usePathname();
     const isClient = useIsClient();
     const { theme, setTheme, resolvedTheme } = useTheme();
-    const isUnderMd = useMatchScreen('md', 'max');
 
     const { isLightTheme, isDarkTheme, isLangEn, isLangVi } = useMemo(
       () => ({
@@ -108,6 +107,7 @@ const Appearance: FC = withErrorBoundary(
         );
       });
     }, [locale, params, pathname, router]);
+
     return (
       <div className='flex gap-2.5'>
         <button
@@ -117,6 +117,7 @@ const Appearance: FC = withErrorBoundary(
               'cursor-not-allowed': isPending
             }
           )}
+          aria-label='Toggle locale'
           disabled={isPending}
           onClick={handleToggleLocale}
         >
@@ -142,12 +143,12 @@ const Appearance: FC = withErrorBoundary(
         <button
           className='transition-all-300 center focus-shadow size-10 rounded-full border border-gray-1100 bg-gray-900 hover:border-gray-1200 hover:bg-gray-1100 dark:border-gray-500 dark:bg-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-400 md:size-9'
           onClick={() => setTheme(nextTheme)}
+          aria-label='Toggle theme'
         >
           {ThemeIcon && (
             <ThemeIcon
               weight='fill'
-              size={isUnderMd ? 27 : 24}
-              className={cn({
+              className={cn('size-6.5 md:size-6', {
                 'text-gray-200': isLightTheme,
                 'text-gray-900': isDarkTheme
               })}
@@ -227,23 +228,21 @@ export const LocaleHeader: FC = withErrorBoundary(
           <div className='absolute left-0 top-0 hidden h-19 w-full bg-[linear-gradient(to_top,rgba(255,255,255,0)_0%,rgba(255,255,255,0.92)_50%)] dark:bg-[linear-gradient(to_top,rgba(40,42,45,0)_0%,rgba(40,42,45,0.92)_50%)] md:block' />
           <div
             className={cn(
-              'relative flex items-center justify-between py-4 transition-[padding] duration-300 md:pt-5',
+              'relative flex items-center justify-between py-3 transition-[padding] duration-300 md:py-4 xl:py-5',
               {
-                'rounded-b-full md:pb-1.5 md:pl-10 md:pr-4': scrollOverMenu,
-                'mb:pb-5': !scrollOverMenu
+                'rounded-b-full md:pb-1.5 md:pl-9 md:pr-2.5 lg:pr-4 xl:pl-10':
+                  scrollOverMenu
               }
             )}
           >
             <div className='flex items-center gap-16'>
               <InternalLink
-                className={cn(
-                  'relative z-2 h-7.5 w-[27px] md:h-auto md:w-auto',
-                  {
-                    'md:h-7.5 md:w-[27px]': scrollOverMenu
-                  }
-                )}
+                className={cn('relative z-2 h-7.5 w-6.5 md:h-auto md:w-auto', {
+                  'md:h-7.5 md:w-6.5': scrollOverMenu
+                })}
                 href={routes.home.pathname.en}
                 onClick={handleCloseMenu}
+                aria-label='Go to home'
               >
                 {Logo && (
                   <Logo
@@ -275,41 +274,43 @@ export const LocaleHeader: FC = withErrorBoundary(
                     {
                       'md:top-0 md:h-12.5 md:border-stroke-strong':
                         !scrollOverMenu,
-                      'md:dark:shadow-d-md shadow-md md:top-3.5 md:h-15.5 md:border-stroke-subtle':
+                      'md:dark:shadow-d-md shadow-md md:top-3.5 md:h-13.5 md:border-stroke-subtle xl:h-15.5':
                         scrollOverMenu
                     }
                   )}
                   onClick={handleToggleMenu}
                 />
-                <ul
-                  className={cn(
-                    'dark:shadow-d-md relative z-1 flex h-[75vh] flex-col items-center gap-6 bg-fill-secondary pt-[102px] shadow-md md:h-full md:flex-row md:gap-16 md:bg-transparent md:pt-0 md:shadow-none'
-                  )}
-                >
-                  {Object.entries(routes)
-                    .filter(([, route]) => route.pathname.en !== '/')
-                    .map(([key, route]) => (
-                      <li key={key}>
-                        <InternalLink
-                          href={route.pathname.en}
-                          className='font-mono text-2xl font-bold md:text-base'
-                          onClick={handleCloseMenu}
-                        >
-                          {t(`page.${key}.name`)}
-                        </InternalLink>
-                      </li>
-                    ))}
-
-                  <div className='absolute bottom-3 right-4 md:hidden'>
+                <div className='relative h-full w-full'>
+                  <ul
+                    className={cn(
+                      'dark:shadow-d-md relative z-1 flex h-[75vh] flex-col items-center gap-6 bg-fill-secondary pt-[102px] shadow-md md:h-full md:flex-row md:gap-16 md:bg-transparent md:pt-0 md:shadow-none'
+                    )}
+                  >
+                    {Object.entries(routes)
+                      .filter(([, route]) => route.pathname.en !== '/')
+                      .map(([key, route]) => (
+                        <li key={key}>
+                          <InternalLink
+                            href={route.pathname.en}
+                            className='font-mono text-2xl font-bold md:text-base'
+                            onClick={handleCloseMenu}
+                          >
+                            {t(`page.${key}.name`)}
+                          </InternalLink>
+                        </li>
+                      ))}
+                  </ul>
+                  <div className='absolute bottom-3 right-4 z-1 md:hidden'>
                     <Appearance />
                   </div>
-                </ul>
+                </div>
               </div>
             </div>
             <div className='z-1'>
               <button
                 className='relative flex size-6 flex-col items-end justify-center gap-1.5 md:hidden'
                 onClick={handleToggleMenu}
+                aria-label='Toggle menu'
               >
                 <div
                   className={cn(

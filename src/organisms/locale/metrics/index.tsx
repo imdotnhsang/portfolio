@@ -7,12 +7,12 @@ import { memo } from 'react';
 
 import type { FC } from 'react';
 
-import { CEnv } from '@/constants';
+import { CCore, CEnv } from '@/constants';
 import { withErrorBoundary } from '@/hocs';
 
 export const LocaleMetrics: FC = withErrorBoundary(
   memo(function LocaleMetrics() {
-    if (CEnv.NODE_ENV === 'development') {
+    if (CCore.IS_DEVELOPMENT) {
       return null;
     }
 
@@ -31,7 +31,7 @@ export const LocaleMetrics: FC = withErrorBoundary(
                     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
                     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
                     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-                })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_MS_CLARITY_KEY}");
+                })(window, document, "clarity", "script", "${CEnv.MS_CLARITY_KEY}");
                 `
           }}
         />

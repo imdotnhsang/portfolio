@@ -19,7 +19,7 @@ const FallbackErrorBoundary: FC<FallbackProps> = memo(
 
     return (
       <div className='middle gap-2'>
-        <span className='text-sm-rps text-semantic-negative'>Error</span>
+        <span className='text-base-rps text-semantic-negative'>Error</span>
         <button
           className='transition-all-300 rounded-1 bg-fill-subtle p-1 hover:bg-fill-strong'
           onClick={resetErrorBoundary}
